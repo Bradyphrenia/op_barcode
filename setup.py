@@ -4,7 +4,7 @@ from Cython.Build import cythonize
 from Cython.Distutils import build_ext
 
 setup(
-    name='op_barcode',
+    name='barcode',
     version='2.100',
     packages=['mainwindow',
               ],

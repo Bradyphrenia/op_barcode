@@ -1,6 +1,6 @@
 pyinstaller -F -w ^
 --add-binary=m_window.cp312-win_amd64.pyd;dist ^
 --add-binary=mainwindow.cp312-win_amd64.pyd;dist ^
-prothesen.py
+barcode.py
 
 python setup.py build_ext --inplace
