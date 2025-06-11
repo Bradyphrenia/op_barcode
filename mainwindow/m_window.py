@@ -12,19 +12,24 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.pushButton_ok.clicked.connect(self.close)
         self.ui.pushButton_decode.clicked.connect(self.barcode_decode)
 
-    def barcode_read(self):
+    def barcode_decode(self):
         barcode = self.ui.lineEdit_barcode.text()
-        return barcode
-
-    def barcode_decode(self, barcode):
-        barcode = '01042801021324431727113010Y018'
-        # barcode = barcode.decode('utf-8')
-
         gtin = barcode[2:16]
         expires = barcode[18:24]
         serial = barcode[26:32]
-        print(gtin, expires, serial)
-        return gtin, expires, serial
+        expires = self.convert_date(expires)
+        self.ui.lineEdit_gtin.setText(gtin)
+        self.ui.lineEdit_expire.setText(expires)
+        self.ui.lineEdit_serial.setText(serial)
+        self.ui.lineEdit_barcode.setText('')
+        return None
+
+    def convert_date(self, date):
+        yy = date[0:2]
+        mm = date[2:4]
+        dd = date[4:6]
+        date = f'20{yy}-{mm}-{dd}'
+        return date
 
 
 if __name__ == '__main__':

@@ -29,9 +29,9 @@
    <widget class="QLineEdit" name="lineEdit_barcode">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>60</y>
-      <width>491</width>
+      <x>150</x>
+      <y>70</y>
+      <width>301</width>
       <height>21</height>
      </rect>
     </property>
@@ -39,8 +39,8 @@
    <widget class="QLineEdit" name="lineEdit_gtin">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>170</y>
+      <x>150</x>
+      <y>380</y>
       <width>301</width>
       <height>21</height>
      </rect>
@@ -49,8 +49,8 @@
    <widget class="QLineEdit" name="lineEdit_serial">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>270</y>
+      <x>150</x>
+      <y>430</y>
       <width>301</width>
       <height>21</height>
      </rect>
@@ -59,9 +59,9 @@
    <widget class="QLineEdit" name="lineEdit_expire">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>370</y>
-      <width>211</width>
+      <x>150</x>
+      <y>480</y>
+      <width>151</width>
       <height>21</height>
      </rect>
     </property>
@@ -69,8 +69,8 @@
    <widget class="QPushButton" name="pushButton_ok">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>470</y>
+      <x>680</x>
+      <y>500</y>
       <width>101</width>
       <height>32</height>
      </rect>
@@ -82,14 +82,66 @@
    <widget class="QPushButton" name="pushButton_decode">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>490</x>
       <y>50</y>
-      <width>101</width>
-      <height>32</height>
+      <width>131</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="text">
      <string>Lesen</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>70</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Barcode:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>380</y>
+      <width>58</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>GTIN:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>430</y>
+      <width>111</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Seriennummer:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>480</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ablaufdatum:</string>
     </property>
    </widget>
   </widget>
