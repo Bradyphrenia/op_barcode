@@ -1,0 +1,5 @@
+python3 setup.py build_ext --inplace
+pyinstaller --onefile --windowed \
+ --add-binary "m_window.cpython-312-darwin.so:mainwindow" \
+ --add-binary "mainwindow.cpython-312-darwin.so:mainwindow" \
+ prothesen.py
