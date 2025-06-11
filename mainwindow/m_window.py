@@ -17,7 +17,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         return barcode
 
     def barcode_decode(self, barcode):
-        # barcode = '01042801021324431727113010Y018'
+        barcode = '01042801021324431727113010Y018'
         # barcode = barcode.decode('utf-8')
 
         gtin = barcode[2:16]
