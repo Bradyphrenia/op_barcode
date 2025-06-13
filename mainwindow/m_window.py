@@ -6,12 +6,17 @@ from mainwindow import Ui_MainWindow
 
 class BarcodeProcessor:
     @staticmethod
-    def process_barcode(barcode):
+    def process_barcode(barcode, djo):
         if not barcode:
             return None, None, None
-        gtin = barcode[2:16] if len(barcode) > 16 else ""
-        expires = barcode[18:24] if len(barcode) > 24 else ""
-        serial = barcode[26:] if len(barcode) > 26 else ""
+        if djo == False:
+            gtin = barcode[2:16] if len(barcode) > 16 else ""
+            expires = barcode[18:24] if len(barcode) > 24 else ""
+            serial = barcode[26:] if len(barcode) > 26 else ""
+        else:
+            gtin = barcode[2:16] if len(barcode) > 16 else ""
+            expires = barcode[29:34] if len(barcode) > 34 else ""
+            serial = barcode[19:27] if len(barcode) > 27 else ""
         expires = BarcodeProcessor.convert_date(expires) if expires else ""
         return gtin, expires, serial
 
@@ -39,6 +44,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """Stellt alle Signal-Slot-Verbindungen her"""
         self.ui.pushButton_ok.clicked.connect(self.close)
         self.ui.pushButton_decode.clicked.connect(self.barcode_decode)
+        self.ui.actionBeenden.triggered.connect(self.close)
 
     def barcode_decode(self):
         barcode = self.ui.lineEdit_barcode.text()
@@ -48,7 +54,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.ui.plainTextEdit_output.appendPlainText(f"Kein Barcode eingegeben")
             return
         try:
-            gtin, expires, serial = self.barcode_processor.process_barcode(barcode)
+            gtin, expires, serial = self.barcode_processor.process_barcode(barcode, self.ui.radioButton_djo.isChecked())
             # UI aktualisieren
             self.ui.lineEdit_gtin.setText(gtin)
             self.ui.lineEdit_expire.setText(expires)

@@ -154,6 +154,19 @@
      </rect>
     </property>
    </widget>
+   <widget class="QRadioButton" name="radioButton_djo">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>100</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>DJO</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
