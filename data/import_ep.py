@@ -36,26 +36,51 @@ def import_json_file(file_path: str) -> Dict[str, Any]:
 def suche_in_dictionary(dictionary, suchbegriff):
     """
     Durchsucht ein Dictionary rekursiv nach einem Suchbegriff
-    und gibt die gefundenen Pfade zurück.
+    und gibt die gefundenen Pfade sowie die vollständigen Einträge zurück.
     """
     ergebnisse = []
 
-    def rekursive_suche(objekt, pfad=""):
-        if isinstance(objekt, dict):
-            for key, value in objekt.items():
-                neuer_pfad = f"{pfad}.{key}" if pfad else key
-                if str(suchbegriff).lower() in str(key).lower():
-                    ergebnisse.append((neuer_pfad, key))
-                rekursive_suche(value, neuer_pfad)
-        elif isinstance(objekt, list):
-            for i, item in enumerate(objekt):
-                neuer_pfad = f"{pfad}[{i}]"
-                rekursive_suche(item, neuer_pfad)
-        else:
-            if str(suchbegriff).lower() in str(objekt).lower():
-                ergebnisse.append((pfad, objekt))
+    # Identifizieren des Top-Level-Elements (Root-Element)
+    if isinstance(dictionary, list):
+        # Bei Array: Jedes Element im Array ist ein Root-Element
+        root_elements = dictionary
+    else:
+        # Bei Dictionary: Das Dictionary selbst ist Root, oder wir suchen nach Root-Elementen
+        # Wenn es einen bestimmten Schlüssel gibt, der ein Array von Datensätzen enthält
+        root_elements = None
+        for key, value in dictionary.items():
+            if isinstance(value, list) and len(value) > 0 and isinstance(value[0], dict):
+                root_elements = value
+                break
 
-    rekursive_suche(dictionary)
+        if root_elements is None:
+            # Wenn kein Array gefunden wurde, verwenden wir das gesamte Dictionary
+            root_elements = [dictionary]
+
+    # Jetzt haben wir eine Liste von Root-Elementen
+    for idx, root_element in enumerate(root_elements):
+        # Für jedes Root-Element verfolgen wir, ob ein Treffer gefunden wurde
+        treffer_gefunden = [False]  # Als Liste für Referenz-Modifikation in verschachtelten Funktionen
+
+        def rekursive_suche(objekt, pfad=""):
+            if isinstance(objekt, dict):
+                for key, value in objekt.items():
+                    neuer_pfad = f"{pfad}.{key}" if pfad else key
+                    if str(suchbegriff).lower() in str(key).lower():
+                        treffer_gefunden[0] = True
+                        ergebnisse.append((f"Root-Element {idx}: {neuer_pfad}", key, root_element))
+                    rekursive_suche(value, neuer_pfad)
+            elif isinstance(objekt, list):
+                for i, item in enumerate(objekt):
+                    neuer_pfad = f"{pfad}[{i}]"
+                    rekursive_suche(item, neuer_pfad)
+            else:
+                if str(suchbegriff).lower() in str(objekt).lower():
+                    treffer_gefunden[0] = True
+                    ergebnisse.append((f"Root-Element {idx}: {pfad}", objekt, root_element))
+
+        rekursive_suche(root_element)
+
     return ergebnisse
 
 
@@ -452,32 +477,37 @@ def import_json_to_postgres(connection, table_name: str, json_data: Dict[str, An
         raise Exception(f"Fehler beim Importieren der JSON-Daten: {str(e)}")
 
 
+# Im Hauptteil, wo Sie die Suche durchführen:
 if __name__ == '__main__':
-    # Konfiguration für die zu importierenden Dateien
-    files_to_import = [
-        {"file_path": "table-EP_ARTIKEL2.json", "table_name": "implantat"},
-    ]
-
-    # Import der Dateien mit strukturierten Tabellen starten und Artikelidentifikation extrahieren
-    import_multiple_files_to_postgres(
-        files_to_import,
-        use_structured_tables=True,
-        extract_artikel_id=True  # Aktiviert die Extraktion der Artikelidentifikation
-    )
 
     # Optional: Suche in den Daten durchführen
     # Wählen Sie eine Datei für die Suche
     search_file = "table-EP_ARTIKEL2.json"
     try:
         search_data = import_json_file(search_file)
-        suchbegriff = "48595"  # Ersetzen Sie dies durch Ihren Suchbegriff
+        suchbegriff = "07611996073546"  # Ersetzen Sie dies durch Ihren Suchbegriff
         gefundene_einträge = suche_in_dictionary(search_data, suchbegriff)
 
         # Ergebnisse ausgeben
         if gefundene_einträge:
             print(f"\nGefunden '{suchbegriff}' in {search_file} an folgenden Stellen:")
-            for pfad, wert in gefundene_einträge:
-                print(f"Pfad: {pfad}, Wert: {wert}")
+
+            # Speichern Sie bereits gezeigte Root-Elemente, um Duplikate zu vermeiden
+            gezeigte_root_elemente = set()
+
+            for pfad, wert, root_element in gefundene_einträge:
+                # Erzeuge einen Hashwert für das Root-Element, um Duplikate zu erkennen
+                root_hash = hash(json.dumps(root_element, sort_keys=True))
+
+                # Nur anzeigen, wenn dieses Root-Element noch nicht gezeigt wurde
+                if root_hash not in gezeigte_root_elemente:
+                    print(f"Pfad: {pfad}, Wert: {wert}")
+                    print(f"Vollständiger Datensatz:")
+                    print(json.dumps(root_element, indent=2, ensure_ascii=False))
+                    print("-" * 80)  # Trennlinie für bessere Lesbarkeit
+
+                    # Markiere dieses Root-Element als bereits gezeigt
+                    gezeigte_root_elemente.add(root_hash)
         else:
             print(f"\n'{suchbegriff}' wurde in {search_file} nicht gefunden.")
     except Exception as e:
