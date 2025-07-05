@@ -116,7 +116,7 @@ def _search_recursively(
             results.append((f"Root-Element {root_idx}: {path}", obj, root_element))
 
 
-def init_search(search_file: str = "table-EP_ARTIKEL2.json") -> Dict[str, Any]:
+def init_search(search_file: str) -> Dict[str, Any]:
     """
     Initialisiert Suchdaten aus einer JSON-Datei.
 
