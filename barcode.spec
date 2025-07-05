@@ -4,7 +4,7 @@
 a = Analysis(
     ['barcode.py'],
     pathex=[],
-    binaries=[('m_window.cp312-win_amd64.pyd', 'dist'), ('mainwindow.cp312-win_amd64.pyd', 'dist')],
+    binaries=[('m_window.cp312-win_amd64.pyd', 'dist'), ('mainwindow.cp312-win_amd64.pyd', 'dist'), ('data.cp312-win_amd64.pyd', 'dist')],
     datas=[],
     hiddenimports=[],
     hookspath=[],

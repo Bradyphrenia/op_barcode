@@ -2114,8 +2114,9 @@ int __pyx_module_is_main_mainwindow = 0;
 /* #### Code section: global_var ### */
 static PyObject *__pyx_builtin_object;
 /* #### Code section: string_decls ### */
-static const char __pyx_k__22[] = "?";
-static const char __pyx_k__26[] = ".";
+static const char __pyx_k_DJO[] = "DJO";
+static const char __pyx_k__27[] = "?";
+static const char __pyx_k__31[] = ".";
 static const char __pyx_k_doc[] = "__doc__";
 static const char __pyx_k_GTIN[] = "GTIN:";
 static const char __pyx_k_dict[] = "__dict__";
@@ -2158,12 +2159,14 @@ static const char __pyx_k_set_name[] = "__set_name__";
 static const char __pyx_k_QLineEdit[] = "QLineEdit";
 static const char __pyx_k_QtWidgets[] = "QtWidgets";
 static const char __pyx_k_addAction[] = "addAction";
+static const char __pyx_k_label_ref[] = "label_ref";
 static const char __pyx_k_menuDatei[] = "menuDatei";
 static const char __pyx_k_metaclass[] = "__metaclass__";
 static const char __pyx_k_statusbar[] = "statusbar";
 static const char __pyx_k_translate[] = "translate";
 static const char __pyx_k_MainWindow[] = "MainWindow";
 static const char __pyx_k_QStatusBar[] = "QStatusBar";
+static const char __pyx_k_Ref_Nummer[] = "Ref-Nummer:";
 static const char __pyx_k_mainwindow[] = "mainwindow";
 static const char __pyx_k_menuAction[] = "menuAction";
 static const char __pyx_k_setMenuBar[] = "setMenuBar";
@@ -2173,8 +2176,10 @@ static const char __pyx_k_QPushButton[] = "QPushButton";
 static const char __pyx_k_mro_entries[] = "__mro_entries__";
 static const char __pyx_k_setGeometry[] = "setGeometry";
 static const char __pyx_k_translate_2[] = "_translate";
+static const char __pyx_k_QRadioButton[] = "QRadioButton";
 static const char __pyx_k_Seriennummer[] = "Seriennummer:";
 static const char __pyx_k_is_coroutine[] = "_is_coroutine";
+static const char __pyx_k_lineEdit_ref[] = "lineEdit_ref";
 static const char __pyx_k_setStatusBar[] = "setStatusBar";
 static const char __pyx_k_Barcode_Leser[] = "Barcode-Leser";
 static const char __pyx_k_Ui_MainWindow[] = "Ui_MainWindow";
@@ -2191,6 +2196,7 @@ static const char __pyx_k_setMinimumSize[] = "setMinimumSize";
 static const char __pyx_k_setWindowTitle[] = "setWindowTitle";
 static const char __pyx_k_lineEdit_expire[] = "lineEdit_expire";
 static const char __pyx_k_lineEdit_serial[] = "lineEdit_serial";
+static const char __pyx_k_radioButton_djo[] = "radioButton_djo";
 static const char __pyx_k_QCoreApplication[] = "QCoreApplication";
 static const char __pyx_k_lineEdit_barcode[] = "lineEdit_barcode";
 static const char __pyx_k_setCentralWidget[] = "setCentralWidget";
@@ -2240,6 +2246,7 @@ typedef struct {
   PyObject *__pyx_kp_u_Barcode;
   PyObject *__pyx_kp_u_Barcode_Leser;
   PyObject *__pyx_n_u_Beenden;
+  PyObject *__pyx_n_u_DJO;
   PyObject *__pyx_n_u_Datei;
   PyObject *__pyx_n_u_Fertig;
   PyObject *__pyx_kp_u_GTIN;
@@ -2256,6 +2263,7 @@ typedef struct {
   PyObject *__pyx_n_s_QMetaObject;
   PyObject *__pyx_n_s_QPlainTextEdit;
   PyObject *__pyx_n_s_QPushButton;
+  PyObject *__pyx_n_s_QRadioButton;
   PyObject *__pyx_n_s_QRect;
   PyObject *__pyx_n_s_QSize;
   PyObject *__pyx_n_s_QStatusBar;
@@ -2263,13 +2271,14 @@ typedef struct {
   PyObject *__pyx_n_s_QtCore;
   PyObject *__pyx_n_s_QtGui;
   PyObject *__pyx_n_s_QtWidgets;
+  PyObject *__pyx_kp_u_Ref_Nummer;
   PyObject *__pyx_kp_u_Seriennummer;
   PyObject *__pyx_n_s_Ui_MainWindow;
   PyObject *__pyx_n_s_Ui_MainWindow_retranslateUi;
   PyObject *__pyx_n_s_Ui_MainWindow_setupUi;
-  PyObject *__pyx_n_s__22;
-  PyObject *__pyx_kp_u__22;
-  PyObject *__pyx_kp_u__26;
+  PyObject *__pyx_n_s__27;
+  PyObject *__pyx_kp_u__27;
+  PyObject *__pyx_kp_u__31;
   PyObject *__pyx_n_s_actionBeenden;
   PyObject *__pyx_n_u_actionBeenden;
   PyObject *__pyx_n_s_action_ber_Barcode_Leser;
@@ -2294,12 +2303,16 @@ typedef struct {
   PyObject *__pyx_n_u_label_3;
   PyObject *__pyx_n_s_label_4;
   PyObject *__pyx_n_u_label_4;
+  PyObject *__pyx_n_s_label_ref;
+  PyObject *__pyx_n_u_label_ref;
   PyObject *__pyx_n_s_lineEdit_barcode;
   PyObject *__pyx_n_u_lineEdit_barcode;
   PyObject *__pyx_n_s_lineEdit_expire;
   PyObject *__pyx_n_u_lineEdit_expire;
   PyObject *__pyx_n_s_lineEdit_gtin;
   PyObject *__pyx_n_u_lineEdit_gtin;
+  PyObject *__pyx_n_s_lineEdit_ref;
+  PyObject *__pyx_n_u_lineEdit_ref;
   PyObject *__pyx_n_s_lineEdit_serial;
   PyObject *__pyx_n_u_lineEdit_serial;
   PyObject *__pyx_n_s_main;
@@ -2326,6 +2339,8 @@ typedef struct {
   PyObject *__pyx_n_s_pushButton_ok;
   PyObject *__pyx_n_u_pushButton_ok;
   PyObject *__pyx_n_s_qualname;
+  PyObject *__pyx_n_s_radioButton_djo;
+  PyObject *__pyx_n_u_radioButton_djo;
   PyObject *__pyx_n_s_resize;
   PyObject *__pyx_n_s_retranslateUi;
   PyObject *__pyx_n_s_self;
@@ -2349,6 +2364,7 @@ typedef struct {
   PyObject *__pyx_n_s_translate_2;
   PyObject *__pyx_int_0;
   PyObject *__pyx_int_16;
+  PyObject *__pyx_int_20;
   PyObject *__pyx_int_21;
   PyObject *__pyx_int_24;
   PyObject *__pyx_int_32;
@@ -2358,6 +2374,7 @@ typedef struct {
   PyObject *__pyx_int_61;
   PyObject *__pyx_int_70;
   PyObject *__pyx_int_91;
+  PyObject *__pyx_int_100;
   PyObject *__pyx_int_101;
   PyObject *__pyx_int_111;
   PyObject *__pyx_int_131;
@@ -2365,6 +2382,7 @@ typedef struct {
   PyObject *__pyx_int_151;
   PyObject *__pyx_int_261;
   PyObject *__pyx_int_301;
+  PyObject *__pyx_int_330;
   PyObject *__pyx_int_331;
   PyObject *__pyx_int_380;
   PyObject *__pyx_int_430;
@@ -2397,15 +2415,20 @@ typedef struct {
   PyObject *__pyx_tuple__19;
   PyObject *__pyx_tuple__20;
   PyObject *__pyx_tuple__21;
+  PyObject *__pyx_tuple__22;
   PyObject *__pyx_tuple__23;
   PyObject *__pyx_tuple__24;
   PyObject *__pyx_tuple__25;
-  PyObject *__pyx_tuple__27;
+  PyObject *__pyx_tuple__26;
   PyObject *__pyx_tuple__28;
   PyObject *__pyx_tuple__29;
-  PyObject *__pyx_tuple__31;
-  PyObject *__pyx_codeobj__30;
-  PyObject *__pyx_codeobj__32;
+  PyObject *__pyx_tuple__30;
+  PyObject *__pyx_tuple__32;
+  PyObject *__pyx_tuple__33;
+  PyObject *__pyx_tuple__34;
+  PyObject *__pyx_tuple__36;
+  PyObject *__pyx_codeobj__35;
+  PyObject *__pyx_codeobj__37;
 } __pyx_mstate;
 
 #if CYTHON_USE_MODULE_STATE
@@ -2452,6 +2475,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_kp_u_Barcode);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Barcode_Leser);
   Py_CLEAR(clear_module_state->__pyx_n_u_Beenden);
+  Py_CLEAR(clear_module_state->__pyx_n_u_DJO);
   Py_CLEAR(clear_module_state->__pyx_n_u_Datei);
   Py_CLEAR(clear_module_state->__pyx_n_u_Fertig);
   Py_CLEAR(clear_module_state->__pyx_kp_u_GTIN);
@@ -2468,6 +2492,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_QMetaObject);
   Py_CLEAR(clear_module_state->__pyx_n_s_QPlainTextEdit);
   Py_CLEAR(clear_module_state->__pyx_n_s_QPushButton);
+  Py_CLEAR(clear_module_state->__pyx_n_s_QRadioButton);
   Py_CLEAR(clear_module_state->__pyx_n_s_QRect);
   Py_CLEAR(clear_module_state->__pyx_n_s_QSize);
   Py_CLEAR(clear_module_state->__pyx_n_s_QStatusBar);
@@ -2475,13 +2500,14 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_QtCore);
   Py_CLEAR(clear_module_state->__pyx_n_s_QtGui);
   Py_CLEAR(clear_module_state->__pyx_n_s_QtWidgets);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Ref_Nummer);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Seriennummer);
   Py_CLEAR(clear_module_state->__pyx_n_s_Ui_MainWindow);
   Py_CLEAR(clear_module_state->__pyx_n_s_Ui_MainWindow_retranslateUi);
   Py_CLEAR(clear_module_state->__pyx_n_s_Ui_MainWindow_setupUi);
-  Py_CLEAR(clear_module_state->__pyx_n_s__22);
-  Py_CLEAR(clear_module_state->__pyx_kp_u__22);
-  Py_CLEAR(clear_module_state->__pyx_kp_u__26);
+  Py_CLEAR(clear_module_state->__pyx_n_s__27);
+  Py_CLEAR(clear_module_state->__pyx_kp_u__27);
+  Py_CLEAR(clear_module_state->__pyx_kp_u__31);
   Py_CLEAR(clear_module_state->__pyx_n_s_actionBeenden);
   Py_CLEAR(clear_module_state->__pyx_n_u_actionBeenden);
   Py_CLEAR(clear_module_state->__pyx_n_s_action_ber_Barcode_Leser);
@@ -2506,12 +2532,16 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_u_label_3);
   Py_CLEAR(clear_module_state->__pyx_n_s_label_4);
   Py_CLEAR(clear_module_state->__pyx_n_u_label_4);
+  Py_CLEAR(clear_module_state->__pyx_n_s_label_ref);
+  Py_CLEAR(clear_module_state->__pyx_n_u_label_ref);
   Py_CLEAR(clear_module_state->__pyx_n_s_lineEdit_barcode);
   Py_CLEAR(clear_module_state->__pyx_n_u_lineEdit_barcode);
   Py_CLEAR(clear_module_state->__pyx_n_s_lineEdit_expire);
   Py_CLEAR(clear_module_state->__pyx_n_u_lineEdit_expire);
   Py_CLEAR(clear_module_state->__pyx_n_s_lineEdit_gtin);
   Py_CLEAR(clear_module_state->__pyx_n_u_lineEdit_gtin);
+  Py_CLEAR(clear_module_state->__pyx_n_s_lineEdit_ref);
+  Py_CLEAR(clear_module_state->__pyx_n_u_lineEdit_ref);
   Py_CLEAR(clear_module_state->__pyx_n_s_lineEdit_serial);
   Py_CLEAR(clear_module_state->__pyx_n_u_lineEdit_serial);
   Py_CLEAR(clear_module_state->__pyx_n_s_main);
@@ -2538,6 +2568,8 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_pushButton_ok);
   Py_CLEAR(clear_module_state->__pyx_n_u_pushButton_ok);
   Py_CLEAR(clear_module_state->__pyx_n_s_qualname);
+  Py_CLEAR(clear_module_state->__pyx_n_s_radioButton_djo);
+  Py_CLEAR(clear_module_state->__pyx_n_u_radioButton_djo);
   Py_CLEAR(clear_module_state->__pyx_n_s_resize);
   Py_CLEAR(clear_module_state->__pyx_n_s_retranslateUi);
   Py_CLEAR(clear_module_state->__pyx_n_s_self);
@@ -2561,6 +2593,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_translate_2);
   Py_CLEAR(clear_module_state->__pyx_int_0);
   Py_CLEAR(clear_module_state->__pyx_int_16);
+  Py_CLEAR(clear_module_state->__pyx_int_20);
   Py_CLEAR(clear_module_state->__pyx_int_21);
   Py_CLEAR(clear_module_state->__pyx_int_24);
   Py_CLEAR(clear_module_state->__pyx_int_32);
@@ -2570,6 +2603,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_int_61);
   Py_CLEAR(clear_module_state->__pyx_int_70);
   Py_CLEAR(clear_module_state->__pyx_int_91);
+  Py_CLEAR(clear_module_state->__pyx_int_100);
   Py_CLEAR(clear_module_state->__pyx_int_101);
   Py_CLEAR(clear_module_state->__pyx_int_111);
   Py_CLEAR(clear_module_state->__pyx_int_131);
@@ -2577,6 +2611,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_int_151);
   Py_CLEAR(clear_module_state->__pyx_int_261);
   Py_CLEAR(clear_module_state->__pyx_int_301);
+  Py_CLEAR(clear_module_state->__pyx_int_330);
   Py_CLEAR(clear_module_state->__pyx_int_331);
   Py_CLEAR(clear_module_state->__pyx_int_380);
   Py_CLEAR(clear_module_state->__pyx_int_430);
@@ -2609,15 +2644,20 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_tuple__19);
   Py_CLEAR(clear_module_state->__pyx_tuple__20);
   Py_CLEAR(clear_module_state->__pyx_tuple__21);
+  Py_CLEAR(clear_module_state->__pyx_tuple__22);
   Py_CLEAR(clear_module_state->__pyx_tuple__23);
   Py_CLEAR(clear_module_state->__pyx_tuple__24);
   Py_CLEAR(clear_module_state->__pyx_tuple__25);
-  Py_CLEAR(clear_module_state->__pyx_tuple__27);
+  Py_CLEAR(clear_module_state->__pyx_tuple__26);
   Py_CLEAR(clear_module_state->__pyx_tuple__28);
   Py_CLEAR(clear_module_state->__pyx_tuple__29);
-  Py_CLEAR(clear_module_state->__pyx_tuple__31);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__30);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__32);
+  Py_CLEAR(clear_module_state->__pyx_tuple__30);
+  Py_CLEAR(clear_module_state->__pyx_tuple__32);
+  Py_CLEAR(clear_module_state->__pyx_tuple__33);
+  Py_CLEAR(clear_module_state->__pyx_tuple__34);
+  Py_CLEAR(clear_module_state->__pyx_tuple__36);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__35);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__37);
   return 0;
 }
 #endif
@@ -2642,6 +2682,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_kp_u_Barcode);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Barcode_Leser);
   Py_VISIT(traverse_module_state->__pyx_n_u_Beenden);
+  Py_VISIT(traverse_module_state->__pyx_n_u_DJO);
   Py_VISIT(traverse_module_state->__pyx_n_u_Datei);
   Py_VISIT(traverse_module_state->__pyx_n_u_Fertig);
   Py_VISIT(traverse_module_state->__pyx_kp_u_GTIN);
@@ -2658,6 +2699,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_QMetaObject);
   Py_VISIT(traverse_module_state->__pyx_n_s_QPlainTextEdit);
   Py_VISIT(traverse_module_state->__pyx_n_s_QPushButton);
+  Py_VISIT(traverse_module_state->__pyx_n_s_QRadioButton);
   Py_VISIT(traverse_module_state->__pyx_n_s_QRect);
   Py_VISIT(traverse_module_state->__pyx_n_s_QSize);
   Py_VISIT(traverse_module_state->__pyx_n_s_QStatusBar);
@@ -2665,13 +2707,14 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_QtCore);
   Py_VISIT(traverse_module_state->__pyx_n_s_QtGui);
   Py_VISIT(traverse_module_state->__pyx_n_s_QtWidgets);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Ref_Nummer);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Seriennummer);
   Py_VISIT(traverse_module_state->__pyx_n_s_Ui_MainWindow);
   Py_VISIT(traverse_module_state->__pyx_n_s_Ui_MainWindow_retranslateUi);
   Py_VISIT(traverse_module_state->__pyx_n_s_Ui_MainWindow_setupUi);
-  Py_VISIT(traverse_module_state->__pyx_n_s__22);
-  Py_VISIT(traverse_module_state->__pyx_kp_u__22);
-  Py_VISIT(traverse_module_state->__pyx_kp_u__26);
+  Py_VISIT(traverse_module_state->__pyx_n_s__27);
+  Py_VISIT(traverse_module_state->__pyx_kp_u__27);
+  Py_VISIT(traverse_module_state->__pyx_kp_u__31);
   Py_VISIT(traverse_module_state->__pyx_n_s_actionBeenden);
   Py_VISIT(traverse_module_state->__pyx_n_u_actionBeenden);
   Py_VISIT(traverse_module_state->__pyx_n_s_action_ber_Barcode_Leser);
@@ -2696,12 +2739,16 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_u_label_3);
   Py_VISIT(traverse_module_state->__pyx_n_s_label_4);
   Py_VISIT(traverse_module_state->__pyx_n_u_label_4);
+  Py_VISIT(traverse_module_state->__pyx_n_s_label_ref);
+  Py_VISIT(traverse_module_state->__pyx_n_u_label_ref);
   Py_VISIT(traverse_module_state->__pyx_n_s_lineEdit_barcode);
   Py_VISIT(traverse_module_state->__pyx_n_u_lineEdit_barcode);
   Py_VISIT(traverse_module_state->__pyx_n_s_lineEdit_expire);
   Py_VISIT(traverse_module_state->__pyx_n_u_lineEdit_expire);
   Py_VISIT(traverse_module_state->__pyx_n_s_lineEdit_gtin);
   Py_VISIT(traverse_module_state->__pyx_n_u_lineEdit_gtin);
+  Py_VISIT(traverse_module_state->__pyx_n_s_lineEdit_ref);
+  Py_VISIT(traverse_module_state->__pyx_n_u_lineEdit_ref);
   Py_VISIT(traverse_module_state->__pyx_n_s_lineEdit_serial);
   Py_VISIT(traverse_module_state->__pyx_n_u_lineEdit_serial);
   Py_VISIT(traverse_module_state->__pyx_n_s_main);
@@ -2728,6 +2775,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_pushButton_ok);
   Py_VISIT(traverse_module_state->__pyx_n_u_pushButton_ok);
   Py_VISIT(traverse_module_state->__pyx_n_s_qualname);
+  Py_VISIT(traverse_module_state->__pyx_n_s_radioButton_djo);
+  Py_VISIT(traverse_module_state->__pyx_n_u_radioButton_djo);
   Py_VISIT(traverse_module_state->__pyx_n_s_resize);
   Py_VISIT(traverse_module_state->__pyx_n_s_retranslateUi);
   Py_VISIT(traverse_module_state->__pyx_n_s_self);
@@ -2751,6 +2800,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_translate_2);
   Py_VISIT(traverse_module_state->__pyx_int_0);
   Py_VISIT(traverse_module_state->__pyx_int_16);
+  Py_VISIT(traverse_module_state->__pyx_int_20);
   Py_VISIT(traverse_module_state->__pyx_int_21);
   Py_VISIT(traverse_module_state->__pyx_int_24);
   Py_VISIT(traverse_module_state->__pyx_int_32);
@@ -2760,6 +2810,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_int_61);
   Py_VISIT(traverse_module_state->__pyx_int_70);
   Py_VISIT(traverse_module_state->__pyx_int_91);
+  Py_VISIT(traverse_module_state->__pyx_int_100);
   Py_VISIT(traverse_module_state->__pyx_int_101);
   Py_VISIT(traverse_module_state->__pyx_int_111);
   Py_VISIT(traverse_module_state->__pyx_int_131);
@@ -2767,6 +2818,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_int_151);
   Py_VISIT(traverse_module_state->__pyx_int_261);
   Py_VISIT(traverse_module_state->__pyx_int_301);
+  Py_VISIT(traverse_module_state->__pyx_int_330);
   Py_VISIT(traverse_module_state->__pyx_int_331);
   Py_VISIT(traverse_module_state->__pyx_int_380);
   Py_VISIT(traverse_module_state->__pyx_int_430);
@@ -2799,15 +2851,20 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_tuple__19);
   Py_VISIT(traverse_module_state->__pyx_tuple__20);
   Py_VISIT(traverse_module_state->__pyx_tuple__21);
+  Py_VISIT(traverse_module_state->__pyx_tuple__22);
   Py_VISIT(traverse_module_state->__pyx_tuple__23);
   Py_VISIT(traverse_module_state->__pyx_tuple__24);
   Py_VISIT(traverse_module_state->__pyx_tuple__25);
-  Py_VISIT(traverse_module_state->__pyx_tuple__27);
+  Py_VISIT(traverse_module_state->__pyx_tuple__26);
   Py_VISIT(traverse_module_state->__pyx_tuple__28);
   Py_VISIT(traverse_module_state->__pyx_tuple__29);
-  Py_VISIT(traverse_module_state->__pyx_tuple__31);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__30);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__32);
+  Py_VISIT(traverse_module_state->__pyx_tuple__30);
+  Py_VISIT(traverse_module_state->__pyx_tuple__32);
+  Py_VISIT(traverse_module_state->__pyx_tuple__33);
+  Py_VISIT(traverse_module_state->__pyx_tuple__34);
+  Py_VISIT(traverse_module_state->__pyx_tuple__36);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__35);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__37);
   return 0;
 }
 #endif
@@ -2842,6 +2899,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_kp_u_Barcode __pyx_mstate_global->__pyx_kp_u_Barcode
 #define __pyx_kp_u_Barcode_Leser __pyx_mstate_global->__pyx_kp_u_Barcode_Leser
 #define __pyx_n_u_Beenden __pyx_mstate_global->__pyx_n_u_Beenden
+#define __pyx_n_u_DJO __pyx_mstate_global->__pyx_n_u_DJO
 #define __pyx_n_u_Datei __pyx_mstate_global->__pyx_n_u_Datei
 #define __pyx_n_u_Fertig __pyx_mstate_global->__pyx_n_u_Fertig
 #define __pyx_kp_u_GTIN __pyx_mstate_global->__pyx_kp_u_GTIN
@@ -2858,6 +2916,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_QMetaObject __pyx_mstate_global->__pyx_n_s_QMetaObject
 #define __pyx_n_s_QPlainTextEdit __pyx_mstate_global->__pyx_n_s_QPlainTextEdit
 #define __pyx_n_s_QPushButton __pyx_mstate_global->__pyx_n_s_QPushButton
+#define __pyx_n_s_QRadioButton __pyx_mstate_global->__pyx_n_s_QRadioButton
 #define __pyx_n_s_QRect __pyx_mstate_global->__pyx_n_s_QRect
 #define __pyx_n_s_QSize __pyx_mstate_global->__pyx_n_s_QSize
 #define __pyx_n_s_QStatusBar __pyx_mstate_global->__pyx_n_s_QStatusBar
@@ -2865,13 +2924,14 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_QtCore __pyx_mstate_global->__pyx_n_s_QtCore
 #define __pyx_n_s_QtGui __pyx_mstate_global->__pyx_n_s_QtGui
 #define __pyx_n_s_QtWidgets __pyx_mstate_global->__pyx_n_s_QtWidgets
+#define __pyx_kp_u_Ref_Nummer __pyx_mstate_global->__pyx_kp_u_Ref_Nummer
 #define __pyx_kp_u_Seriennummer __pyx_mstate_global->__pyx_kp_u_Seriennummer
 #define __pyx_n_s_Ui_MainWindow __pyx_mstate_global->__pyx_n_s_Ui_MainWindow
 #define __pyx_n_s_Ui_MainWindow_retranslateUi __pyx_mstate_global->__pyx_n_s_Ui_MainWindow_retranslateUi
 #define __pyx_n_s_Ui_MainWindow_setupUi __pyx_mstate_global->__pyx_n_s_Ui_MainWindow_setupUi
-#define __pyx_n_s__22 __pyx_mstate_global->__pyx_n_s__22
-#define __pyx_kp_u__22 __pyx_mstate_global->__pyx_kp_u__22
-#define __pyx_kp_u__26 __pyx_mstate_global->__pyx_kp_u__26
+#define __pyx_n_s__27 __pyx_mstate_global->__pyx_n_s__27
+#define __pyx_kp_u__27 __pyx_mstate_global->__pyx_kp_u__27
+#define __pyx_kp_u__31 __pyx_mstate_global->__pyx_kp_u__31
 #define __pyx_n_s_actionBeenden __pyx_mstate_global->__pyx_n_s_actionBeenden
 #define __pyx_n_u_actionBeenden __pyx_mstate_global->__pyx_n_u_actionBeenden
 #define __pyx_n_s_action_ber_Barcode_Leser __pyx_mstate_global->__pyx_n_s_action_ber_Barcode_Leser
@@ -2896,12 +2956,16 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_u_label_3 __pyx_mstate_global->__pyx_n_u_label_3
 #define __pyx_n_s_label_4 __pyx_mstate_global->__pyx_n_s_label_4
 #define __pyx_n_u_label_4 __pyx_mstate_global->__pyx_n_u_label_4
+#define __pyx_n_s_label_ref __pyx_mstate_global->__pyx_n_s_label_ref
+#define __pyx_n_u_label_ref __pyx_mstate_global->__pyx_n_u_label_ref
 #define __pyx_n_s_lineEdit_barcode __pyx_mstate_global->__pyx_n_s_lineEdit_barcode
 #define __pyx_n_u_lineEdit_barcode __pyx_mstate_global->__pyx_n_u_lineEdit_barcode
 #define __pyx_n_s_lineEdit_expire __pyx_mstate_global->__pyx_n_s_lineEdit_expire
 #define __pyx_n_u_lineEdit_expire __pyx_mstate_global->__pyx_n_u_lineEdit_expire
 #define __pyx_n_s_lineEdit_gtin __pyx_mstate_global->__pyx_n_s_lineEdit_gtin
 #define __pyx_n_u_lineEdit_gtin __pyx_mstate_global->__pyx_n_u_lineEdit_gtin
+#define __pyx_n_s_lineEdit_ref __pyx_mstate_global->__pyx_n_s_lineEdit_ref
+#define __pyx_n_u_lineEdit_ref __pyx_mstate_global->__pyx_n_u_lineEdit_ref
 #define __pyx_n_s_lineEdit_serial __pyx_mstate_global->__pyx_n_s_lineEdit_serial
 #define __pyx_n_u_lineEdit_serial __pyx_mstate_global->__pyx_n_u_lineEdit_serial
 #define __pyx_n_s_main __pyx_mstate_global->__pyx_n_s_main
@@ -2928,6 +2992,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_pushButton_ok __pyx_mstate_global->__pyx_n_s_pushButton_ok
 #define __pyx_n_u_pushButton_ok __pyx_mstate_global->__pyx_n_u_pushButton_ok
 #define __pyx_n_s_qualname __pyx_mstate_global->__pyx_n_s_qualname
+#define __pyx_n_s_radioButton_djo __pyx_mstate_global->__pyx_n_s_radioButton_djo
+#define __pyx_n_u_radioButton_djo __pyx_mstate_global->__pyx_n_u_radioButton_djo
 #define __pyx_n_s_resize __pyx_mstate_global->__pyx_n_s_resize
 #define __pyx_n_s_retranslateUi __pyx_mstate_global->__pyx_n_s_retranslateUi
 #define __pyx_n_s_self __pyx_mstate_global->__pyx_n_s_self
@@ -2951,6 +3017,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_translate_2 __pyx_mstate_global->__pyx_n_s_translate_2
 #define __pyx_int_0 __pyx_mstate_global->__pyx_int_0
 #define __pyx_int_16 __pyx_mstate_global->__pyx_int_16
+#define __pyx_int_20 __pyx_mstate_global->__pyx_int_20
 #define __pyx_int_21 __pyx_mstate_global->__pyx_int_21
 #define __pyx_int_24 __pyx_mstate_global->__pyx_int_24
 #define __pyx_int_32 __pyx_mstate_global->__pyx_int_32
@@ -2960,6 +3027,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_int_61 __pyx_mstate_global->__pyx_int_61
 #define __pyx_int_70 __pyx_mstate_global->__pyx_int_70
 #define __pyx_int_91 __pyx_mstate_global->__pyx_int_91
+#define __pyx_int_100 __pyx_mstate_global->__pyx_int_100
 #define __pyx_int_101 __pyx_mstate_global->__pyx_int_101
 #define __pyx_int_111 __pyx_mstate_global->__pyx_int_111
 #define __pyx_int_131 __pyx_mstate_global->__pyx_int_131
@@ -2967,6 +3035,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_int_151 __pyx_mstate_global->__pyx_int_151
 #define __pyx_int_261 __pyx_mstate_global->__pyx_int_261
 #define __pyx_int_301 __pyx_mstate_global->__pyx_int_301
+#define __pyx_int_330 __pyx_mstate_global->__pyx_int_330
 #define __pyx_int_331 __pyx_mstate_global->__pyx_int_331
 #define __pyx_int_380 __pyx_mstate_global->__pyx_int_380
 #define __pyx_int_430 __pyx_mstate_global->__pyx_int_430
@@ -2999,15 +3068,20 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_tuple__19 __pyx_mstate_global->__pyx_tuple__19
 #define __pyx_tuple__20 __pyx_mstate_global->__pyx_tuple__20
 #define __pyx_tuple__21 __pyx_mstate_global->__pyx_tuple__21
+#define __pyx_tuple__22 __pyx_mstate_global->__pyx_tuple__22
 #define __pyx_tuple__23 __pyx_mstate_global->__pyx_tuple__23
 #define __pyx_tuple__24 __pyx_mstate_global->__pyx_tuple__24
 #define __pyx_tuple__25 __pyx_mstate_global->__pyx_tuple__25
-#define __pyx_tuple__27 __pyx_mstate_global->__pyx_tuple__27
+#define __pyx_tuple__26 __pyx_mstate_global->__pyx_tuple__26
 #define __pyx_tuple__28 __pyx_mstate_global->__pyx_tuple__28
 #define __pyx_tuple__29 __pyx_mstate_global->__pyx_tuple__29
-#define __pyx_tuple__31 __pyx_mstate_global->__pyx_tuple__31
-#define __pyx_codeobj__30 __pyx_mstate_global->__pyx_codeobj__30
-#define __pyx_codeobj__32 __pyx_mstate_global->__pyx_codeobj__32
+#define __pyx_tuple__30 __pyx_mstate_global->__pyx_tuple__30
+#define __pyx_tuple__32 __pyx_mstate_global->__pyx_tuple__32
+#define __pyx_tuple__33 __pyx_mstate_global->__pyx_tuple__33
+#define __pyx_tuple__34 __pyx_mstate_global->__pyx_tuple__34
+#define __pyx_tuple__36 __pyx_mstate_global->__pyx_tuple__36
+#define __pyx_codeobj__35 __pyx_mstate_global->__pyx_codeobj__35
+#define __pyx_codeobj__37 __pyx_mstate_global->__pyx_codeobj__37
 /* #### Code section: module_code ### */
 
 /* "mainwindow.py":15
@@ -4602,7 +4676,7 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_setupUi(CYTHON_UNUSED PyO
  *         self.plainTextEdit_output = QtWidgets.QPlainTextEdit(self.centralwidget)
  *         self.plainTextEdit_output.setGeometry(QtCore.QRect(520, 150, 261, 331))             # <<<<<<<<<<<<<<
  *         self.plainTextEdit_output.setObjectName("plainTextEdit_output")
- *         MainWindow.setCentralWidget(self.centralwidget)
+ *         self.radioButton_djo = QtWidgets.QRadioButton(self.centralwidget)
  */
   __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_plainTextEdit_output); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -4646,8 +4720,8 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_setupUi(CYTHON_UNUSED PyO
  *         self.plainTextEdit_output = QtWidgets.QPlainTextEdit(self.centralwidget)
  *         self.plainTextEdit_output.setGeometry(QtCore.QRect(520, 150, 261, 331))
  *         self.plainTextEdit_output.setObjectName("plainTextEdit_output")             # <<<<<<<<<<<<<<
- *         MainWindow.setCentralWidget(self.centralwidget)
- *         self.menubar = QtWidgets.QMenuBar(MainWindow)
+ *         self.radioButton_djo = QtWidgets.QRadioButton(self.centralwidget)
+ *         self.radioButton_djo.setGeometry(QtCore.QRect(150, 100, 100, 20))
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_plainTextEdit_output); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 54, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -4681,59 +4755,25 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_setupUi(CYTHON_UNUSED PyO
   /* "mainwindow.py":55
  *         self.plainTextEdit_output.setGeometry(QtCore.QRect(520, 150, 261, 331))
  *         self.plainTextEdit_output.setObjectName("plainTextEdit_output")
- *         MainWindow.setCentralWidget(self.centralwidget)             # <<<<<<<<<<<<<<
- *         self.menubar = QtWidgets.QMenuBar(MainWindow)
- *         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 24))
+ *         self.radioButton_djo = QtWidgets.QRadioButton(self.centralwidget)             # <<<<<<<<<<<<<<
+ *         self.radioButton_djo.setGeometry(QtCore.QRect(150, 100, 100, 20))
+ *         self.radioButton_djo.setObjectName("radioButton_djo")
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_MainWindow, __pyx_n_s_setCentralWidget); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 55, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_QtWidgets); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 55, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_centralwidget); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 55, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_QRadioButton); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 55, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_centralwidget); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 55, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_5 = NULL;
   __pyx_t_4 = 0;
   #if CYTHON_UNPACK_METHODS
-  if (likely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_3);
-    if (likely(__pyx_t_5)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_5);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_3, function);
-      __pyx_t_4 = 1;
-    }
-  }
-  #endif
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_1};
-    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
-    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 55, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  }
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "mainwindow.py":56
- *         self.plainTextEdit_output.setObjectName("plainTextEdit_output")
- *         MainWindow.setCentralWidget(self.centralwidget)
- *         self.menubar = QtWidgets.QMenuBar(MainWindow)             # <<<<<<<<<<<<<<
- *         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 24))
- *         self.menubar.setObjectName("menubar")
- */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_QtWidgets); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 56, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_QMenuBar); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = NULL;
-  __pyx_t_4 = 0;
-  #if CYTHON_UNPACK_METHODS
   if (unlikely(PyMethod_Check(__pyx_t_1))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_1);
-    if (likely(__pyx_t_3)) {
+    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_1);
+    if (likely(__pyx_t_5)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_5);
       __Pyx_INCREF(function);
       __Pyx_DECREF_SET(__pyx_t_1, function);
       __pyx_t_4 = 1;
@@ -4741,34 +4781,35 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_setupUi(CYTHON_UNUSED PyO
   }
   #endif
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_MainWindow};
+    PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_3};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 56, __pyx_L1_error)
+    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 55, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_menubar, __pyx_t_2) < 0) __PYX_ERR(0, 56, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_radioButton_djo, __pyx_t_2) < 0) __PYX_ERR(0, 55, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "mainwindow.py":57
- *         MainWindow.setCentralWidget(self.centralwidget)
- *         self.menubar = QtWidgets.QMenuBar(MainWindow)
- *         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 24))             # <<<<<<<<<<<<<<
- *         self.menubar.setObjectName("menubar")
- *         self.menuDatei = QtWidgets.QMenu(self.menubar)
+  /* "mainwindow.py":56
+ *         self.plainTextEdit_output.setObjectName("plainTextEdit_output")
+ *         self.radioButton_djo = QtWidgets.QRadioButton(self.centralwidget)
+ *         self.radioButton_djo.setGeometry(QtCore.QRect(150, 100, 100, 20))             # <<<<<<<<<<<<<<
+ *         self.radioButton_djo.setObjectName("radioButton_djo")
+ *         self.label_ref = QtWidgets.QLabel(self.centralwidget)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menubar); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_radioButton_djo); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_setGeometry); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_setGeometry); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_QtCore); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_QtCore); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_QRect); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_QRect); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__13, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__13, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -4790,61 +4831,61 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_setupUi(CYTHON_UNUSED PyO
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 57, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 56, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "mainwindow.py":57
+ *         self.radioButton_djo = QtWidgets.QRadioButton(self.centralwidget)
+ *         self.radioButton_djo.setGeometry(QtCore.QRect(150, 100, 100, 20))
+ *         self.radioButton_djo.setObjectName("radioButton_djo")             # <<<<<<<<<<<<<<
+ *         self.label_ref = QtWidgets.QLabel(self.centralwidget)
+ *         self.label_ref.setGeometry(QtCore.QRect(40, 330, 91, 16))
+ */
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_radioButton_djo); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setObjectName); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_1))) {
+    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_1);
+    if (likely(__pyx_t_3)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_1, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_n_u_radioButton_djo};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 57, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "mainwindow.py":58
- *         self.menubar = QtWidgets.QMenuBar(MainWindow)
- *         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 24))
- *         self.menubar.setObjectName("menubar")             # <<<<<<<<<<<<<<
- *         self.menuDatei = QtWidgets.QMenu(self.menubar)
- *         self.menuDatei.setObjectName("menuDatei")
+ *         self.radioButton_djo.setGeometry(QtCore.QRect(150, 100, 100, 20))
+ *         self.radioButton_djo.setObjectName("radioButton_djo")
+ *         self.label_ref = QtWidgets.QLabel(self.centralwidget)             # <<<<<<<<<<<<<<
+ *         self.label_ref.setGeometry(QtCore.QRect(40, 330, 91, 16))
+ *         self.label_ref.setObjectName("label_ref")
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menubar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 58, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setObjectName); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_QtWidgets); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 58, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = NULL;
-  __pyx_t_4 = 0;
-  #if CYTHON_UNPACK_METHODS
-  if (likely(PyMethod_Check(__pyx_t_1))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_1);
-    if (likely(__pyx_t_3)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-      __Pyx_INCREF(__pyx_t_3);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_1, function);
-      __pyx_t_4 = 1;
-    }
-  }
-  #endif
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_n_u_menubar};
-    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 58, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  }
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "mainwindow.py":59
- *         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 24))
- *         self.menubar.setObjectName("menubar")
- *         self.menuDatei = QtWidgets.QMenu(self.menubar)             # <<<<<<<<<<<<<<
- *         self.menuDatei.setObjectName("menuDatei")
- *         self.menu = QtWidgets.QMenu(self.menubar)
- */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_QtWidgets); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 59, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_QMenu); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_QLabel); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 58, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menubar); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_centralwidget); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 58, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   __pyx_t_4 = 0;
@@ -4865,33 +4906,41 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_setupUi(CYTHON_UNUSED PyO
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 59, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 58, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_menuDatei, __pyx_t_2) < 0) __PYX_ERR(0, 59, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_label_ref, __pyx_t_2) < 0) __PYX_ERR(0, 58, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "mainwindow.py":60
- *         self.menubar.setObjectName("menubar")
- *         self.menuDatei = QtWidgets.QMenu(self.menubar)
- *         self.menuDatei.setObjectName("menuDatei")             # <<<<<<<<<<<<<<
- *         self.menu = QtWidgets.QMenu(self.menubar)
- *         self.menu.setObjectName("menu")
+  /* "mainwindow.py":59
+ *         self.radioButton_djo.setObjectName("radioButton_djo")
+ *         self.label_ref = QtWidgets.QLabel(self.centralwidget)
+ *         self.label_ref.setGeometry(QtCore.QRect(40, 330, 91, 16))             # <<<<<<<<<<<<<<
+ *         self.label_ref.setObjectName("label_ref")
+ *         self.lineEdit_ref = QtWidgets.QLineEdit(self.centralwidget)
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menuDatei); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 60, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_label_ref); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 59, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setObjectName); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 60, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setGeometry); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 59, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_QtCore); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_QRect); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__14, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_5 = NULL;
   __pyx_t_4 = 0;
   #if CYTHON_UNPACK_METHODS
   if (likely(PyMethod_Check(__pyx_t_1))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_1);
-    if (likely(__pyx_t_3)) {
+    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_1);
+    if (likely(__pyx_t_5)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_5);
       __Pyx_INCREF(function);
       __Pyx_DECREF_SET(__pyx_t_1, function);
       __pyx_t_4 = 1;
@@ -4899,33 +4948,116 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_setupUi(CYTHON_UNUSED PyO
   }
   #endif
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_n_u_menuDatei};
+    PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_3};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 60, __pyx_L1_error)
+    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 59, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "mainwindow.py":60
+ *         self.label_ref = QtWidgets.QLabel(self.centralwidget)
+ *         self.label_ref.setGeometry(QtCore.QRect(40, 330, 91, 16))
+ *         self.label_ref.setObjectName("label_ref")             # <<<<<<<<<<<<<<
+ *         self.lineEdit_ref = QtWidgets.QLineEdit(self.centralwidget)
+ *         self.lineEdit_ref.setGeometry(QtCore.QRect(150, 330, 301, 21))
+ */
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_label_ref); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 60, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_setObjectName); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 60, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_1)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_n_u_label_ref};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 60, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "mainwindow.py":61
- *         self.menuDatei = QtWidgets.QMenu(self.menubar)
- *         self.menuDatei.setObjectName("menuDatei")
- *         self.menu = QtWidgets.QMenu(self.menubar)             # <<<<<<<<<<<<<<
- *         self.menu.setObjectName("menu")
- *         MainWindow.setMenuBar(self.menubar)
+ *         self.label_ref.setGeometry(QtCore.QRect(40, 330, 91, 16))
+ *         self.label_ref.setObjectName("label_ref")
+ *         self.lineEdit_ref = QtWidgets.QLineEdit(self.centralwidget)             # <<<<<<<<<<<<<<
+ *         self.lineEdit_ref.setGeometry(QtCore.QRect(150, 330, 301, 21))
+ *         self.lineEdit_ref.setObjectName("lineEdit_ref")
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_QtWidgets); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 61, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_QMenu); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 61, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_QtWidgets); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 61, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menubar); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 61, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_QLineEdit); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 61, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_centralwidget); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 61, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_5 = NULL;
   __pyx_t_4 = 0;
   #if CYTHON_UNPACK_METHODS
-  if (unlikely(PyMethod_Check(__pyx_t_3))) {
+  if (unlikely(PyMethod_Check(__pyx_t_1))) {
+    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_1);
+    if (likely(__pyx_t_5)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+      __Pyx_INCREF(__pyx_t_5);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_1, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_3};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 61, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_lineEdit_ref, __pyx_t_2) < 0) __PYX_ERR(0, 61, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "mainwindow.py":62
+ *         self.label_ref.setObjectName("label_ref")
+ *         self.lineEdit_ref = QtWidgets.QLineEdit(self.centralwidget)
+ *         self.lineEdit_ref.setGeometry(QtCore.QRect(150, 330, 301, 21))             # <<<<<<<<<<<<<<
+ *         self.lineEdit_ref.setObjectName("lineEdit_ref")
+ *         MainWindow.setCentralWidget(self.centralwidget)
+ */
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_lineEdit_ref); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_setGeometry); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_QtCore); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_QRect); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_5 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_3))) {
     __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_3);
     if (likely(__pyx_t_5)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
@@ -4941,23 +5073,22 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_setupUi(CYTHON_UNUSED PyO
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 61, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 62, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_menu, __pyx_t_2) < 0) __PYX_ERR(0, 61, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "mainwindow.py":62
- *         self.menuDatei.setObjectName("menuDatei")
- *         self.menu = QtWidgets.QMenu(self.menubar)
- *         self.menu.setObjectName("menu")             # <<<<<<<<<<<<<<
- *         MainWindow.setMenuBar(self.menubar)
- *         self.statusbar = QtWidgets.QStatusBar(MainWindow)
+  /* "mainwindow.py":63
+ *         self.lineEdit_ref = QtWidgets.QLineEdit(self.centralwidget)
+ *         self.lineEdit_ref.setGeometry(QtCore.QRect(150, 330, 301, 21))
+ *         self.lineEdit_ref.setObjectName("lineEdit_ref")             # <<<<<<<<<<<<<<
+ *         MainWindow.setCentralWidget(self.centralwidget)
+ *         self.menubar = QtWidgets.QMenuBar(MainWindow)
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menu); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_lineEdit_ref); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 63, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setObjectName); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setObjectName); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 63, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -4975,25 +5106,25 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_setupUi(CYTHON_UNUSED PyO
   }
   #endif
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_n_u_menu};
+    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_n_u_lineEdit_ref};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 62, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 63, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "mainwindow.py":63
- *         self.menu = QtWidgets.QMenu(self.menubar)
- *         self.menu.setObjectName("menu")
- *         MainWindow.setMenuBar(self.menubar)             # <<<<<<<<<<<<<<
- *         self.statusbar = QtWidgets.QStatusBar(MainWindow)
- *         self.statusbar.setObjectName("statusbar")
+  /* "mainwindow.py":64
+ *         self.lineEdit_ref.setGeometry(QtCore.QRect(150, 330, 301, 21))
+ *         self.lineEdit_ref.setObjectName("lineEdit_ref")
+ *         MainWindow.setCentralWidget(self.centralwidget)             # <<<<<<<<<<<<<<
+ *         self.menubar = QtWidgets.QMenuBar(MainWindow)
+ *         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 24))
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_MainWindow, __pyx_n_s_setMenuBar); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 63, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_MainWindow, __pyx_n_s_setCentralWidget); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 64, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menubar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 63, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_centralwidget); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 64, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_5 = NULL;
   __pyx_t_4 = 0;
@@ -5014,22 +5145,22 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_setupUi(CYTHON_UNUSED PyO
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 63, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 64, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "mainwindow.py":64
- *         self.menu.setObjectName("menu")
- *         MainWindow.setMenuBar(self.menubar)
- *         self.statusbar = QtWidgets.QStatusBar(MainWindow)             # <<<<<<<<<<<<<<
- *         self.statusbar.setObjectName("statusbar")
- *         MainWindow.setStatusBar(self.statusbar)
+  /* "mainwindow.py":65
+ *         self.lineEdit_ref.setObjectName("lineEdit_ref")
+ *         MainWindow.setCentralWidget(self.centralwidget)
+ *         self.menubar = QtWidgets.QMenuBar(MainWindow)             # <<<<<<<<<<<<<<
+ *         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 24))
+ *         self.menubar.setObjectName("menubar")
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_QtWidgets); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 64, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_QtWidgets); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 65, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_QStatusBar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 64, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_QMenuBar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 65, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = NULL;
@@ -5050,60 +5181,33 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_setupUi(CYTHON_UNUSED PyO
     PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_v_MainWindow};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 64, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 65, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_statusbar, __pyx_t_2) < 0) __PYX_ERR(0, 64, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "mainwindow.py":65
- *         MainWindow.setMenuBar(self.menubar)
- *         self.statusbar = QtWidgets.QStatusBar(MainWindow)
- *         self.statusbar.setObjectName("statusbar")             # <<<<<<<<<<<<<<
- *         MainWindow.setStatusBar(self.statusbar)
- *         self.actionBeenden = QtWidgets.QAction(MainWindow)
- */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_statusbar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 65, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setObjectName); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 65, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = NULL;
-  __pyx_t_4 = 0;
-  #if CYTHON_UNPACK_METHODS
-  if (likely(PyMethod_Check(__pyx_t_1))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_1);
-    if (likely(__pyx_t_3)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-      __Pyx_INCREF(__pyx_t_3);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_1, function);
-      __pyx_t_4 = 1;
-    }
-  }
-  #endif
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_n_u_statusbar};
-    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 65, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  }
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_menubar, __pyx_t_2) < 0) __PYX_ERR(0, 65, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "mainwindow.py":66
- *         self.statusbar = QtWidgets.QStatusBar(MainWindow)
- *         self.statusbar.setObjectName("statusbar")
- *         MainWindow.setStatusBar(self.statusbar)             # <<<<<<<<<<<<<<
- *         self.actionBeenden = QtWidgets.QAction(MainWindow)
- *         self.actionBeenden.setObjectName("actionBeenden")
+ *         MainWindow.setCentralWidget(self.centralwidget)
+ *         self.menubar = QtWidgets.QMenuBar(MainWindow)
+ *         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 24))             # <<<<<<<<<<<<<<
+ *         self.menubar.setObjectName("menubar")
+ *         self.menuDatei = QtWidgets.QMenu(self.menubar)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_MainWindow, __pyx_n_s_setStatusBar); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_statusbar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menubar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setGeometry); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_QtCore); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_QRect); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__16, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
   __pyx_t_4 = 0;
   #if CYTHON_UNPACK_METHODS
@@ -5130,21 +5234,21 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_setupUi(CYTHON_UNUSED PyO
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "mainwindow.py":67
- *         self.statusbar.setObjectName("statusbar")
- *         MainWindow.setStatusBar(self.statusbar)
- *         self.actionBeenden = QtWidgets.QAction(MainWindow)             # <<<<<<<<<<<<<<
- *         self.actionBeenden.setObjectName("actionBeenden")
- *         self.action_ber_Barcode_Leser = QtWidgets.QAction(MainWindow)
+ *         self.menubar = QtWidgets.QMenuBar(MainWindow)
+ *         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 24))
+ *         self.menubar.setObjectName("menubar")             # <<<<<<<<<<<<<<
+ *         self.menuDatei = QtWidgets.QMenu(self.menubar)
+ *         self.menuDatei.setObjectName("menuDatei")
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_QtWidgets); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menubar); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_QAction); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_setObjectName); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = NULL;
   __pyx_t_4 = 0;
   #if CYTHON_UNPACK_METHODS
-  if (unlikely(PyMethod_Check(__pyx_t_3))) {
+  if (likely(PyMethod_Check(__pyx_t_3))) {
     __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_3);
     if (likely(__pyx_t_1)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
@@ -5156,36 +5260,37 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_setupUi(CYTHON_UNUSED PyO
   }
   #endif
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_v_MainWindow};
+    PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_n_u_menubar};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 67, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_actionBeenden, __pyx_t_2) < 0) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "mainwindow.py":68
- *         MainWindow.setStatusBar(self.statusbar)
- *         self.actionBeenden = QtWidgets.QAction(MainWindow)
- *         self.actionBeenden.setObjectName("actionBeenden")             # <<<<<<<<<<<<<<
- *         self.action_ber_Barcode_Leser = QtWidgets.QAction(MainWindow)
- *         self.action_ber_Barcode_Leser.setObjectName("action_ber_Barcode_Leser")
+ *         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 24))
+ *         self.menubar.setObjectName("menubar")
+ *         self.menuDatei = QtWidgets.QMenu(self.menubar)             # <<<<<<<<<<<<<<
+ *         self.menuDatei.setObjectName("menuDatei")
+ *         self.menu = QtWidgets.QMenu(self.menubar)
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_actionBeenden); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_QtWidgets); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setObjectName); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 68, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_QMenu); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 68, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = NULL;
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menubar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_5 = NULL;
   __pyx_t_4 = 0;
   #if CYTHON_UNPACK_METHODS
-  if (likely(PyMethod_Check(__pyx_t_1))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_1);
-    if (likely(__pyx_t_3)) {
+  if (unlikely(PyMethod_Check(__pyx_t_1))) {
+    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_1);
+    if (likely(__pyx_t_5)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_5);
       __Pyx_INCREF(function);
       __Pyx_DECREF_SET(__pyx_t_1, function);
       __pyx_t_4 = 1;
@@ -5193,31 +5298,33 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_setupUi(CYTHON_UNUSED PyO
   }
   #endif
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_n_u_actionBeenden};
+    PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_3};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 68, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_menuDatei, __pyx_t_2) < 0) __PYX_ERR(0, 68, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "mainwindow.py":69
- *         self.actionBeenden = QtWidgets.QAction(MainWindow)
- *         self.actionBeenden.setObjectName("actionBeenden")
- *         self.action_ber_Barcode_Leser = QtWidgets.QAction(MainWindow)             # <<<<<<<<<<<<<<
- *         self.action_ber_Barcode_Leser.setObjectName("action_ber_Barcode_Leser")
- *         self.menuDatei.addAction(self.actionBeenden)
+ *         self.menubar.setObjectName("menubar")
+ *         self.menuDatei = QtWidgets.QMenu(self.menubar)
+ *         self.menuDatei.setObjectName("menuDatei")             # <<<<<<<<<<<<<<
+ *         self.menu = QtWidgets.QMenu(self.menubar)
+ *         self.menu.setObjectName("menu")
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_QtWidgets); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 69, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menuDatei); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_QAction); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 69, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_setObjectName); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = NULL;
   __pyx_t_4 = 0;
   #if CYTHON_UNPACK_METHODS
-  if (unlikely(PyMethod_Check(__pyx_t_3))) {
+  if (likely(PyMethod_Check(__pyx_t_3))) {
     __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_3);
     if (likely(__pyx_t_1)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
@@ -5229,36 +5336,37 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_setupUi(CYTHON_UNUSED PyO
   }
   #endif
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_v_MainWindow};
+    PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_n_u_menuDatei};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 69, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_action_ber_Barcode_Leser, __pyx_t_2) < 0) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "mainwindow.py":70
- *         self.actionBeenden.setObjectName("actionBeenden")
- *         self.action_ber_Barcode_Leser = QtWidgets.QAction(MainWindow)
- *         self.action_ber_Barcode_Leser.setObjectName("action_ber_Barcode_Leser")             # <<<<<<<<<<<<<<
- *         self.menuDatei.addAction(self.actionBeenden)
- *         self.menu.addAction(self.action_ber_Barcode_Leser)
+ *         self.menuDatei = QtWidgets.QMenu(self.menubar)
+ *         self.menuDatei.setObjectName("menuDatei")
+ *         self.menu = QtWidgets.QMenu(self.menubar)             # <<<<<<<<<<<<<<
+ *         self.menu.setObjectName("menu")
+ *         MainWindow.setMenuBar(self.menubar)
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_action_ber_Barcode_Leser); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 70, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_QtWidgets); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 70, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setObjectName); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 70, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_QMenu); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 70, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = NULL;
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menubar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 70, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_5 = NULL;
   __pyx_t_4 = 0;
   #if CYTHON_UNPACK_METHODS
-  if (likely(PyMethod_Check(__pyx_t_1))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_1);
-    if (likely(__pyx_t_3)) {
+  if (unlikely(PyMethod_Check(__pyx_t_1))) {
+    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_1);
+    if (likely(__pyx_t_5)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_5);
       __Pyx_INCREF(function);
       __Pyx_DECREF_SET(__pyx_t_1, function);
       __pyx_t_4 = 1;
@@ -5266,28 +5374,63 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_setupUi(CYTHON_UNUSED PyO
   }
   #endif
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_n_u_action_ber_Barcode_Leser};
+    PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_3};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 70, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_menu, __pyx_t_2) < 0) __PYX_ERR(0, 70, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "mainwindow.py":71
- *         self.action_ber_Barcode_Leser = QtWidgets.QAction(MainWindow)
- *         self.action_ber_Barcode_Leser.setObjectName("action_ber_Barcode_Leser")
- *         self.menuDatei.addAction(self.actionBeenden)             # <<<<<<<<<<<<<<
- *         self.menu.addAction(self.action_ber_Barcode_Leser)
- *         self.menubar.addAction(self.menuDatei.menuAction())
+ *         self.menuDatei.setObjectName("menuDatei")
+ *         self.menu = QtWidgets.QMenu(self.menubar)
+ *         self.menu.setObjectName("menu")             # <<<<<<<<<<<<<<
+ *         MainWindow.setMenuBar(self.menubar)
+ *         self.statusbar = QtWidgets.QStatusBar(MainWindow)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menuDatei); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 71, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menu); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 71, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_addAction); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 71, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_setObjectName); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 71, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_actionBeenden); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 71, __pyx_L1_error)
+  __pyx_t_1 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_1)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_n_u_menu};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 71, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "mainwindow.py":72
+ *         self.menu = QtWidgets.QMenu(self.menubar)
+ *         self.menu.setObjectName("menu")
+ *         MainWindow.setMenuBar(self.menubar)             # <<<<<<<<<<<<<<
+ *         self.statusbar = QtWidgets.QStatusBar(MainWindow)
+ *         self.statusbar.setObjectName("statusbar")
+ */
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_MainWindow, __pyx_n_s_setMenuBar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 72, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menubar); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 72, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   __pyx_t_4 = 0;
@@ -5308,34 +5451,32 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_setupUi(CYTHON_UNUSED PyO
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 71, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 72, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "mainwindow.py":72
- *         self.action_ber_Barcode_Leser.setObjectName("action_ber_Barcode_Leser")
- *         self.menuDatei.addAction(self.actionBeenden)
- *         self.menu.addAction(self.action_ber_Barcode_Leser)             # <<<<<<<<<<<<<<
- *         self.menubar.addAction(self.menuDatei.menuAction())
- *         self.menubar.addAction(self.menu.menuAction())
+  /* "mainwindow.py":73
+ *         self.menu.setObjectName("menu")
+ *         MainWindow.setMenuBar(self.menubar)
+ *         self.statusbar = QtWidgets.QStatusBar(MainWindow)             # <<<<<<<<<<<<<<
+ *         self.statusbar.setObjectName("statusbar")
+ *         MainWindow.setStatusBar(self.statusbar)
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menu); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 72, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_QtWidgets); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_addAction); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 72, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_QStatusBar); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_action_ber_Barcode_Leser); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 72, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = NULL;
+  __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
   #if CYTHON_UNPACK_METHODS
-  if (likely(PyMethod_Check(__pyx_t_1))) {
-    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_1);
-    if (likely(__pyx_t_5)) {
+  if (unlikely(PyMethod_Check(__pyx_t_1))) {
+    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_1);
+    if (likely(__pyx_t_3)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-      __Pyx_INCREF(__pyx_t_5);
+      __Pyx_INCREF(__pyx_t_3);
       __Pyx_INCREF(function);
       __Pyx_DECREF_SET(__pyx_t_1, function);
       __pyx_t_4 = 1;
@@ -5343,63 +5484,36 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_setupUi(CYTHON_UNUSED PyO
   }
   #endif
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_3};
+    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_MainWindow};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
-    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 72, __pyx_L1_error)
+    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 73, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_statusbar, __pyx_t_2) < 0) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "mainwindow.py":73
- *         self.menuDatei.addAction(self.actionBeenden)
- *         self.menu.addAction(self.action_ber_Barcode_Leser)
- *         self.menubar.addAction(self.menuDatei.menuAction())             # <<<<<<<<<<<<<<
- *         self.menubar.addAction(self.menu.menuAction())
- * 
+  /* "mainwindow.py":74
+ *         MainWindow.setMenuBar(self.menubar)
+ *         self.statusbar = QtWidgets.QStatusBar(MainWindow)
+ *         self.statusbar.setObjectName("statusbar")             # <<<<<<<<<<<<<<
+ *         MainWindow.setStatusBar(self.statusbar)
+ *         self.actionBeenden = QtWidgets.QAction(MainWindow)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menubar); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 73, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_statusbar); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 74, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_addAction); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 73, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_setObjectName); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 74, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menuDatei); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 73, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_menuAction); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 73, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_6);
-  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = NULL;
-  __pyx_t_4 = 0;
-  #if CYTHON_UNPACK_METHODS
-  if (likely(PyMethod_Check(__pyx_t_6))) {
-    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_6);
-    if (likely(__pyx_t_5)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
-      __Pyx_INCREF(__pyx_t_5);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_6, function);
-      __pyx_t_4 = 1;
-    }
-  }
-  #endif
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_5, NULL};
-    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
-    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 73, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  }
-  __pyx_t_6 = NULL;
+  __pyx_t_1 = NULL;
   __pyx_t_4 = 0;
   #if CYTHON_UNPACK_METHODS
   if (likely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_3);
-    if (likely(__pyx_t_6)) {
+    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_1)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_6);
+      __Pyx_INCREF(__pyx_t_1);
       __Pyx_INCREF(function);
       __Pyx_DECREF_SET(__pyx_t_3, function);
       __pyx_t_4 = 1;
@@ -5407,93 +5521,67 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_setupUi(CYTHON_UNUSED PyO
   }
   #endif
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_t_1};
+    PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_n_u_statusbar};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
-    __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 73, __pyx_L1_error)
+    __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 74, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "mainwindow.py":74
- *         self.menu.addAction(self.action_ber_Barcode_Leser)
- *         self.menubar.addAction(self.menuDatei.menuAction())
- *         self.menubar.addAction(self.menu.menuAction())             # <<<<<<<<<<<<<<
- * 
- *         self.retranslateUi(MainWindow)
+  /* "mainwindow.py":75
+ *         self.statusbar = QtWidgets.QStatusBar(MainWindow)
+ *         self.statusbar.setObjectName("statusbar")
+ *         MainWindow.setStatusBar(self.statusbar)             # <<<<<<<<<<<<<<
+ *         self.actionBeenden = QtWidgets.QAction(MainWindow)
+ *         self.actionBeenden.setObjectName("actionBeenden")
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menubar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 74, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_MainWindow, __pyx_n_s_setStatusBar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 75, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_addAction); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 74, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_statusbar); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 75, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menu); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 74, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_menuAction); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 74, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = NULL;
-  __pyx_t_4 = 0;
-  #if CYTHON_UNPACK_METHODS
-  if (likely(PyMethod_Check(__pyx_t_5))) {
-    __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_5);
-    if (likely(__pyx_t_6)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
-      __Pyx_INCREF(__pyx_t_6);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_5, function);
-      __pyx_t_4 = 1;
-    }
-  }
-  #endif
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_6, NULL};
-    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
-    __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 74, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  }
   __pyx_t_5 = NULL;
   __pyx_t_4 = 0;
   #if CYTHON_UNPACK_METHODS
-  if (likely(PyMethod_Check(__pyx_t_1))) {
-    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_1);
+  if (likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_3);
     if (likely(__pyx_t_5)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_5);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_1, function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
       __pyx_t_4 = 1;
     }
   }
   #endif
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_3};
-    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
+    PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_1};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 74, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 75, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "mainwindow.py":76
- *         self.menubar.addAction(self.menu.menuAction())
- * 
- *         self.retranslateUi(MainWindow)             # <<<<<<<<<<<<<<
- *         QtCore.QMetaObject.connectSlotsByName(MainWindow)
- * 
+ *         self.statusbar.setObjectName("statusbar")
+ *         MainWindow.setStatusBar(self.statusbar)
+ *         self.actionBeenden = QtWidgets.QAction(MainWindow)             # <<<<<<<<<<<<<<
+ *         self.actionBeenden.setObjectName("actionBeenden")
+ *         self.action_ber_Barcode_Leser = QtWidgets.QAction(MainWindow)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_retranslateUi); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 76, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_QtWidgets); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 76, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_QAction); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 76, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
   #if CYTHON_UNPACK_METHODS
-  if (likely(PyMethod_Check(__pyx_t_1))) {
+  if (unlikely(PyMethod_Check(__pyx_t_1))) {
     __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_1);
     if (likely(__pyx_t_3)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
@@ -5512,27 +5600,61 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_setupUi(CYTHON_UNUSED PyO
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_actionBeenden, __pyx_t_2) < 0) __PYX_ERR(0, 76, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "mainwindow.py":77
- * 
- *         self.retranslateUi(MainWindow)
- *         QtCore.QMetaObject.connectSlotsByName(MainWindow)             # <<<<<<<<<<<<<<
- * 
- *     def retranslateUi(self, MainWindow):
+ *         MainWindow.setStatusBar(self.statusbar)
+ *         self.actionBeenden = QtWidgets.QAction(MainWindow)
+ *         self.actionBeenden.setObjectName("actionBeenden")             # <<<<<<<<<<<<<<
+ *         self.action_ber_Barcode_Leser = QtWidgets.QAction(MainWindow)
+ *         self.action_ber_Barcode_Leser.setObjectName("action_ber_Barcode_Leser")
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_QtCore); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 77, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_actionBeenden); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_QMetaObject); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 77, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_setObjectName); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_connectSlotsByName); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 77, __pyx_L1_error)
+  __pyx_t_1 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_1)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_n_u_actionBeenden};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 77, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "mainwindow.py":78
+ *         self.actionBeenden = QtWidgets.QAction(MainWindow)
+ *         self.actionBeenden.setObjectName("actionBeenden")
+ *         self.action_ber_Barcode_Leser = QtWidgets.QAction(MainWindow)             # <<<<<<<<<<<<<<
+ *         self.action_ber_Barcode_Leser.setObjectName("action_ber_Barcode_Leser")
+ *         self.menuDatei.addAction(self.actionBeenden)
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_QtWidgets); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 78, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_QAction); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 78, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
   #if CYTHON_UNPACK_METHODS
-  if (likely(PyMethod_Check(__pyx_t_1))) {
+  if (unlikely(PyMethod_Check(__pyx_t_1))) {
     __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_1);
     if (likely(__pyx_t_3)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
@@ -5547,9 +5669,324 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_setupUi(CYTHON_UNUSED PyO
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_MainWindow};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 77, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 78, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_action_ber_Barcode_Leser, __pyx_t_2) < 0) __PYX_ERR(0, 78, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "mainwindow.py":79
+ *         self.actionBeenden.setObjectName("actionBeenden")
+ *         self.action_ber_Barcode_Leser = QtWidgets.QAction(MainWindow)
+ *         self.action_ber_Barcode_Leser.setObjectName("action_ber_Barcode_Leser")             # <<<<<<<<<<<<<<
+ *         self.menuDatei.addAction(self.actionBeenden)
+ *         self.menu.addAction(self.action_ber_Barcode_Leser)
+ */
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_action_ber_Barcode_Leser); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 79, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_setObjectName); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 79, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_1)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_n_u_action_ber_Barcode_Leser};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 79, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "mainwindow.py":80
+ *         self.action_ber_Barcode_Leser = QtWidgets.QAction(MainWindow)
+ *         self.action_ber_Barcode_Leser.setObjectName("action_ber_Barcode_Leser")
+ *         self.menuDatei.addAction(self.actionBeenden)             # <<<<<<<<<<<<<<
+ *         self.menu.addAction(self.action_ber_Barcode_Leser)
+ *         self.menubar.addAction(self.menuDatei.menuAction())
+ */
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menuDatei); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_addAction); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_actionBeenden); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_5 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_1))) {
+    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_1);
+    if (likely(__pyx_t_5)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+      __Pyx_INCREF(__pyx_t_5);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_1, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_3};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 80, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "mainwindow.py":81
+ *         self.action_ber_Barcode_Leser.setObjectName("action_ber_Barcode_Leser")
+ *         self.menuDatei.addAction(self.actionBeenden)
+ *         self.menu.addAction(self.action_ber_Barcode_Leser)             # <<<<<<<<<<<<<<
+ *         self.menubar.addAction(self.menuDatei.menuAction())
+ *         self.menubar.addAction(self.menu.menuAction())
+ */
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menu); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 81, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_addAction); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 81, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_action_ber_Barcode_Leser); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 81, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_5 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_5)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_5);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_1};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 81, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "mainwindow.py":82
+ *         self.menuDatei.addAction(self.actionBeenden)
+ *         self.menu.addAction(self.action_ber_Barcode_Leser)
+ *         self.menubar.addAction(self.menuDatei.menuAction())             # <<<<<<<<<<<<<<
+ *         self.menubar.addAction(self.menu.menuAction())
+ * 
+ */
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menubar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 82, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_addAction); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 82, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menuDatei); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 82, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_menuAction); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 82, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_5 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_6))) {
+    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_6);
+    if (likely(__pyx_t_5)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
+      __Pyx_INCREF(__pyx_t_5);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_6, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_5, NULL};
+    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 82, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  }
+  __pyx_t_6 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_1))) {
+    __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_1);
+    if (likely(__pyx_t_6)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+      __Pyx_INCREF(__pyx_t_6);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_1, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_t_3};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 82, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "mainwindow.py":83
+ *         self.menu.addAction(self.action_ber_Barcode_Leser)
+ *         self.menubar.addAction(self.menuDatei.menuAction())
+ *         self.menubar.addAction(self.menu.menuAction())             # <<<<<<<<<<<<<<
+ * 
+ *         self.retranslateUi(MainWindow)
+ */
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menubar); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 83, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_addAction); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 83, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menu); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 83, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_menuAction); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 83, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  __pyx_t_6 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_5))) {
+    __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_5);
+    if (likely(__pyx_t_6)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
+      __Pyx_INCREF(__pyx_t_6);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_5, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_6, NULL};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 83, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  }
+  __pyx_t_5 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_5)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_5);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_1};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 83, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "mainwindow.py":85
+ *         self.menubar.addAction(self.menu.menuAction())
+ * 
+ *         self.retranslateUi(MainWindow)             # <<<<<<<<<<<<<<
+ *         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+ * 
+ */
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_retranslateUi); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 85, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_1 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_1)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_v_MainWindow};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 85, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "mainwindow.py":86
+ * 
+ *         self.retranslateUi(MainWindow)
+ *         QtCore.QMetaObject.connectSlotsByName(MainWindow)             # <<<<<<<<<<<<<<
+ * 
+ *     def retranslateUi(self, MainWindow):
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_QtCore); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_QMetaObject); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_connectSlotsByName); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_1)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_v_MainWindow};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 86, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
@@ -5578,7 +6015,7 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_setupUi(CYTHON_UNUSED PyO
   return __pyx_r;
 }
 
-/* "mainwindow.py":79
+/* "mainwindow.py":88
  *         QtCore.QMetaObject.connectSlotsByName(MainWindow)
  * 
  *     def retranslateUi(self, MainWindow):             # <<<<<<<<<<<<<<
@@ -5642,7 +6079,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 79, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 88, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -5650,14 +6087,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 79, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 88, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("retranslateUi", 1, 2, 2, 1); __PYX_ERR(0, 79, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("retranslateUi", 1, 2, 2, 1); __PYX_ERR(0, 88, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "retranslateUi") < 0)) __PYX_ERR(0, 79, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "retranslateUi") < 0)) __PYX_ERR(0, 88, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -5670,7 +6107,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("retranslateUi", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 79, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("retranslateUi", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 88, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -5711,34 +6148,34 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_2retranslateUi(CYTHON_UNU
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("retranslateUi", 1);
 
-  /* "mainwindow.py":80
+  /* "mainwindow.py":89
  * 
  *     def retranslateUi(self, MainWindow):
  *         _translate = QtCore.QCoreApplication.translate             # <<<<<<<<<<<<<<
  *         MainWindow.setWindowTitle(_translate("MainWindow", "Barcode-Leser"))
  *         self.pushButton_ok.setText(_translate("MainWindow", "Fertig"))
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_QtCore); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_QtCore); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 89, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_QCoreApplication); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_QCoreApplication); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 89, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_translate); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_translate); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 89, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v__translate = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "mainwindow.py":81
+  /* "mainwindow.py":90
  *     def retranslateUi(self, MainWindow):
  *         _translate = QtCore.QCoreApplication.translate
  *         MainWindow.setWindowTitle(_translate("MainWindow", "Barcode-Leser"))             # <<<<<<<<<<<<<<
  *         self.pushButton_ok.setText(_translate("MainWindow", "Fertig"))
  *         self.pushButton_decode.setText(_translate("MainWindow", "Lesen"))
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_MainWindow, __pyx_n_s_setWindowTitle); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 81, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_MainWindow, __pyx_n_s_setWindowTitle); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 90, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__14, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 81, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__17, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 90, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -5759,25 +6196,25 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_2retranslateUi(CYTHON_UNU
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 81, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 90, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "mainwindow.py":82
+  /* "mainwindow.py":91
  *         _translate = QtCore.QCoreApplication.translate
  *         MainWindow.setWindowTitle(_translate("MainWindow", "Barcode-Leser"))
  *         self.pushButton_ok.setText(_translate("MainWindow", "Fertig"))             # <<<<<<<<<<<<<<
  *         self.pushButton_decode.setText(_translate("MainWindow", "Lesen"))
  *         self.label.setText(_translate("MainWindow", "Barcode:"))
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_pushButton_ok); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 82, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_pushButton_ok); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 91, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setText); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 82, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setText); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 91, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 82, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__18, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 91, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -5798,25 +6235,25 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_2retranslateUi(CYTHON_UNU
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 82, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 91, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "mainwindow.py":83
+  /* "mainwindow.py":92
  *         MainWindow.setWindowTitle(_translate("MainWindow", "Barcode-Leser"))
  *         self.pushButton_ok.setText(_translate("MainWindow", "Fertig"))
  *         self.pushButton_decode.setText(_translate("MainWindow", "Lesen"))             # <<<<<<<<<<<<<<
  *         self.label.setText(_translate("MainWindow", "Barcode:"))
  *         self.label_2.setText(_translate("MainWindow", "GTIN:"))
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_pushButton_decode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 83, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_pushButton_decode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 92, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setText); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 83, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setText); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 92, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__16, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 83, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__19, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 92, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -5837,25 +6274,25 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_2retranslateUi(CYTHON_UNU
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 83, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 92, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "mainwindow.py":84
+  /* "mainwindow.py":93
  *         self.pushButton_ok.setText(_translate("MainWindow", "Fertig"))
  *         self.pushButton_decode.setText(_translate("MainWindow", "Lesen"))
  *         self.label.setText(_translate("MainWindow", "Barcode:"))             # <<<<<<<<<<<<<<
  *         self.label_2.setText(_translate("MainWindow", "GTIN:"))
  *         self.label_3.setText(_translate("MainWindow", "Seriennummer:"))
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_label); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 84, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_label); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 93, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setText); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 84, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setText); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 93, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__17, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 84, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__20, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 93, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -5876,25 +6313,25 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_2retranslateUi(CYTHON_UNU
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 84, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 93, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "mainwindow.py":85
+  /* "mainwindow.py":94
  *         self.pushButton_decode.setText(_translate("MainWindow", "Lesen"))
  *         self.label.setText(_translate("MainWindow", "Barcode:"))
  *         self.label_2.setText(_translate("MainWindow", "GTIN:"))             # <<<<<<<<<<<<<<
  *         self.label_3.setText(_translate("MainWindow", "Seriennummer:"))
  *         self.label_4.setText(_translate("MainWindow", "Ablaufdatum:"))
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_label_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 85, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_label_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setText); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 85, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setText); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__18, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 85, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__21, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -5915,25 +6352,25 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_2retranslateUi(CYTHON_UNU
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 85, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 94, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "mainwindow.py":86
+  /* "mainwindow.py":95
  *         self.label.setText(_translate("MainWindow", "Barcode:"))
  *         self.label_2.setText(_translate("MainWindow", "GTIN:"))
  *         self.label_3.setText(_translate("MainWindow", "Seriennummer:"))             # <<<<<<<<<<<<<<
  *         self.label_4.setText(_translate("MainWindow", "Ablaufdatum:"))
- *         self.menuDatei.setTitle(_translate("MainWindow", "Datei"))
+ *         self.radioButton_djo.setText(_translate("MainWindow", "DJO"))
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_label_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_label_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setText); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setText); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__19, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__22, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -5954,25 +6391,25 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_2retranslateUi(CYTHON_UNU
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 86, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 95, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "mainwindow.py":87
+  /* "mainwindow.py":96
  *         self.label_2.setText(_translate("MainWindow", "GTIN:"))
  *         self.label_3.setText(_translate("MainWindow", "Seriennummer:"))
  *         self.label_4.setText(_translate("MainWindow", "Ablaufdatum:"))             # <<<<<<<<<<<<<<
- *         self.menuDatei.setTitle(_translate("MainWindow", "Datei"))
- *         self.menu.setTitle(_translate("MainWindow", "?"))
+ *         self.radioButton_djo.setText(_translate("MainWindow", "DJO"))
+ *         self.label_ref.setText(_translate("MainWindow", "Ref-Nummer:"))
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_label_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 87, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_label_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setText); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 87, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setText); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__20, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 87, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__23, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -5993,166 +6430,244 @@ static PyObject *__pyx_pf_10mainwindow_13Ui_MainWindow_2retranslateUi(CYTHON_UNU
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 96, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "mainwindow.py":97
+ *         self.label_3.setText(_translate("MainWindow", "Seriennummer:"))
+ *         self.label_4.setText(_translate("MainWindow", "Ablaufdatum:"))
+ *         self.radioButton_djo.setText(_translate("MainWindow", "DJO"))             # <<<<<<<<<<<<<<
+ *         self.label_ref.setText(_translate("MainWindow", "Ref-Nummer:"))
+ *         self.menuDatei.setTitle(_translate("MainWindow", "Datei"))
+ */
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_radioButton_djo); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setText); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__24, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_4 = NULL;
+  __pyx_t_5 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __pyx_t_5 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_t_2};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 97, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "mainwindow.py":98
+ *         self.label_4.setText(_translate("MainWindow", "Ablaufdatum:"))
+ *         self.radioButton_djo.setText(_translate("MainWindow", "DJO"))
+ *         self.label_ref.setText(_translate("MainWindow", "Ref-Nummer:"))             # <<<<<<<<<<<<<<
+ *         self.menuDatei.setTitle(_translate("MainWindow", "Datei"))
+ *         self.menu.setTitle(_translate("MainWindow", "?"))
+ */
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_label_ref); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setText); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__25, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = NULL;
+  __pyx_t_5 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
+      __pyx_t_5 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_t_3};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 98, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "mainwindow.py":99
+ *         self.radioButton_djo.setText(_translate("MainWindow", "DJO"))
+ *         self.label_ref.setText(_translate("MainWindow", "Ref-Nummer:"))
+ *         self.menuDatei.setTitle(_translate("MainWindow", "Datei"))             # <<<<<<<<<<<<<<
+ *         self.menu.setTitle(_translate("MainWindow", "?"))
+ *         self.actionBeenden.setText(_translate("MainWindow", "Beenden"))
+ */
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menuDatei); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 99, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setTitle); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 99, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__26, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 99, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_4 = NULL;
+  __pyx_t_5 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __pyx_t_5 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_t_2};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 99, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "mainwindow.py":100
+ *         self.label_ref.setText(_translate("MainWindow", "Ref-Nummer:"))
+ *         self.menuDatei.setTitle(_translate("MainWindow", "Datei"))
+ *         self.menu.setTitle(_translate("MainWindow", "?"))             # <<<<<<<<<<<<<<
+ *         self.actionBeenden.setText(_translate("MainWindow", "Beenden"))
+ *         self.action_ber_Barcode_Leser.setText(_translate("MainWindow", "ber Barcode-Leser"))
+ */
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menu); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setTitle); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__28, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = NULL;
+  __pyx_t_5 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
+      __pyx_t_5 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_t_3};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 100, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "mainwindow.py":101
+ *         self.menuDatei.setTitle(_translate("MainWindow", "Datei"))
+ *         self.menu.setTitle(_translate("MainWindow", "?"))
+ *         self.actionBeenden.setText(_translate("MainWindow", "Beenden"))             # <<<<<<<<<<<<<<
+ *         self.action_ber_Barcode_Leser.setText(_translate("MainWindow", "ber Barcode-Leser"))
+ */
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_actionBeenden); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 101, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setText); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 101, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__29, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 101, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_4 = NULL;
+  __pyx_t_5 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __pyx_t_5 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_t_2};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 101, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "mainwindow.py":102
+ *         self.menu.setTitle(_translate("MainWindow", "?"))
+ *         self.actionBeenden.setText(_translate("MainWindow", "Beenden"))
+ *         self.action_ber_Barcode_Leser.setText(_translate("MainWindow", "ber Barcode-Leser"))             # <<<<<<<<<<<<<<
+ */
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_action_ber_Barcode_Leser); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 102, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setText); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 102, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__30, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 102, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = NULL;
+  __pyx_t_5 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
+      __pyx_t_5 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_t_3};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 102, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "mainwindow.py":88
- *         self.label_3.setText(_translate("MainWindow", "Seriennummer:"))
- *         self.label_4.setText(_translate("MainWindow", "Ablaufdatum:"))
- *         self.menuDatei.setTitle(_translate("MainWindow", "Datei"))             # <<<<<<<<<<<<<<
- *         self.menu.setTitle(_translate("MainWindow", "?"))
- *         self.actionBeenden.setText(_translate("MainWindow", "Beenden"))
- */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menuDatei); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 88, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setTitle); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 88, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__21, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 88, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = NULL;
-  __pyx_t_5 = 0;
-  #if CYTHON_UNPACK_METHODS
-  if (likely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
-    if (likely(__pyx_t_4)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_4);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_3, function);
-      __pyx_t_5 = 1;
-    }
-  }
-  #endif
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_t_2};
-    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
-    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 88, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  }
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "mainwindow.py":89
- *         self.label_4.setText(_translate("MainWindow", "Ablaufdatum:"))
- *         self.menuDatei.setTitle(_translate("MainWindow", "Datei"))
- *         self.menu.setTitle(_translate("MainWindow", "?"))             # <<<<<<<<<<<<<<
- *         self.actionBeenden.setText(_translate("MainWindow", "Beenden"))
- *         self.action_ber_Barcode_Leser.setText(_translate("MainWindow", "ber Barcode-Leser"))
- */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_menu); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 89, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setTitle); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 89, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__23, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 89, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = NULL;
-  __pyx_t_5 = 0;
-  #if CYTHON_UNPACK_METHODS
-  if (likely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_4)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_4);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_2, function);
-      __pyx_t_5 = 1;
-    }
-  }
-  #endif
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_t_3};
-    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
-    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 89, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  }
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "mainwindow.py":90
- *         self.menuDatei.setTitle(_translate("MainWindow", "Datei"))
- *         self.menu.setTitle(_translate("MainWindow", "?"))
- *         self.actionBeenden.setText(_translate("MainWindow", "Beenden"))             # <<<<<<<<<<<<<<
- *         self.action_ber_Barcode_Leser.setText(_translate("MainWindow", "ber Barcode-Leser"))
- */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_actionBeenden); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 90, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setText); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 90, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__24, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 90, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = NULL;
-  __pyx_t_5 = 0;
-  #if CYTHON_UNPACK_METHODS
-  if (likely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
-    if (likely(__pyx_t_4)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_4);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_3, function);
-      __pyx_t_5 = 1;
-    }
-  }
-  #endif
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_t_2};
-    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
-    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 90, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  }
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "mainwindow.py":91
- *         self.menu.setTitle(_translate("MainWindow", "?"))
- *         self.actionBeenden.setText(_translate("MainWindow", "Beenden"))
- *         self.action_ber_Barcode_Leser.setText(_translate("MainWindow", "ber Barcode-Leser"))             # <<<<<<<<<<<<<<
- */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_action_ber_Barcode_Leser); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 91, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setText); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 91, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_v__translate, __pyx_tuple__25, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 91, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = NULL;
-  __pyx_t_5 = 0;
-  #if CYTHON_UNPACK_METHODS
-  if (likely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_4)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_4);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_2, function);
-      __pyx_t_5 = 1;
-    }
-  }
-  #endif
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_t_3};
-    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
-    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 91, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  }
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "mainwindow.py":79
  *         QtCore.QMetaObject.connectSlotsByName(MainWindow)
  * 
  *     def retranslateUi(self, MainWindow):             # <<<<<<<<<<<<<<
@@ -6197,6 +6712,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_kp_u_Barcode, __pyx_k_Barcode, sizeof(__pyx_k_Barcode), 0, 1, 0, 0},
     {&__pyx_kp_u_Barcode_Leser, __pyx_k_Barcode_Leser, sizeof(__pyx_k_Barcode_Leser), 0, 1, 0, 0},
     {&__pyx_n_u_Beenden, __pyx_k_Beenden, sizeof(__pyx_k_Beenden), 0, 1, 0, 1},
+    {&__pyx_n_u_DJO, __pyx_k_DJO, sizeof(__pyx_k_DJO), 0, 1, 0, 1},
     {&__pyx_n_u_Datei, __pyx_k_Datei, sizeof(__pyx_k_Datei), 0, 1, 0, 1},
     {&__pyx_n_u_Fertig, __pyx_k_Fertig, sizeof(__pyx_k_Fertig), 0, 1, 0, 1},
     {&__pyx_kp_u_GTIN, __pyx_k_GTIN, sizeof(__pyx_k_GTIN), 0, 1, 0, 0},
@@ -6213,6 +6729,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_QMetaObject, __pyx_k_QMetaObject, sizeof(__pyx_k_QMetaObject), 0, 0, 1, 1},
     {&__pyx_n_s_QPlainTextEdit, __pyx_k_QPlainTextEdit, sizeof(__pyx_k_QPlainTextEdit), 0, 0, 1, 1},
     {&__pyx_n_s_QPushButton, __pyx_k_QPushButton, sizeof(__pyx_k_QPushButton), 0, 0, 1, 1},
+    {&__pyx_n_s_QRadioButton, __pyx_k_QRadioButton, sizeof(__pyx_k_QRadioButton), 0, 0, 1, 1},
     {&__pyx_n_s_QRect, __pyx_k_QRect, sizeof(__pyx_k_QRect), 0, 0, 1, 1},
     {&__pyx_n_s_QSize, __pyx_k_QSize, sizeof(__pyx_k_QSize), 0, 0, 1, 1},
     {&__pyx_n_s_QStatusBar, __pyx_k_QStatusBar, sizeof(__pyx_k_QStatusBar), 0, 0, 1, 1},
@@ -6220,13 +6737,14 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_QtCore, __pyx_k_QtCore, sizeof(__pyx_k_QtCore), 0, 0, 1, 1},
     {&__pyx_n_s_QtGui, __pyx_k_QtGui, sizeof(__pyx_k_QtGui), 0, 0, 1, 1},
     {&__pyx_n_s_QtWidgets, __pyx_k_QtWidgets, sizeof(__pyx_k_QtWidgets), 0, 0, 1, 1},
+    {&__pyx_kp_u_Ref_Nummer, __pyx_k_Ref_Nummer, sizeof(__pyx_k_Ref_Nummer), 0, 1, 0, 0},
     {&__pyx_kp_u_Seriennummer, __pyx_k_Seriennummer, sizeof(__pyx_k_Seriennummer), 0, 1, 0, 0},
     {&__pyx_n_s_Ui_MainWindow, __pyx_k_Ui_MainWindow, sizeof(__pyx_k_Ui_MainWindow), 0, 0, 1, 1},
     {&__pyx_n_s_Ui_MainWindow_retranslateUi, __pyx_k_Ui_MainWindow_retranslateUi, sizeof(__pyx_k_Ui_MainWindow_retranslateUi), 0, 0, 1, 1},
     {&__pyx_n_s_Ui_MainWindow_setupUi, __pyx_k_Ui_MainWindow_setupUi, sizeof(__pyx_k_Ui_MainWindow_setupUi), 0, 0, 1, 1},
-    {&__pyx_n_s__22, __pyx_k__22, sizeof(__pyx_k__22), 0, 0, 1, 1},
-    {&__pyx_kp_u__22, __pyx_k__22, sizeof(__pyx_k__22), 0, 1, 0, 0},
-    {&__pyx_kp_u__26, __pyx_k__26, sizeof(__pyx_k__26), 0, 1, 0, 0},
+    {&__pyx_n_s__27, __pyx_k__27, sizeof(__pyx_k__27), 0, 0, 1, 1},
+    {&__pyx_kp_u__27, __pyx_k__27, sizeof(__pyx_k__27), 0, 1, 0, 0},
+    {&__pyx_kp_u__31, __pyx_k__31, sizeof(__pyx_k__31), 0, 1, 0, 0},
     {&__pyx_n_s_actionBeenden, __pyx_k_actionBeenden, sizeof(__pyx_k_actionBeenden), 0, 0, 1, 1},
     {&__pyx_n_u_actionBeenden, __pyx_k_actionBeenden, sizeof(__pyx_k_actionBeenden), 0, 1, 0, 1},
     {&__pyx_n_s_action_ber_Barcode_Leser, __pyx_k_action_ber_Barcode_Leser, sizeof(__pyx_k_action_ber_Barcode_Leser), 0, 0, 1, 1},
@@ -6251,12 +6769,16 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_u_label_3, __pyx_k_label_3, sizeof(__pyx_k_label_3), 0, 1, 0, 1},
     {&__pyx_n_s_label_4, __pyx_k_label_4, sizeof(__pyx_k_label_4), 0, 0, 1, 1},
     {&__pyx_n_u_label_4, __pyx_k_label_4, sizeof(__pyx_k_label_4), 0, 1, 0, 1},
+    {&__pyx_n_s_label_ref, __pyx_k_label_ref, sizeof(__pyx_k_label_ref), 0, 0, 1, 1},
+    {&__pyx_n_u_label_ref, __pyx_k_label_ref, sizeof(__pyx_k_label_ref), 0, 1, 0, 1},
     {&__pyx_n_s_lineEdit_barcode, __pyx_k_lineEdit_barcode, sizeof(__pyx_k_lineEdit_barcode), 0, 0, 1, 1},
     {&__pyx_n_u_lineEdit_barcode, __pyx_k_lineEdit_barcode, sizeof(__pyx_k_lineEdit_barcode), 0, 1, 0, 1},
     {&__pyx_n_s_lineEdit_expire, __pyx_k_lineEdit_expire, sizeof(__pyx_k_lineEdit_expire), 0, 0, 1, 1},
     {&__pyx_n_u_lineEdit_expire, __pyx_k_lineEdit_expire, sizeof(__pyx_k_lineEdit_expire), 0, 1, 0, 1},
     {&__pyx_n_s_lineEdit_gtin, __pyx_k_lineEdit_gtin, sizeof(__pyx_k_lineEdit_gtin), 0, 0, 1, 1},
     {&__pyx_n_u_lineEdit_gtin, __pyx_k_lineEdit_gtin, sizeof(__pyx_k_lineEdit_gtin), 0, 1, 0, 1},
+    {&__pyx_n_s_lineEdit_ref, __pyx_k_lineEdit_ref, sizeof(__pyx_k_lineEdit_ref), 0, 0, 1, 1},
+    {&__pyx_n_u_lineEdit_ref, __pyx_k_lineEdit_ref, sizeof(__pyx_k_lineEdit_ref), 0, 1, 0, 1},
     {&__pyx_n_s_lineEdit_serial, __pyx_k_lineEdit_serial, sizeof(__pyx_k_lineEdit_serial), 0, 0, 1, 1},
     {&__pyx_n_u_lineEdit_serial, __pyx_k_lineEdit_serial, sizeof(__pyx_k_lineEdit_serial), 0, 1, 0, 1},
     {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
@@ -6283,6 +6805,8 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_pushButton_ok, __pyx_k_pushButton_ok, sizeof(__pyx_k_pushButton_ok), 0, 0, 1, 1},
     {&__pyx_n_u_pushButton_ok, __pyx_k_pushButton_ok, sizeof(__pyx_k_pushButton_ok), 0, 1, 0, 1},
     {&__pyx_n_s_qualname, __pyx_k_qualname, sizeof(__pyx_k_qualname), 0, 0, 1, 1},
+    {&__pyx_n_s_radioButton_djo, __pyx_k_radioButton_djo, sizeof(__pyx_k_radioButton_djo), 0, 0, 1, 1},
+    {&__pyx_n_u_radioButton_djo, __pyx_k_radioButton_djo, sizeof(__pyx_k_radioButton_djo), 0, 1, 0, 1},
     {&__pyx_n_s_resize, __pyx_k_resize, sizeof(__pyx_k_resize), 0, 0, 1, 1},
     {&__pyx_n_s_retranslateUi, __pyx_k_retranslateUi, sizeof(__pyx_k_retranslateUi), 0, 0, 1, 1},
     {&__pyx_n_s_self, __pyx_k_self, sizeof(__pyx_k_self), 0, 0, 1, 1},
@@ -6447,140 +6971,195 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         self.plainTextEdit_output = QtWidgets.QPlainTextEdit(self.centralwidget)
  *         self.plainTextEdit_output.setGeometry(QtCore.QRect(520, 150, 261, 331))             # <<<<<<<<<<<<<<
  *         self.plainTextEdit_output.setObjectName("plainTextEdit_output")
- *         MainWindow.setCentralWidget(self.centralwidget)
+ *         self.radioButton_djo = QtWidgets.QRadioButton(self.centralwidget)
  */
   __pyx_tuple__12 = PyTuple_Pack(4, __pyx_int_520, __pyx_int_150, __pyx_int_261, __pyx_int_331); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__12);
   __Pyx_GIVEREF(__pyx_tuple__12);
 
-  /* "mainwindow.py":57
+  /* "mainwindow.py":56
+ *         self.plainTextEdit_output.setObjectName("plainTextEdit_output")
+ *         self.radioButton_djo = QtWidgets.QRadioButton(self.centralwidget)
+ *         self.radioButton_djo.setGeometry(QtCore.QRect(150, 100, 100, 20))             # <<<<<<<<<<<<<<
+ *         self.radioButton_djo.setObjectName("radioButton_djo")
+ *         self.label_ref = QtWidgets.QLabel(self.centralwidget)
+ */
+  __pyx_tuple__13 = PyTuple_Pack(4, __pyx_int_150, __pyx_int_100, __pyx_int_100, __pyx_int_20); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(0, 56, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__13);
+  __Pyx_GIVEREF(__pyx_tuple__13);
+
+  /* "mainwindow.py":59
+ *         self.radioButton_djo.setObjectName("radioButton_djo")
+ *         self.label_ref = QtWidgets.QLabel(self.centralwidget)
+ *         self.label_ref.setGeometry(QtCore.QRect(40, 330, 91, 16))             # <<<<<<<<<<<<<<
+ *         self.label_ref.setObjectName("label_ref")
+ *         self.lineEdit_ref = QtWidgets.QLineEdit(self.centralwidget)
+ */
+  __pyx_tuple__14 = PyTuple_Pack(4, __pyx_int_40, __pyx_int_330, __pyx_int_91, __pyx_int_16); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__14);
+  __Pyx_GIVEREF(__pyx_tuple__14);
+
+  /* "mainwindow.py":62
+ *         self.label_ref.setObjectName("label_ref")
+ *         self.lineEdit_ref = QtWidgets.QLineEdit(self.centralwidget)
+ *         self.lineEdit_ref.setGeometry(QtCore.QRect(150, 330, 301, 21))             # <<<<<<<<<<<<<<
+ *         self.lineEdit_ref.setObjectName("lineEdit_ref")
+ *         MainWindow.setCentralWidget(self.centralwidget)
+ */
+  __pyx_tuple__15 = PyTuple_Pack(4, __pyx_int_150, __pyx_int_330, __pyx_int_301, __pyx_int_21); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__15);
+  __Pyx_GIVEREF(__pyx_tuple__15);
+
+  /* "mainwindow.py":66
  *         MainWindow.setCentralWidget(self.centralwidget)
  *         self.menubar = QtWidgets.QMenuBar(MainWindow)
  *         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 24))             # <<<<<<<<<<<<<<
  *         self.menubar.setObjectName("menubar")
  *         self.menuDatei = QtWidgets.QMenu(self.menubar)
  */
-  __pyx_tuple__13 = PyTuple_Pack(4, __pyx_int_0, __pyx_int_0, __pyx_int_800, __pyx_int_24); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(0, 57, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__13);
-  __Pyx_GIVEREF(__pyx_tuple__13);
+  __pyx_tuple__16 = PyTuple_Pack(4, __pyx_int_0, __pyx_int_0, __pyx_int_800, __pyx_int_24); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__16);
+  __Pyx_GIVEREF(__pyx_tuple__16);
 
-  /* "mainwindow.py":81
+  /* "mainwindow.py":90
  *     def retranslateUi(self, MainWindow):
  *         _translate = QtCore.QCoreApplication.translate
  *         MainWindow.setWindowTitle(_translate("MainWindow", "Barcode-Leser"))             # <<<<<<<<<<<<<<
  *         self.pushButton_ok.setText(_translate("MainWindow", "Fertig"))
  *         self.pushButton_decode.setText(_translate("MainWindow", "Lesen"))
  */
-  __pyx_tuple__14 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_kp_u_Barcode_Leser); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 81, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__14);
-  __Pyx_GIVEREF(__pyx_tuple__14);
+  __pyx_tuple__17 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_kp_u_Barcode_Leser); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(0, 90, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__17);
+  __Pyx_GIVEREF(__pyx_tuple__17);
 
-  /* "mainwindow.py":82
+  /* "mainwindow.py":91
  *         _translate = QtCore.QCoreApplication.translate
  *         MainWindow.setWindowTitle(_translate("MainWindow", "Barcode-Leser"))
  *         self.pushButton_ok.setText(_translate("MainWindow", "Fertig"))             # <<<<<<<<<<<<<<
  *         self.pushButton_decode.setText(_translate("MainWindow", "Lesen"))
  *         self.label.setText(_translate("MainWindow", "Barcode:"))
  */
-  __pyx_tuple__15 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_n_u_Fertig); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(0, 82, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__15);
-  __Pyx_GIVEREF(__pyx_tuple__15);
+  __pyx_tuple__18 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_n_u_Fertig); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(0, 91, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__18);
+  __Pyx_GIVEREF(__pyx_tuple__18);
 
-  /* "mainwindow.py":83
+  /* "mainwindow.py":92
  *         MainWindow.setWindowTitle(_translate("MainWindow", "Barcode-Leser"))
  *         self.pushButton_ok.setText(_translate("MainWindow", "Fertig"))
  *         self.pushButton_decode.setText(_translate("MainWindow", "Lesen"))             # <<<<<<<<<<<<<<
  *         self.label.setText(_translate("MainWindow", "Barcode:"))
  *         self.label_2.setText(_translate("MainWindow", "GTIN:"))
  */
-  __pyx_tuple__16 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_n_u_Lesen); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(0, 83, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__16);
-  __Pyx_GIVEREF(__pyx_tuple__16);
+  __pyx_tuple__19 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_n_u_Lesen); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(0, 92, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__19);
+  __Pyx_GIVEREF(__pyx_tuple__19);
 
-  /* "mainwindow.py":84
+  /* "mainwindow.py":93
  *         self.pushButton_ok.setText(_translate("MainWindow", "Fertig"))
  *         self.pushButton_decode.setText(_translate("MainWindow", "Lesen"))
  *         self.label.setText(_translate("MainWindow", "Barcode:"))             # <<<<<<<<<<<<<<
  *         self.label_2.setText(_translate("MainWindow", "GTIN:"))
  *         self.label_3.setText(_translate("MainWindow", "Seriennummer:"))
  */
-  __pyx_tuple__17 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_kp_u_Barcode); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(0, 84, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__17);
-  __Pyx_GIVEREF(__pyx_tuple__17);
+  __pyx_tuple__20 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_kp_u_Barcode); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 93, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__20);
+  __Pyx_GIVEREF(__pyx_tuple__20);
 
-  /* "mainwindow.py":85
+  /* "mainwindow.py":94
  *         self.pushButton_decode.setText(_translate("MainWindow", "Lesen"))
  *         self.label.setText(_translate("MainWindow", "Barcode:"))
  *         self.label_2.setText(_translate("MainWindow", "GTIN:"))             # <<<<<<<<<<<<<<
  *         self.label_3.setText(_translate("MainWindow", "Seriennummer:"))
  *         self.label_4.setText(_translate("MainWindow", "Ablaufdatum:"))
  */
-  __pyx_tuple__18 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_kp_u_GTIN); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(0, 85, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__18);
-  __Pyx_GIVEREF(__pyx_tuple__18);
+  __pyx_tuple__21 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_kp_u_GTIN); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 94, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__21);
+  __Pyx_GIVEREF(__pyx_tuple__21);
 
-  /* "mainwindow.py":86
+  /* "mainwindow.py":95
  *         self.label.setText(_translate("MainWindow", "Barcode:"))
  *         self.label_2.setText(_translate("MainWindow", "GTIN:"))
  *         self.label_3.setText(_translate("MainWindow", "Seriennummer:"))             # <<<<<<<<<<<<<<
  *         self.label_4.setText(_translate("MainWindow", "Ablaufdatum:"))
- *         self.menuDatei.setTitle(_translate("MainWindow", "Datei"))
+ *         self.radioButton_djo.setText(_translate("MainWindow", "DJO"))
  */
-  __pyx_tuple__19 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_kp_u_Seriennummer); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(0, 86, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__19);
-  __Pyx_GIVEREF(__pyx_tuple__19);
+  __pyx_tuple__22 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_kp_u_Seriennummer); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 95, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__22);
+  __Pyx_GIVEREF(__pyx_tuple__22);
 
-  /* "mainwindow.py":87
+  /* "mainwindow.py":96
  *         self.label_2.setText(_translate("MainWindow", "GTIN:"))
  *         self.label_3.setText(_translate("MainWindow", "Seriennummer:"))
  *         self.label_4.setText(_translate("MainWindow", "Ablaufdatum:"))             # <<<<<<<<<<<<<<
+ *         self.radioButton_djo.setText(_translate("MainWindow", "DJO"))
+ *         self.label_ref.setText(_translate("MainWindow", "Ref-Nummer:"))
+ */
+  __pyx_tuple__23 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_kp_u_Ablaufdatum); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(0, 96, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__23);
+  __Pyx_GIVEREF(__pyx_tuple__23);
+
+  /* "mainwindow.py":97
+ *         self.label_3.setText(_translate("MainWindow", "Seriennummer:"))
+ *         self.label_4.setText(_translate("MainWindow", "Ablaufdatum:"))
+ *         self.radioButton_djo.setText(_translate("MainWindow", "DJO"))             # <<<<<<<<<<<<<<
+ *         self.label_ref.setText(_translate("MainWindow", "Ref-Nummer:"))
+ *         self.menuDatei.setTitle(_translate("MainWindow", "Datei"))
+ */
+  __pyx_tuple__24 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_n_u_DJO); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__24);
+  __Pyx_GIVEREF(__pyx_tuple__24);
+
+  /* "mainwindow.py":98
+ *         self.label_4.setText(_translate("MainWindow", "Ablaufdatum:"))
+ *         self.radioButton_djo.setText(_translate("MainWindow", "DJO"))
+ *         self.label_ref.setText(_translate("MainWindow", "Ref-Nummer:"))             # <<<<<<<<<<<<<<
  *         self.menuDatei.setTitle(_translate("MainWindow", "Datei"))
  *         self.menu.setTitle(_translate("MainWindow", "?"))
  */
-  __pyx_tuple__20 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_kp_u_Ablaufdatum); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 87, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__20);
-  __Pyx_GIVEREF(__pyx_tuple__20);
+  __pyx_tuple__25 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_kp_u_Ref_Nummer); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__25);
+  __Pyx_GIVEREF(__pyx_tuple__25);
 
-  /* "mainwindow.py":88
- *         self.label_3.setText(_translate("MainWindow", "Seriennummer:"))
- *         self.label_4.setText(_translate("MainWindow", "Ablaufdatum:"))
+  /* "mainwindow.py":99
+ *         self.radioButton_djo.setText(_translate("MainWindow", "DJO"))
+ *         self.label_ref.setText(_translate("MainWindow", "Ref-Nummer:"))
  *         self.menuDatei.setTitle(_translate("MainWindow", "Datei"))             # <<<<<<<<<<<<<<
  *         self.menu.setTitle(_translate("MainWindow", "?"))
  *         self.actionBeenden.setText(_translate("MainWindow", "Beenden"))
  */
-  __pyx_tuple__21 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_n_u_Datei); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 88, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__21);
-  __Pyx_GIVEREF(__pyx_tuple__21);
+  __pyx_tuple__26 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_n_u_Datei); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(0, 99, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__26);
+  __Pyx_GIVEREF(__pyx_tuple__26);
 
-  /* "mainwindow.py":89
- *         self.label_4.setText(_translate("MainWindow", "Ablaufdatum:"))
+  /* "mainwindow.py":100
+ *         self.label_ref.setText(_translate("MainWindow", "Ref-Nummer:"))
  *         self.menuDatei.setTitle(_translate("MainWindow", "Datei"))
  *         self.menu.setTitle(_translate("MainWindow", "?"))             # <<<<<<<<<<<<<<
  *         self.actionBeenden.setText(_translate("MainWindow", "Beenden"))
  *         self.action_ber_Barcode_Leser.setText(_translate("MainWindow", "ber Barcode-Leser"))
  */
-  __pyx_tuple__23 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_kp_u__22); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(0, 89, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__23);
-  __Pyx_GIVEREF(__pyx_tuple__23);
+  __pyx_tuple__28 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_kp_u__27); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__28);
+  __Pyx_GIVEREF(__pyx_tuple__28);
 
-  /* "mainwindow.py":90
+  /* "mainwindow.py":101
  *         self.menuDatei.setTitle(_translate("MainWindow", "Datei"))
  *         self.menu.setTitle(_translate("MainWindow", "?"))
  *         self.actionBeenden.setText(_translate("MainWindow", "Beenden"))             # <<<<<<<<<<<<<<
  *         self.action_ber_Barcode_Leser.setText(_translate("MainWindow", "ber Barcode-Leser"))
  */
-  __pyx_tuple__24 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_n_u_Beenden); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(0, 90, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__24);
-  __Pyx_GIVEREF(__pyx_tuple__24);
+  __pyx_tuple__29 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_n_u_Beenden); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(0, 101, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__29);
+  __Pyx_GIVEREF(__pyx_tuple__29);
 
-  /* "mainwindow.py":91
+  /* "mainwindow.py":102
  *         self.menu.setTitle(_translate("MainWindow", "?"))
  *         self.actionBeenden.setText(_translate("MainWindow", "Beenden"))
  *         self.action_ber_Barcode_Leser.setText(_translate("MainWindow", "ber Barcode-Leser"))             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__25 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_kp_u_ber_Barcode_Leser); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(0, 91, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__25);
-  __Pyx_GIVEREF(__pyx_tuple__25);
+  __pyx_tuple__30 = PyTuple_Pack(2, __pyx_n_u_MainWindow, __pyx_kp_u_ber_Barcode_Leser); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(0, 102, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__30);
+  __Pyx_GIVEREF(__pyx_tuple__30);
 
   /* "mainwindow.py":14
  * 
@@ -6589,12 +7168,12 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     def setupUi(self, MainWindow):
  *         MainWindow.setObjectName("MainWindow")
  */
-  __pyx_tuple__27 = PyTuple_Pack(1, __pyx_builtin_object); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(0, 14, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__27);
-  __Pyx_GIVEREF(__pyx_tuple__27);
-  __pyx_tuple__28 = PyTuple_Pack(1, __pyx_builtin_object); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(0, 14, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__28);
-  __Pyx_GIVEREF(__pyx_tuple__28);
+  __pyx_tuple__32 = PyTuple_Pack(1, __pyx_builtin_object); if (unlikely(!__pyx_tuple__32)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__32);
+  __Pyx_GIVEREF(__pyx_tuple__32);
+  __pyx_tuple__33 = PyTuple_Pack(1, __pyx_builtin_object); if (unlikely(!__pyx_tuple__33)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__33);
+  __Pyx_GIVEREF(__pyx_tuple__33);
 
   /* "mainwindow.py":15
  * 
@@ -6603,22 +7182,22 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         MainWindow.setObjectName("MainWindow")
  *         MainWindow.resize(800, 600)
  */
-  __pyx_tuple__29 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_MainWindow); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(0, 15, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__29);
-  __Pyx_GIVEREF(__pyx_tuple__29);
-  __pyx_codeobj__30 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__29, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_mainwindow_mainwindow_py, __pyx_n_s_setupUi, 15, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__30)) __PYX_ERR(0, 15, __pyx_L1_error)
+  __pyx_tuple__34 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_MainWindow); if (unlikely(!__pyx_tuple__34)) __PYX_ERR(0, 15, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__34);
+  __Pyx_GIVEREF(__pyx_tuple__34);
+  __pyx_codeobj__35 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__34, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_mainwindow_mainwindow_py, __pyx_n_s_setupUi, 15, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__35)) __PYX_ERR(0, 15, __pyx_L1_error)
 
-  /* "mainwindow.py":79
+  /* "mainwindow.py":88
  *         QtCore.QMetaObject.connectSlotsByName(MainWindow)
  * 
  *     def retranslateUi(self, MainWindow):             # <<<<<<<<<<<<<<
  *         _translate = QtCore.QCoreApplication.translate
  *         MainWindow.setWindowTitle(_translate("MainWindow", "Barcode-Leser"))
  */
-  __pyx_tuple__31 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_MainWindow, __pyx_n_s_translate_2); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(0, 79, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__31);
-  __Pyx_GIVEREF(__pyx_tuple__31);
-  __pyx_codeobj__32 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__31, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_mainwindow_mainwindow_py, __pyx_n_s_retranslateUi, 79, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__32)) __PYX_ERR(0, 79, __pyx_L1_error)
+  __pyx_tuple__36 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_MainWindow, __pyx_n_s_translate_2); if (unlikely(!__pyx_tuple__36)) __PYX_ERR(0, 88, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__36);
+  __Pyx_GIVEREF(__pyx_tuple__36);
+  __pyx_codeobj__37 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__36, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_mainwindow_mainwindow_py, __pyx_n_s_retranslateUi, 88, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__37)) __PYX_ERR(0, 88, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -6631,6 +7210,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitConstants(void) {
   if (__Pyx_CreateStringTabAndInitStrings() < 0) __PYX_ERR(0, 1, __pyx_L1_error);
   __pyx_int_0 = PyInt_FromLong(0); if (unlikely(!__pyx_int_0)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_16 = PyInt_FromLong(16); if (unlikely(!__pyx_int_16)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_20 = PyInt_FromLong(20); if (unlikely(!__pyx_int_20)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_21 = PyInt_FromLong(21); if (unlikely(!__pyx_int_21)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_24 = PyInt_FromLong(24); if (unlikely(!__pyx_int_24)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_32 = PyInt_FromLong(32); if (unlikely(!__pyx_int_32)) __PYX_ERR(0, 1, __pyx_L1_error)
@@ -6640,6 +7220,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitConstants(void) {
   __pyx_int_61 = PyInt_FromLong(61); if (unlikely(!__pyx_int_61)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_70 = PyInt_FromLong(70); if (unlikely(!__pyx_int_70)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_91 = PyInt_FromLong(91); if (unlikely(!__pyx_int_91)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_100 = PyInt_FromLong(100); if (unlikely(!__pyx_int_100)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_101 = PyInt_FromLong(101); if (unlikely(!__pyx_int_101)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_111 = PyInt_FromLong(111); if (unlikely(!__pyx_int_111)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_131 = PyInt_FromLong(131); if (unlikely(!__pyx_int_131)) __PYX_ERR(0, 1, __pyx_L1_error)
@@ -6647,6 +7228,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitConstants(void) {
   __pyx_int_151 = PyInt_FromLong(151); if (unlikely(!__pyx_int_151)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_261 = PyInt_FromLong(261); if (unlikely(!__pyx_int_261)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_301 = PyInt_FromLong(301); if (unlikely(!__pyx_int_301)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_330 = PyInt_FromLong(330); if (unlikely(!__pyx_int_330)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_331 = PyInt_FromLong(331); if (unlikely(!__pyx_int_331)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_380 = PyInt_FromLong(380); if (unlikely(!__pyx_int_380)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_430 = PyInt_FromLong(430); if (unlikely(!__pyx_int_430)) __PYX_ERR(0, 1, __pyx_L1_error)
@@ -7065,14 +7647,14 @@ if (!__Pyx_RefNanny) {
  *     def setupUi(self, MainWindow):
  *         MainWindow.setObjectName("MainWindow")
  */
-  __pyx_t_3 = __Pyx_PEP560_update_bases(__pyx_tuple__28); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PEP560_update_bases(__pyx_tuple__33); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = __Pyx_CalculateMetaclass(NULL, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = __Pyx_Py3MetaclassPrepare(__pyx_t_2, __pyx_t_3, __pyx_n_s_Ui_MainWindow, __pyx_n_s_Ui_MainWindow, (PyObject *) NULL, __pyx_n_s_mainwindow, (PyObject *) NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (__pyx_t_3 != __pyx_tuple__28) {
-    if (unlikely((PyDict_SetItemString(__pyx_t_4, "__orig_bases__", __pyx_tuple__28) < 0))) __PYX_ERR(0, 14, __pyx_L1_error)
+  if (__pyx_t_3 != __pyx_tuple__33) {
+    if (unlikely((PyDict_SetItemString(__pyx_t_4, "__orig_bases__", __pyx_tuple__33) < 0))) __PYX_ERR(0, 14, __pyx_L1_error)
   }
 
   /* "mainwindow.py":15
@@ -7082,21 +7664,21 @@ if (!__Pyx_RefNanny) {
  *         MainWindow.setObjectName("MainWindow")
  *         MainWindow.resize(800, 600)
  */
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10mainwindow_13Ui_MainWindow_1setupUi, 0, __pyx_n_s_Ui_MainWindow_setupUi, NULL, __pyx_n_s_mainwindow, __pyx_d, ((PyObject *)__pyx_codeobj__30)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 15, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10mainwindow_13Ui_MainWindow_1setupUi, 0, __pyx_n_s_Ui_MainWindow_setupUi, NULL, __pyx_n_s_mainwindow, __pyx_d, ((PyObject *)__pyx_codeobj__35)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 15, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (__Pyx_SetNameInClass(__pyx_t_4, __pyx_n_s_setupUi, __pyx_t_5) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "mainwindow.py":79
+  /* "mainwindow.py":88
  *         QtCore.QMetaObject.connectSlotsByName(MainWindow)
  * 
  *     def retranslateUi(self, MainWindow):             # <<<<<<<<<<<<<<
  *         _translate = QtCore.QCoreApplication.translate
  *         MainWindow.setWindowTitle(_translate("MainWindow", "Barcode-Leser"))
  */
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10mainwindow_13Ui_MainWindow_3retranslateUi, 0, __pyx_n_s_Ui_MainWindow_retranslateUi, NULL, __pyx_n_s_mainwindow, __pyx_d, ((PyObject *)__pyx_codeobj__32)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 79, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10mainwindow_13Ui_MainWindow_3retranslateUi, 0, __pyx_n_s_Ui_MainWindow_retranslateUi, NULL, __pyx_n_s_mainwindow, __pyx_d, ((PyObject *)__pyx_codeobj__37)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 88, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (__Pyx_SetNameInClass(__pyx_t_4, __pyx_n_s_retranslateUi, __pyx_t_5) < 0) __PYX_ERR(0, 79, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_4, __pyx_n_s_retranslateUi, __pyx_t_5) < 0) __PYX_ERR(0, 88, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
   /* "mainwindow.py":14
@@ -8231,7 +8813,7 @@ static PyObject* __Pyx_ImportFrom(PyObject* module, PyObject* name) {
         if (unlikely(!module_name_str)) { goto modbad; }
         module_name = PyUnicode_FromString(module_name_str);
         if (unlikely(!module_name)) { goto modbad; }
-        module_dot = PyUnicode_Concat(module_name, __pyx_kp_u__26);
+        module_dot = PyUnicode_Concat(module_name, __pyx_kp_u__31);
         if (unlikely(!module_dot)) { goto modbad; }
         full_name = PyUnicode_Concat(module_dot, name);
         if (unlikely(!full_name)) { goto modbad; }
@@ -10199,7 +10781,7 @@ __Pyx_PyType_GetName(PyTypeObject* tp)
     if (unlikely(name == NULL) || unlikely(!PyUnicode_Check(name))) {
         PyErr_Clear();
         Py_XDECREF(name);
-        name = __Pyx_NewRef(__pyx_n_s__22);
+        name = __Pyx_NewRef(__pyx_n_s__27);
     }
     return name;
 }

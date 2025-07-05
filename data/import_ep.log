@@ -1,0 +1,5 @@
+2025-07-05 21:16:54,700 - __main__ - ERROR - File not found: ../table-EP_ARTIKEL2.json
+2025-07-05 21:16:54,700 - __main__ - ERROR - Error reading JSON file ../table-EP_ARTIKEL2.json: File not found: ../table-EP_ARTIKEL2.json
+2025-07-05 21:16:54,700 - root - ERROR - Unerwarteter Fehler beim Laden der Suchdatei: Error reading JSON file: File not found: ../table-EP_ARTIKEL2.json
+2025-07-05 21:16:54,700 - __main__ - INFO - Suche nach GTIN: 07611996073546
+2025-07-05 21:16:54,701 - __main__ - WARNING - Keine Einträge gefunden für GTIN 07611996073546

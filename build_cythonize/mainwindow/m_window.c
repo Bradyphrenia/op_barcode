@@ -1702,6 +1702,10 @@ static CYTHON_INLINE int __Pyx_PyUnicode_Equals(PyObject* s1, PyObject* s2, int 
 #define __Pyx_ArgsSlice_FASTCALL(args, start, stop) PyTuple_GetSlice(args, start, stop)
 #endif
 
+/* RaiseArgTupleInvalid.proto */
+static void __Pyx_RaiseArgtupleInvalid(const char* func_name, int exact,
+    Py_ssize_t num_min, Py_ssize_t num_max, Py_ssize_t num_found);
+
 /* RaiseDoubleKeywords.proto */
 static void __Pyx_RaiseDoubleKeywordsError(const char* func_name, PyObject* kw_name);
 
@@ -1710,10 +1714,6 @@ static int __Pyx_ParseOptionalKeywords(PyObject *kwds, PyObject *const *kwvalues
     PyObject **argnames[],
     PyObject *kwds2, PyObject *values[], Py_ssize_t num_pos_args,
     const char* function_name);
-
-/* RaiseArgTupleInvalid.proto */
-static void __Pyx_RaiseArgtupleInvalid(const char* func_name, int exact,
-    Py_ssize_t num_min, Py_ssize_t num_max, Py_ssize_t num_found);
 
 /* SliceObject.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyObject_GetSlice(
@@ -2199,20 +2199,22 @@ static PyObject *__pyx_builtin_super;
 static const char __pyx_k_e[] = "e";
 static const char __pyx_k_20[] = "20";
 static const char __pyx_k__3[] = "";
-static const char __pyx_k__9[] = "-";
 static const char __pyx_k_dd[] = "dd";
 static const char __pyx_k_mm[] = "mm";
 static const char __pyx_k_mw[] = "mw";
 static const char __pyx_k_ui[] = "ui";
 static const char __pyx_k_yy[] = "yy";
-static const char __pyx_k__10[] = "*";
-static const char __pyx_k__11[] = ".";
-static const char __pyx_k__21[] = "?";
+static const char __pyx_k__11[] = "-";
+static const char __pyx_k__12[] = "*";
+static const char __pyx_k__13[] = ".";
+static const char __pyx_k__23[] = "?";
 static const char __pyx_k_app[] = "app";
+static const char __pyx_k_djo[] = "djo";
 static const char __pyx_k_doc[] = "__doc__";
 static const char __pyx_k_qtw[] = "qtw";
 static const char __pyx_k_sys[] = "sys";
 static const char __pyx_k_argv[] = "argv";
+static const char __pyx_k_data[] = "data";
 static const char __pyx_k_date[] = "date";
 static const char __pyx_k_dict[] = "__dict__";
 static const char __pyx_k_exec[] = "exec";
@@ -2244,17 +2246,22 @@ static const char __pyx_k_m_window[] = "m_window";
 static const char __pyx_k_qualname[] = "__qualname__";
 static const char __pyx_k_set_name[] = "__set_name__";
 static const char __pyx_k_QtWidgets[] = "QtWidgets";
+static const char __pyx_k_isChecked[] = "isChecked";
 static const char __pyx_k_metaclass[] = "__metaclass__";
+static const char __pyx_k_triggered[] = "triggered";
 static const char __pyx_k_MainWindow[] = "MainWindow";
 static const char __pyx_k_mainwindow[] = "mainwindow";
 static const char __pyx_k_QMainWindow[] = "QMainWindow";
+static const char __pyx_k_init_search[] = "init_search";
 static const char __pyx_k_mro_entries[] = "__mro_entries__";
 static const char __pyx_k_QApplication[] = "QApplication";
 static const char __pyx_k_convert_date[] = "convert_date";
 static const char __pyx_k_initializing[] = "_initializing";
 static const char __pyx_k_is_coroutine[] = "_is_coroutine";
+static const char __pyx_k_lineEdit_ref[] = "lineEdit_ref";
 static const char __pyx_k_staticmethod[] = "staticmethod";
 static const char __pyx_k_Ui_MainWindow[] = "Ui_MainWindow";
+static const char __pyx_k_actionBeenden[] = "actionBeenden";
 static const char __pyx_k_init_subclass[] = "__init_subclass__";
 static const char __pyx_k_lineEdit_gtin[] = "lineEdit_gtin";
 static const char __pyx_k_pushButton_ok[] = "pushButton_ok";
@@ -2264,8 +2271,10 @@ static const char __pyx_k_appendPlainText[] = "appendPlainText";
 static const char __pyx_k_lineEdit_expire[] = "lineEdit_expire";
 static const char __pyx_k_lineEdit_serial[] = "lineEdit_serial";
 static const char __pyx_k_process_barcode[] = "process_barcode";
+static const char __pyx_k_radioButton_djo[] = "radioButton_djo";
 static const char __pyx_k_BarcodeProcessor[] = "BarcodeProcessor";
 static const char __pyx_k_lineEdit_barcode[] = "lineEdit_barcode";
+static const char __pyx_k_search_refnumber[] = "search_refnumber";
 static const char __pyx_k_MainWindow___init[] = "MainWindow.__init__";
 static const char __pyx_k_barcode_processor[] = "barcode_processor";
 static const char __pyx_k_pushButton_decode[] = "pushButton_decode";
@@ -2274,6 +2283,7 @@ static const char __pyx_k_asyncio_coroutines[] = "asyncio.coroutines";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_plainTextEdit_output[] = "plainTextEdit_output";
 static const char __pyx_k_mainwindow_m_window_py[] = "mainwindow\\m_window.py";
+static const char __pyx_k_table_EP_ARTIKEL2_json[] = "table-EP_ARTIKEL2.json";
 static const char __pyx_k_Kein_Barcode_eingegeben[] = "Kein Barcode eingegeben";
 static const char __pyx_k_MainWindow_barcode_decode[] = "MainWindow.barcode_decode";
 static const char __pyx_k_BarcodeProcessor_convert_date[] = "BarcodeProcessor.convert_date";
@@ -2281,7 +2291,7 @@ static const char __pyx_k_MainWindow__setup_connections[] = "MainWindow._setup_c
 static const char __pyx_k_BarcodeProcessor_process_barcode[] = "BarcodeProcessor.process_barcode";
 static const char __pyx_k_Fehler_bei_der_Barcode_Verarbeit[] = "Fehler bei der Barcode-Verarbeitung: ";
 /* #### Code section: decls ### */
-static PyObject *__pyx_pf_8m_window_16BarcodeProcessor_process_barcode(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_barcode); /* proto */
+static PyObject *__pyx_pf_8m_window_16BarcodeProcessor_process_barcode(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_barcode, PyObject *__pyx_v_djo); /* proto */
 static PyObject *__pyx_pf_8m_window_16BarcodeProcessor_2convert_date(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_date); /* proto */
 static PyObject *__pyx_pf_8m_window_10MainWindow___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_8m_window_10MainWindow_2_setup_connections(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
@@ -2331,11 +2341,12 @@ typedef struct {
   PyObject *__pyx_n_s_QMainWindow;
   PyObject *__pyx_n_s_QtWidgets;
   PyObject *__pyx_n_s_Ui_MainWindow;
-  PyObject *__pyx_n_s__10;
   PyObject *__pyx_kp_u__11;
-  PyObject *__pyx_n_s__21;
+  PyObject *__pyx_n_s__12;
+  PyObject *__pyx_kp_u__13;
+  PyObject *__pyx_n_s__23;
   PyObject *__pyx_kp_u__3;
-  PyObject *__pyx_kp_u__9;
+  PyObject *__pyx_n_s_actionBeenden;
   PyObject *__pyx_n_s_app;
   PyObject *__pyx_n_s_appendPlainText;
   PyObject *__pyx_n_s_argv;
@@ -2349,9 +2360,11 @@ typedef struct {
   PyObject *__pyx_n_s_close;
   PyObject *__pyx_n_s_connect;
   PyObject *__pyx_n_s_convert_date;
+  PyObject *__pyx_n_s_data;
   PyObject *__pyx_n_s_date;
   PyObject *__pyx_n_s_dd;
   PyObject *__pyx_n_s_dict;
+  PyObject *__pyx_n_s_djo;
   PyObject *__pyx_n_s_doc;
   PyObject *__pyx_n_s_e;
   PyObject *__pyx_n_s_exec;
@@ -2360,12 +2373,15 @@ typedef struct {
   PyObject *__pyx_n_s_gtin;
   PyObject *__pyx_n_s_import;
   PyObject *__pyx_n_s_init;
+  PyObject *__pyx_n_s_init_search;
   PyObject *__pyx_n_s_init_subclass;
   PyObject *__pyx_n_s_initializing;
+  PyObject *__pyx_n_s_isChecked;
   PyObject *__pyx_n_s_is_coroutine;
   PyObject *__pyx_n_s_lineEdit_barcode;
   PyObject *__pyx_n_s_lineEdit_expire;
   PyObject *__pyx_n_s_lineEdit_gtin;
+  PyObject *__pyx_n_s_lineEdit_ref;
   PyObject *__pyx_n_s_lineEdit_serial;
   PyObject *__pyx_n_s_m_window;
   PyObject *__pyx_n_s_main;
@@ -2385,6 +2401,8 @@ typedef struct {
   PyObject *__pyx_n_s_pushButton_ok;
   PyObject *__pyx_n_s_qtw;
   PyObject *__pyx_n_s_qualname;
+  PyObject *__pyx_n_s_radioButton_djo;
+  PyObject *__pyx_n_s_search_refnumber;
   PyObject *__pyx_n_s_self;
   PyObject *__pyx_n_s_serial;
   PyObject *__pyx_n_s_setText;
@@ -2396,8 +2414,10 @@ typedef struct {
   PyObject *__pyx_n_s_staticmethod;
   PyObject *__pyx_n_s_super;
   PyObject *__pyx_n_s_sys;
+  PyObject *__pyx_kp_u_table_EP_ARTIKEL2_json;
   PyObject *__pyx_n_s_test;
   PyObject *__pyx_n_s_text;
+  PyObject *__pyx_n_s_triggered;
   PyObject *__pyx_n_s_ui;
   PyObject *__pyx_n_s_yy;
   PyObject *__pyx_int_0;
@@ -2406,8 +2426,12 @@ typedef struct {
   PyObject *__pyx_int_6;
   PyObject *__pyx_int_16;
   PyObject *__pyx_int_18;
+  PyObject *__pyx_int_19;
   PyObject *__pyx_int_24;
   PyObject *__pyx_int_26;
+  PyObject *__pyx_int_27;
+  PyObject *__pyx_int_29;
+  PyObject *__pyx_int_34;
   PyObject *__pyx_tuple_;
   PyObject *__pyx_slice__2;
   PyObject *__pyx_slice__4;
@@ -2415,15 +2439,17 @@ typedef struct {
   PyObject *__pyx_slice__6;
   PyObject *__pyx_slice__7;
   PyObject *__pyx_slice__8;
-  PyObject *__pyx_tuple__12;
+  PyObject *__pyx_slice__9;
+  PyObject *__pyx_slice__10;
   PyObject *__pyx_tuple__14;
   PyObject *__pyx_tuple__16;
-  PyObject *__pyx_tuple__19;
-  PyObject *__pyx_codeobj__13;
+  PyObject *__pyx_tuple__18;
+  PyObject *__pyx_tuple__21;
   PyObject *__pyx_codeobj__15;
   PyObject *__pyx_codeobj__17;
-  PyObject *__pyx_codeobj__18;
+  PyObject *__pyx_codeobj__19;
   PyObject *__pyx_codeobj__20;
+  PyObject *__pyx_codeobj__22;
 } __pyx_mstate;
 
 #if CYTHON_USE_MODULE_STATE
@@ -2482,11 +2508,12 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_QMainWindow);
   Py_CLEAR(clear_module_state->__pyx_n_s_QtWidgets);
   Py_CLEAR(clear_module_state->__pyx_n_s_Ui_MainWindow);
-  Py_CLEAR(clear_module_state->__pyx_n_s__10);
   Py_CLEAR(clear_module_state->__pyx_kp_u__11);
-  Py_CLEAR(clear_module_state->__pyx_n_s__21);
+  Py_CLEAR(clear_module_state->__pyx_n_s__12);
+  Py_CLEAR(clear_module_state->__pyx_kp_u__13);
+  Py_CLEAR(clear_module_state->__pyx_n_s__23);
   Py_CLEAR(clear_module_state->__pyx_kp_u__3);
-  Py_CLEAR(clear_module_state->__pyx_kp_u__9);
+  Py_CLEAR(clear_module_state->__pyx_n_s_actionBeenden);
   Py_CLEAR(clear_module_state->__pyx_n_s_app);
   Py_CLEAR(clear_module_state->__pyx_n_s_appendPlainText);
   Py_CLEAR(clear_module_state->__pyx_n_s_argv);
@@ -2500,9 +2527,11 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_close);
   Py_CLEAR(clear_module_state->__pyx_n_s_connect);
   Py_CLEAR(clear_module_state->__pyx_n_s_convert_date);
+  Py_CLEAR(clear_module_state->__pyx_n_s_data);
   Py_CLEAR(clear_module_state->__pyx_n_s_date);
   Py_CLEAR(clear_module_state->__pyx_n_s_dd);
   Py_CLEAR(clear_module_state->__pyx_n_s_dict);
+  Py_CLEAR(clear_module_state->__pyx_n_s_djo);
   Py_CLEAR(clear_module_state->__pyx_n_s_doc);
   Py_CLEAR(clear_module_state->__pyx_n_s_e);
   Py_CLEAR(clear_module_state->__pyx_n_s_exec);
@@ -2511,12 +2540,15 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_gtin);
   Py_CLEAR(clear_module_state->__pyx_n_s_import);
   Py_CLEAR(clear_module_state->__pyx_n_s_init);
+  Py_CLEAR(clear_module_state->__pyx_n_s_init_search);
   Py_CLEAR(clear_module_state->__pyx_n_s_init_subclass);
   Py_CLEAR(clear_module_state->__pyx_n_s_initializing);
+  Py_CLEAR(clear_module_state->__pyx_n_s_isChecked);
   Py_CLEAR(clear_module_state->__pyx_n_s_is_coroutine);
   Py_CLEAR(clear_module_state->__pyx_n_s_lineEdit_barcode);
   Py_CLEAR(clear_module_state->__pyx_n_s_lineEdit_expire);
   Py_CLEAR(clear_module_state->__pyx_n_s_lineEdit_gtin);
+  Py_CLEAR(clear_module_state->__pyx_n_s_lineEdit_ref);
   Py_CLEAR(clear_module_state->__pyx_n_s_lineEdit_serial);
   Py_CLEAR(clear_module_state->__pyx_n_s_m_window);
   Py_CLEAR(clear_module_state->__pyx_n_s_main);
@@ -2536,6 +2568,8 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_pushButton_ok);
   Py_CLEAR(clear_module_state->__pyx_n_s_qtw);
   Py_CLEAR(clear_module_state->__pyx_n_s_qualname);
+  Py_CLEAR(clear_module_state->__pyx_n_s_radioButton_djo);
+  Py_CLEAR(clear_module_state->__pyx_n_s_search_refnumber);
   Py_CLEAR(clear_module_state->__pyx_n_s_self);
   Py_CLEAR(clear_module_state->__pyx_n_s_serial);
   Py_CLEAR(clear_module_state->__pyx_n_s_setText);
@@ -2547,8 +2581,10 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_staticmethod);
   Py_CLEAR(clear_module_state->__pyx_n_s_super);
   Py_CLEAR(clear_module_state->__pyx_n_s_sys);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_table_EP_ARTIKEL2_json);
   Py_CLEAR(clear_module_state->__pyx_n_s_test);
   Py_CLEAR(clear_module_state->__pyx_n_s_text);
+  Py_CLEAR(clear_module_state->__pyx_n_s_triggered);
   Py_CLEAR(clear_module_state->__pyx_n_s_ui);
   Py_CLEAR(clear_module_state->__pyx_n_s_yy);
   Py_CLEAR(clear_module_state->__pyx_int_0);
@@ -2557,8 +2593,12 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_int_6);
   Py_CLEAR(clear_module_state->__pyx_int_16);
   Py_CLEAR(clear_module_state->__pyx_int_18);
+  Py_CLEAR(clear_module_state->__pyx_int_19);
   Py_CLEAR(clear_module_state->__pyx_int_24);
   Py_CLEAR(clear_module_state->__pyx_int_26);
+  Py_CLEAR(clear_module_state->__pyx_int_27);
+  Py_CLEAR(clear_module_state->__pyx_int_29);
+  Py_CLEAR(clear_module_state->__pyx_int_34);
   Py_CLEAR(clear_module_state->__pyx_tuple_);
   Py_CLEAR(clear_module_state->__pyx_slice__2);
   Py_CLEAR(clear_module_state->__pyx_slice__4);
@@ -2566,15 +2606,17 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_slice__6);
   Py_CLEAR(clear_module_state->__pyx_slice__7);
   Py_CLEAR(clear_module_state->__pyx_slice__8);
-  Py_CLEAR(clear_module_state->__pyx_tuple__12);
+  Py_CLEAR(clear_module_state->__pyx_slice__9);
+  Py_CLEAR(clear_module_state->__pyx_slice__10);
   Py_CLEAR(clear_module_state->__pyx_tuple__14);
   Py_CLEAR(clear_module_state->__pyx_tuple__16);
-  Py_CLEAR(clear_module_state->__pyx_tuple__19);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__13);
+  Py_CLEAR(clear_module_state->__pyx_tuple__18);
+  Py_CLEAR(clear_module_state->__pyx_tuple__21);
   Py_CLEAR(clear_module_state->__pyx_codeobj__15);
   Py_CLEAR(clear_module_state->__pyx_codeobj__17);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__18);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__19);
   Py_CLEAR(clear_module_state->__pyx_codeobj__20);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__22);
   return 0;
 }
 #endif
@@ -2611,11 +2653,12 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_QMainWindow);
   Py_VISIT(traverse_module_state->__pyx_n_s_QtWidgets);
   Py_VISIT(traverse_module_state->__pyx_n_s_Ui_MainWindow);
-  Py_VISIT(traverse_module_state->__pyx_n_s__10);
   Py_VISIT(traverse_module_state->__pyx_kp_u__11);
-  Py_VISIT(traverse_module_state->__pyx_n_s__21);
+  Py_VISIT(traverse_module_state->__pyx_n_s__12);
+  Py_VISIT(traverse_module_state->__pyx_kp_u__13);
+  Py_VISIT(traverse_module_state->__pyx_n_s__23);
   Py_VISIT(traverse_module_state->__pyx_kp_u__3);
-  Py_VISIT(traverse_module_state->__pyx_kp_u__9);
+  Py_VISIT(traverse_module_state->__pyx_n_s_actionBeenden);
   Py_VISIT(traverse_module_state->__pyx_n_s_app);
   Py_VISIT(traverse_module_state->__pyx_n_s_appendPlainText);
   Py_VISIT(traverse_module_state->__pyx_n_s_argv);
@@ -2629,9 +2672,11 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_close);
   Py_VISIT(traverse_module_state->__pyx_n_s_connect);
   Py_VISIT(traverse_module_state->__pyx_n_s_convert_date);
+  Py_VISIT(traverse_module_state->__pyx_n_s_data);
   Py_VISIT(traverse_module_state->__pyx_n_s_date);
   Py_VISIT(traverse_module_state->__pyx_n_s_dd);
   Py_VISIT(traverse_module_state->__pyx_n_s_dict);
+  Py_VISIT(traverse_module_state->__pyx_n_s_djo);
   Py_VISIT(traverse_module_state->__pyx_n_s_doc);
   Py_VISIT(traverse_module_state->__pyx_n_s_e);
   Py_VISIT(traverse_module_state->__pyx_n_s_exec);
@@ -2640,12 +2685,15 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_gtin);
   Py_VISIT(traverse_module_state->__pyx_n_s_import);
   Py_VISIT(traverse_module_state->__pyx_n_s_init);
+  Py_VISIT(traverse_module_state->__pyx_n_s_init_search);
   Py_VISIT(traverse_module_state->__pyx_n_s_init_subclass);
   Py_VISIT(traverse_module_state->__pyx_n_s_initializing);
+  Py_VISIT(traverse_module_state->__pyx_n_s_isChecked);
   Py_VISIT(traverse_module_state->__pyx_n_s_is_coroutine);
   Py_VISIT(traverse_module_state->__pyx_n_s_lineEdit_barcode);
   Py_VISIT(traverse_module_state->__pyx_n_s_lineEdit_expire);
   Py_VISIT(traverse_module_state->__pyx_n_s_lineEdit_gtin);
+  Py_VISIT(traverse_module_state->__pyx_n_s_lineEdit_ref);
   Py_VISIT(traverse_module_state->__pyx_n_s_lineEdit_serial);
   Py_VISIT(traverse_module_state->__pyx_n_s_m_window);
   Py_VISIT(traverse_module_state->__pyx_n_s_main);
@@ -2665,6 +2713,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_pushButton_ok);
   Py_VISIT(traverse_module_state->__pyx_n_s_qtw);
   Py_VISIT(traverse_module_state->__pyx_n_s_qualname);
+  Py_VISIT(traverse_module_state->__pyx_n_s_radioButton_djo);
+  Py_VISIT(traverse_module_state->__pyx_n_s_search_refnumber);
   Py_VISIT(traverse_module_state->__pyx_n_s_self);
   Py_VISIT(traverse_module_state->__pyx_n_s_serial);
   Py_VISIT(traverse_module_state->__pyx_n_s_setText);
@@ -2676,8 +2726,10 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_staticmethod);
   Py_VISIT(traverse_module_state->__pyx_n_s_super);
   Py_VISIT(traverse_module_state->__pyx_n_s_sys);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_table_EP_ARTIKEL2_json);
   Py_VISIT(traverse_module_state->__pyx_n_s_test);
   Py_VISIT(traverse_module_state->__pyx_n_s_text);
+  Py_VISIT(traverse_module_state->__pyx_n_s_triggered);
   Py_VISIT(traverse_module_state->__pyx_n_s_ui);
   Py_VISIT(traverse_module_state->__pyx_n_s_yy);
   Py_VISIT(traverse_module_state->__pyx_int_0);
@@ -2686,8 +2738,12 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_int_6);
   Py_VISIT(traverse_module_state->__pyx_int_16);
   Py_VISIT(traverse_module_state->__pyx_int_18);
+  Py_VISIT(traverse_module_state->__pyx_int_19);
   Py_VISIT(traverse_module_state->__pyx_int_24);
   Py_VISIT(traverse_module_state->__pyx_int_26);
+  Py_VISIT(traverse_module_state->__pyx_int_27);
+  Py_VISIT(traverse_module_state->__pyx_int_29);
+  Py_VISIT(traverse_module_state->__pyx_int_34);
   Py_VISIT(traverse_module_state->__pyx_tuple_);
   Py_VISIT(traverse_module_state->__pyx_slice__2);
   Py_VISIT(traverse_module_state->__pyx_slice__4);
@@ -2695,15 +2751,17 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_slice__6);
   Py_VISIT(traverse_module_state->__pyx_slice__7);
   Py_VISIT(traverse_module_state->__pyx_slice__8);
-  Py_VISIT(traverse_module_state->__pyx_tuple__12);
+  Py_VISIT(traverse_module_state->__pyx_slice__9);
+  Py_VISIT(traverse_module_state->__pyx_slice__10);
   Py_VISIT(traverse_module_state->__pyx_tuple__14);
   Py_VISIT(traverse_module_state->__pyx_tuple__16);
-  Py_VISIT(traverse_module_state->__pyx_tuple__19);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__13);
+  Py_VISIT(traverse_module_state->__pyx_tuple__18);
+  Py_VISIT(traverse_module_state->__pyx_tuple__21);
   Py_VISIT(traverse_module_state->__pyx_codeobj__15);
   Py_VISIT(traverse_module_state->__pyx_codeobj__17);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__18);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__19);
   Py_VISIT(traverse_module_state->__pyx_codeobj__20);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__22);
   return 0;
 }
 #endif
@@ -2750,11 +2808,12 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_QMainWindow __pyx_mstate_global->__pyx_n_s_QMainWindow
 #define __pyx_n_s_QtWidgets __pyx_mstate_global->__pyx_n_s_QtWidgets
 #define __pyx_n_s_Ui_MainWindow __pyx_mstate_global->__pyx_n_s_Ui_MainWindow
-#define __pyx_n_s__10 __pyx_mstate_global->__pyx_n_s__10
 #define __pyx_kp_u__11 __pyx_mstate_global->__pyx_kp_u__11
-#define __pyx_n_s__21 __pyx_mstate_global->__pyx_n_s__21
+#define __pyx_n_s__12 __pyx_mstate_global->__pyx_n_s__12
+#define __pyx_kp_u__13 __pyx_mstate_global->__pyx_kp_u__13
+#define __pyx_n_s__23 __pyx_mstate_global->__pyx_n_s__23
 #define __pyx_kp_u__3 __pyx_mstate_global->__pyx_kp_u__3
-#define __pyx_kp_u__9 __pyx_mstate_global->__pyx_kp_u__9
+#define __pyx_n_s_actionBeenden __pyx_mstate_global->__pyx_n_s_actionBeenden
 #define __pyx_n_s_app __pyx_mstate_global->__pyx_n_s_app
 #define __pyx_n_s_appendPlainText __pyx_mstate_global->__pyx_n_s_appendPlainText
 #define __pyx_n_s_argv __pyx_mstate_global->__pyx_n_s_argv
@@ -2768,9 +2827,11 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_close __pyx_mstate_global->__pyx_n_s_close
 #define __pyx_n_s_connect __pyx_mstate_global->__pyx_n_s_connect
 #define __pyx_n_s_convert_date __pyx_mstate_global->__pyx_n_s_convert_date
+#define __pyx_n_s_data __pyx_mstate_global->__pyx_n_s_data
 #define __pyx_n_s_date __pyx_mstate_global->__pyx_n_s_date
 #define __pyx_n_s_dd __pyx_mstate_global->__pyx_n_s_dd
 #define __pyx_n_s_dict __pyx_mstate_global->__pyx_n_s_dict
+#define __pyx_n_s_djo __pyx_mstate_global->__pyx_n_s_djo
 #define __pyx_n_s_doc __pyx_mstate_global->__pyx_n_s_doc
 #define __pyx_n_s_e __pyx_mstate_global->__pyx_n_s_e
 #define __pyx_n_s_exec __pyx_mstate_global->__pyx_n_s_exec
@@ -2779,12 +2840,15 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_gtin __pyx_mstate_global->__pyx_n_s_gtin
 #define __pyx_n_s_import __pyx_mstate_global->__pyx_n_s_import
 #define __pyx_n_s_init __pyx_mstate_global->__pyx_n_s_init
+#define __pyx_n_s_init_search __pyx_mstate_global->__pyx_n_s_init_search
 #define __pyx_n_s_init_subclass __pyx_mstate_global->__pyx_n_s_init_subclass
 #define __pyx_n_s_initializing __pyx_mstate_global->__pyx_n_s_initializing
+#define __pyx_n_s_isChecked __pyx_mstate_global->__pyx_n_s_isChecked
 #define __pyx_n_s_is_coroutine __pyx_mstate_global->__pyx_n_s_is_coroutine
 #define __pyx_n_s_lineEdit_barcode __pyx_mstate_global->__pyx_n_s_lineEdit_barcode
 #define __pyx_n_s_lineEdit_expire __pyx_mstate_global->__pyx_n_s_lineEdit_expire
 #define __pyx_n_s_lineEdit_gtin __pyx_mstate_global->__pyx_n_s_lineEdit_gtin
+#define __pyx_n_s_lineEdit_ref __pyx_mstate_global->__pyx_n_s_lineEdit_ref
 #define __pyx_n_s_lineEdit_serial __pyx_mstate_global->__pyx_n_s_lineEdit_serial
 #define __pyx_n_s_m_window __pyx_mstate_global->__pyx_n_s_m_window
 #define __pyx_n_s_main __pyx_mstate_global->__pyx_n_s_main
@@ -2804,6 +2868,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_pushButton_ok __pyx_mstate_global->__pyx_n_s_pushButton_ok
 #define __pyx_n_s_qtw __pyx_mstate_global->__pyx_n_s_qtw
 #define __pyx_n_s_qualname __pyx_mstate_global->__pyx_n_s_qualname
+#define __pyx_n_s_radioButton_djo __pyx_mstate_global->__pyx_n_s_radioButton_djo
+#define __pyx_n_s_search_refnumber __pyx_mstate_global->__pyx_n_s_search_refnumber
 #define __pyx_n_s_self __pyx_mstate_global->__pyx_n_s_self
 #define __pyx_n_s_serial __pyx_mstate_global->__pyx_n_s_serial
 #define __pyx_n_s_setText __pyx_mstate_global->__pyx_n_s_setText
@@ -2815,8 +2881,10 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_staticmethod __pyx_mstate_global->__pyx_n_s_staticmethod
 #define __pyx_n_s_super __pyx_mstate_global->__pyx_n_s_super
 #define __pyx_n_s_sys __pyx_mstate_global->__pyx_n_s_sys
+#define __pyx_kp_u_table_EP_ARTIKEL2_json __pyx_mstate_global->__pyx_kp_u_table_EP_ARTIKEL2_json
 #define __pyx_n_s_test __pyx_mstate_global->__pyx_n_s_test
 #define __pyx_n_s_text __pyx_mstate_global->__pyx_n_s_text
+#define __pyx_n_s_triggered __pyx_mstate_global->__pyx_n_s_triggered
 #define __pyx_n_s_ui __pyx_mstate_global->__pyx_n_s_ui
 #define __pyx_n_s_yy __pyx_mstate_global->__pyx_n_s_yy
 #define __pyx_int_0 __pyx_mstate_global->__pyx_int_0
@@ -2825,8 +2893,12 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_int_6 __pyx_mstate_global->__pyx_int_6
 #define __pyx_int_16 __pyx_mstate_global->__pyx_int_16
 #define __pyx_int_18 __pyx_mstate_global->__pyx_int_18
+#define __pyx_int_19 __pyx_mstate_global->__pyx_int_19
 #define __pyx_int_24 __pyx_mstate_global->__pyx_int_24
 #define __pyx_int_26 __pyx_mstate_global->__pyx_int_26
+#define __pyx_int_27 __pyx_mstate_global->__pyx_int_27
+#define __pyx_int_29 __pyx_mstate_global->__pyx_int_29
+#define __pyx_int_34 __pyx_mstate_global->__pyx_int_34
 #define __pyx_tuple_ __pyx_mstate_global->__pyx_tuple_
 #define __pyx_slice__2 __pyx_mstate_global->__pyx_slice__2
 #define __pyx_slice__4 __pyx_mstate_global->__pyx_slice__4
@@ -2834,22 +2906,24 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_slice__6 __pyx_mstate_global->__pyx_slice__6
 #define __pyx_slice__7 __pyx_mstate_global->__pyx_slice__7
 #define __pyx_slice__8 __pyx_mstate_global->__pyx_slice__8
-#define __pyx_tuple__12 __pyx_mstate_global->__pyx_tuple__12
+#define __pyx_slice__9 __pyx_mstate_global->__pyx_slice__9
+#define __pyx_slice__10 __pyx_mstate_global->__pyx_slice__10
 #define __pyx_tuple__14 __pyx_mstate_global->__pyx_tuple__14
 #define __pyx_tuple__16 __pyx_mstate_global->__pyx_tuple__16
-#define __pyx_tuple__19 __pyx_mstate_global->__pyx_tuple__19
-#define __pyx_codeobj__13 __pyx_mstate_global->__pyx_codeobj__13
+#define __pyx_tuple__18 __pyx_mstate_global->__pyx_tuple__18
+#define __pyx_tuple__21 __pyx_mstate_global->__pyx_tuple__21
 #define __pyx_codeobj__15 __pyx_mstate_global->__pyx_codeobj__15
 #define __pyx_codeobj__17 __pyx_mstate_global->__pyx_codeobj__17
-#define __pyx_codeobj__18 __pyx_mstate_global->__pyx_codeobj__18
+#define __pyx_codeobj__19 __pyx_mstate_global->__pyx_codeobj__19
 #define __pyx_codeobj__20 __pyx_mstate_global->__pyx_codeobj__20
+#define __pyx_codeobj__22 __pyx_mstate_global->__pyx_codeobj__22
 /* #### Code section: module_code ### */
 
-/* "m_window.py":8
+/* "m_window.py":9
  * 
  * class BarcodeProcessor:
  *     @staticmethod             # <<<<<<<<<<<<<<
- *     def process_barcode(barcode):
+ *     def process_barcode(barcode, djo):
  *         if not barcode:
  */
 
@@ -2870,11 +2944,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ) {
   PyObject *__pyx_v_barcode = 0;
+  PyObject *__pyx_v_djo = 0;
   #if !CYTHON_METH_FASTCALL
   CYTHON_UNUSED Py_ssize_t __pyx_nargs;
   #endif
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
-  PyObject* values[1] = {0};
+  PyObject* values[2] = {0,0};
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -2890,10 +2965,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   #endif
   __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
   {
-    PyObject **__pyx_pyargnames[] = {&__pyx_n_s_barcode,0};
+    PyObject **__pyx_pyargnames[] = {&__pyx_n_s_barcode,&__pyx_n_s_djo,0};
     if (__pyx_kwds) {
       Py_ssize_t kw_args;
       switch (__pyx_nargs) {
+        case  2: values[1] = __Pyx_Arg_FASTCALL(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
         case  1: values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
         CYTHON_FALLTHROUGH;
         case  0: break;
@@ -2906,23 +2983,35 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 8, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 9, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_djo)) != 0)) {
+          (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
+          kw_args--;
+        }
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 9, __pyx_L3_error)
+        else {
+          __Pyx_RaiseArgtupleInvalid("process_barcode", 1, 2, 2, 1); __PYX_ERR(0, 9, __pyx_L3_error)
+        }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "process_barcode") < 0)) __PYX_ERR(0, 8, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "process_barcode") < 0)) __PYX_ERR(0, 9, __pyx_L3_error)
       }
-    } else if (unlikely(__pyx_nargs != 1)) {
+    } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
+      values[1] = __Pyx_Arg_FASTCALL(__pyx_args, 1);
     }
     __pyx_v_barcode = values[0];
+    __pyx_v_djo = values[1];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("process_barcode", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 8, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("process_barcode", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 9, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2936,7 +3025,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_8m_window_16BarcodeProcessor_process_barcode(__pyx_self, __pyx_v_barcode);
+  __pyx_r = __pyx_pf_8m_window_16BarcodeProcessor_process_barcode(__pyx_self, __pyx_v_barcode, __pyx_v_djo);
 
   /* function exit code */
   {
@@ -2949,7 +3038,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_8m_window_16BarcodeProcessor_process_barcode(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_barcode) {
+static PyObject *__pyx_pf_8m_window_16BarcodeProcessor_process_barcode(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_barcode, PyObject *__pyx_v_djo) {
   PyObject *__pyx_v_gtin = NULL;
   PyObject *__pyx_v_expires = NULL;
   PyObject *__pyx_v_serial = NULL;
@@ -2968,113 +3057,201 @@ static PyObject *__pyx_pf_8m_window_16BarcodeProcessor_process_barcode(CYTHON_UN
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("process_barcode", 1);
 
-  /* "m_window.py":10
+  /* "m_window.py":11
  *     @staticmethod
- *     def process_barcode(barcode):
+ *     def process_barcode(barcode, djo):
  *         if not barcode:             # <<<<<<<<<<<<<<
  *             return None, None, None
- *         gtin = barcode[2:16] if len(barcode) > 16 else ""
+ *         if djo == False:
  */
-  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_barcode); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 10, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_barcode); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 11, __pyx_L1_error)
   __pyx_t_2 = (!__pyx_t_1);
   if (__pyx_t_2) {
 
-    /* "m_window.py":11
- *     def process_barcode(barcode):
+    /* "m_window.py":12
+ *     def process_barcode(barcode, djo):
  *         if not barcode:
  *             return None, None, None             # <<<<<<<<<<<<<<
- *         gtin = barcode[2:16] if len(barcode) > 16 else ""
- *         expires = barcode[18:24] if len(barcode) > 24 else ""
+ *         if djo == False:
+ *             gtin = barcode[2:16] if len(barcode) > 16 else ""
  */
     __Pyx_XDECREF(__pyx_r);
     __Pyx_INCREF(__pyx_tuple_);
     __pyx_r = __pyx_tuple_;
     goto __pyx_L0;
 
-    /* "m_window.py":10
+    /* "m_window.py":11
  *     @staticmethod
- *     def process_barcode(barcode):
+ *     def process_barcode(barcode, djo):
  *         if not barcode:             # <<<<<<<<<<<<<<
  *             return None, None, None
- *         gtin = barcode[2:16] if len(barcode) > 16 else ""
+ *         if djo == False:
  */
   }
-
-  /* "m_window.py":12
- *         if not barcode:
- *             return None, None, None
- *         gtin = barcode[2:16] if len(barcode) > 16 else ""             # <<<<<<<<<<<<<<
- *         expires = barcode[18:24] if len(barcode) > 24 else ""
- *         serial = barcode[26:] if len(barcode) > 26 else ""
- */
-  __pyx_t_4 = PyObject_Length(__pyx_v_barcode); if (unlikely(__pyx_t_4 == ((Py_ssize_t)-1))) __PYX_ERR(0, 12, __pyx_L1_error)
-  __pyx_t_2 = (__pyx_t_4 > 16);
-  if (__pyx_t_2) {
-    __pyx_t_5 = __Pyx_PyObject_GetSlice(__pyx_v_barcode, 2, 16, NULL, NULL, &__pyx_slice__2, 1, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 12, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_3 = __pyx_t_5;
-    __pyx_t_5 = 0;
-  } else {
-    __Pyx_INCREF(__pyx_kp_u__3);
-    __pyx_t_3 = __pyx_kp_u__3;
-  }
-  __pyx_v_gtin = __pyx_t_3;
-  __pyx_t_3 = 0;
 
   /* "m_window.py":13
+ *         if not barcode:
  *             return None, None, None
- *         gtin = barcode[2:16] if len(barcode) > 16 else ""
- *         expires = barcode[18:24] if len(barcode) > 24 else ""             # <<<<<<<<<<<<<<
- *         serial = barcode[26:] if len(barcode) > 26 else ""
+ *         if djo == False:             # <<<<<<<<<<<<<<
+ *             gtin = barcode[2:16] if len(barcode) > 16 else ""
+ *             expires = barcode[18:24] if len(barcode) > 24 else ""
+ */
+  __pyx_t_3 = PyObject_RichCompare(__pyx_v_djo, Py_False, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 13, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 13, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (__pyx_t_2) {
+
+    /* "m_window.py":14
+ *             return None, None, None
+ *         if djo == False:
+ *             gtin = barcode[2:16] if len(barcode) > 16 else ""             # <<<<<<<<<<<<<<
+ *             expires = barcode[18:24] if len(barcode) > 24 else ""
+ *             serial = barcode[26:] if len(barcode) > 26 else ""
+ */
+    __pyx_t_4 = PyObject_Length(__pyx_v_barcode); if (unlikely(__pyx_t_4 == ((Py_ssize_t)-1))) __PYX_ERR(0, 14, __pyx_L1_error)
+    __pyx_t_2 = (__pyx_t_4 > 16);
+    if (__pyx_t_2) {
+      __pyx_t_5 = __Pyx_PyObject_GetSlice(__pyx_v_barcode, 2, 16, NULL, NULL, &__pyx_slice__2, 1, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 14, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_3 = __pyx_t_5;
+      __pyx_t_5 = 0;
+    } else {
+      __Pyx_INCREF(__pyx_kp_u__3);
+      __pyx_t_3 = __pyx_kp_u__3;
+    }
+    __pyx_v_gtin = __pyx_t_3;
+    __pyx_t_3 = 0;
+
+    /* "m_window.py":15
+ *         if djo == False:
+ *             gtin = barcode[2:16] if len(barcode) > 16 else ""
+ *             expires = barcode[18:24] if len(barcode) > 24 else ""             # <<<<<<<<<<<<<<
+ *             serial = barcode[26:] if len(barcode) > 26 else ""
+ *         else:
+ */
+    __pyx_t_4 = PyObject_Length(__pyx_v_barcode); if (unlikely(__pyx_t_4 == ((Py_ssize_t)-1))) __PYX_ERR(0, 15, __pyx_L1_error)
+    __pyx_t_2 = (__pyx_t_4 > 24);
+    if (__pyx_t_2) {
+      __pyx_t_5 = __Pyx_PyObject_GetSlice(__pyx_v_barcode, 18, 24, NULL, NULL, &__pyx_slice__4, 1, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 15, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_3 = __pyx_t_5;
+      __pyx_t_5 = 0;
+    } else {
+      __Pyx_INCREF(__pyx_kp_u__3);
+      __pyx_t_3 = __pyx_kp_u__3;
+    }
+    __pyx_v_expires = __pyx_t_3;
+    __pyx_t_3 = 0;
+
+    /* "m_window.py":16
+ *             gtin = barcode[2:16] if len(barcode) > 16 else ""
+ *             expires = barcode[18:24] if len(barcode) > 24 else ""
+ *             serial = barcode[26:] if len(barcode) > 26 else ""             # <<<<<<<<<<<<<<
+ *         else:
+ *             gtin = barcode[2:16] if len(barcode) > 16 else ""
+ */
+    __pyx_t_4 = PyObject_Length(__pyx_v_barcode); if (unlikely(__pyx_t_4 == ((Py_ssize_t)-1))) __PYX_ERR(0, 16, __pyx_L1_error)
+    __pyx_t_2 = (__pyx_t_4 > 26);
+    if (__pyx_t_2) {
+      __pyx_t_5 = __Pyx_PyObject_GetSlice(__pyx_v_barcode, 26, 0, NULL, NULL, &__pyx_slice__5, 1, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 16, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_3 = __pyx_t_5;
+      __pyx_t_5 = 0;
+    } else {
+      __Pyx_INCREF(__pyx_kp_u__3);
+      __pyx_t_3 = __pyx_kp_u__3;
+    }
+    __pyx_v_serial = __pyx_t_3;
+    __pyx_t_3 = 0;
+
+    /* "m_window.py":13
+ *         if not barcode:
+ *             return None, None, None
+ *         if djo == False:             # <<<<<<<<<<<<<<
+ *             gtin = barcode[2:16] if len(barcode) > 16 else ""
+ *             expires = barcode[18:24] if len(barcode) > 24 else ""
+ */
+    goto __pyx_L4;
+  }
+
+  /* "m_window.py":18
+ *             serial = barcode[26:] if len(barcode) > 26 else ""
+ *         else:
+ *             gtin = barcode[2:16] if len(barcode) > 16 else ""             # <<<<<<<<<<<<<<
+ *             expires = barcode[29:34] if len(barcode) > 34 else ""
+ *             serial = barcode[19:27] if len(barcode) > 27 else ""
+ */
+  /*else*/ {
+    __pyx_t_4 = PyObject_Length(__pyx_v_barcode); if (unlikely(__pyx_t_4 == ((Py_ssize_t)-1))) __PYX_ERR(0, 18, __pyx_L1_error)
+    __pyx_t_2 = (__pyx_t_4 > 16);
+    if (__pyx_t_2) {
+      __pyx_t_5 = __Pyx_PyObject_GetSlice(__pyx_v_barcode, 2, 16, NULL, NULL, &__pyx_slice__2, 1, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 18, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_3 = __pyx_t_5;
+      __pyx_t_5 = 0;
+    } else {
+      __Pyx_INCREF(__pyx_kp_u__3);
+      __pyx_t_3 = __pyx_kp_u__3;
+    }
+    __pyx_v_gtin = __pyx_t_3;
+    __pyx_t_3 = 0;
+
+    /* "m_window.py":19
+ *         else:
+ *             gtin = barcode[2:16] if len(barcode) > 16 else ""
+ *             expires = barcode[29:34] if len(barcode) > 34 else ""             # <<<<<<<<<<<<<<
+ *             serial = barcode[19:27] if len(barcode) > 27 else ""
  *         expires = BarcodeProcessor.convert_date(expires) if expires else ""
  */
-  __pyx_t_4 = PyObject_Length(__pyx_v_barcode); if (unlikely(__pyx_t_4 == ((Py_ssize_t)-1))) __PYX_ERR(0, 13, __pyx_L1_error)
-  __pyx_t_2 = (__pyx_t_4 > 24);
-  if (__pyx_t_2) {
-    __pyx_t_5 = __Pyx_PyObject_GetSlice(__pyx_v_barcode, 18, 24, NULL, NULL, &__pyx_slice__4, 1, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 13, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_3 = __pyx_t_5;
-    __pyx_t_5 = 0;
-  } else {
-    __Pyx_INCREF(__pyx_kp_u__3);
-    __pyx_t_3 = __pyx_kp_u__3;
-  }
-  __pyx_v_expires = __pyx_t_3;
-  __pyx_t_3 = 0;
+    __pyx_t_4 = PyObject_Length(__pyx_v_barcode); if (unlikely(__pyx_t_4 == ((Py_ssize_t)-1))) __PYX_ERR(0, 19, __pyx_L1_error)
+    __pyx_t_2 = (__pyx_t_4 > 34);
+    if (__pyx_t_2) {
+      __pyx_t_5 = __Pyx_PyObject_GetSlice(__pyx_v_barcode, 29, 34, NULL, NULL, &__pyx_slice__6, 1, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 19, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_3 = __pyx_t_5;
+      __pyx_t_5 = 0;
+    } else {
+      __Pyx_INCREF(__pyx_kp_u__3);
+      __pyx_t_3 = __pyx_kp_u__3;
+    }
+    __pyx_v_expires = __pyx_t_3;
+    __pyx_t_3 = 0;
 
-  /* "m_window.py":14
- *         gtin = barcode[2:16] if len(barcode) > 16 else ""
- *         expires = barcode[18:24] if len(barcode) > 24 else ""
- *         serial = barcode[26:] if len(barcode) > 26 else ""             # <<<<<<<<<<<<<<
+    /* "m_window.py":20
+ *             gtin = barcode[2:16] if len(barcode) > 16 else ""
+ *             expires = barcode[29:34] if len(barcode) > 34 else ""
+ *             serial = barcode[19:27] if len(barcode) > 27 else ""             # <<<<<<<<<<<<<<
  *         expires = BarcodeProcessor.convert_date(expires) if expires else ""
  *         return gtin, expires, serial
  */
-  __pyx_t_4 = PyObject_Length(__pyx_v_barcode); if (unlikely(__pyx_t_4 == ((Py_ssize_t)-1))) __PYX_ERR(0, 14, __pyx_L1_error)
-  __pyx_t_2 = (__pyx_t_4 > 26);
-  if (__pyx_t_2) {
-    __pyx_t_5 = __Pyx_PyObject_GetSlice(__pyx_v_barcode, 26, 0, NULL, NULL, &__pyx_slice__5, 1, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 14, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_3 = __pyx_t_5;
-    __pyx_t_5 = 0;
-  } else {
-    __Pyx_INCREF(__pyx_kp_u__3);
-    __pyx_t_3 = __pyx_kp_u__3;
+    __pyx_t_4 = PyObject_Length(__pyx_v_barcode); if (unlikely(__pyx_t_4 == ((Py_ssize_t)-1))) __PYX_ERR(0, 20, __pyx_L1_error)
+    __pyx_t_2 = (__pyx_t_4 > 27);
+    if (__pyx_t_2) {
+      __pyx_t_5 = __Pyx_PyObject_GetSlice(__pyx_v_barcode, 19, 27, NULL, NULL, &__pyx_slice__7, 1, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 20, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_3 = __pyx_t_5;
+      __pyx_t_5 = 0;
+    } else {
+      __Pyx_INCREF(__pyx_kp_u__3);
+      __pyx_t_3 = __pyx_kp_u__3;
+    }
+    __pyx_v_serial = __pyx_t_3;
+    __pyx_t_3 = 0;
   }
-  __pyx_v_serial = __pyx_t_3;
-  __pyx_t_3 = 0;
+  __pyx_L4:;
 
-  /* "m_window.py":15
- *         expires = barcode[18:24] if len(barcode) > 24 else ""
- *         serial = barcode[26:] if len(barcode) > 26 else ""
+  /* "m_window.py":21
+ *             expires = barcode[29:34] if len(barcode) > 34 else ""
+ *             serial = barcode[19:27] if len(barcode) > 27 else ""
  *         expires = BarcodeProcessor.convert_date(expires) if expires else ""             # <<<<<<<<<<<<<<
  *         return gtin, expires, serial
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_expires); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 15, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_expires); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 21, __pyx_L1_error)
   if (__pyx_t_2) {
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_BarcodeProcessor); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 15, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_BarcodeProcessor); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 21, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_convert_date); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 15, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_convert_date); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 21, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_6 = NULL;
@@ -3095,7 +3272,7 @@ static PyObject *__pyx_pf_8m_window_16BarcodeProcessor_process_barcode(CYTHON_UN
       PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_v_expires};
       __pyx_t_5 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_8, 1+__pyx_t_8);
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 15, __pyx_L1_error)
+      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 21, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     }
@@ -3108,34 +3285,34 @@ static PyObject *__pyx_pf_8m_window_16BarcodeProcessor_process_barcode(CYTHON_UN
   __Pyx_DECREF_SET(__pyx_v_expires, __pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "m_window.py":16
- *         serial = barcode[26:] if len(barcode) > 26 else ""
+  /* "m_window.py":22
+ *             serial = barcode[19:27] if len(barcode) > 27 else ""
  *         expires = BarcodeProcessor.convert_date(expires) if expires else ""
  *         return gtin, expires, serial             # <<<<<<<<<<<<<<
  * 
  *     @staticmethod
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 16, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(__pyx_v_gtin);
   __Pyx_GIVEREF(__pyx_v_gtin);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_v_gtin)) __PYX_ERR(0, 16, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_v_gtin)) __PYX_ERR(0, 22, __pyx_L1_error);
   __Pyx_INCREF(__pyx_v_expires);
   __Pyx_GIVEREF(__pyx_v_expires);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_v_expires)) __PYX_ERR(0, 16, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_v_expires)) __PYX_ERR(0, 22, __pyx_L1_error);
   __Pyx_INCREF(__pyx_v_serial);
   __Pyx_GIVEREF(__pyx_v_serial);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_v_serial)) __PYX_ERR(0, 16, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_v_serial)) __PYX_ERR(0, 22, __pyx_L1_error);
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "m_window.py":8
+  /* "m_window.py":9
  * 
  * class BarcodeProcessor:
  *     @staticmethod             # <<<<<<<<<<<<<<
- *     def process_barcode(barcode):
+ *     def process_barcode(barcode, djo):
  *         if not barcode:
  */
 
@@ -3156,7 +3333,7 @@ static PyObject *__pyx_pf_8m_window_16BarcodeProcessor_process_barcode(CYTHON_UN
   return __pyx_r;
 }
 
-/* "m_window.py":18
+/* "m_window.py":24
  *         return gtin, expires, serial
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
@@ -3217,12 +3394,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 18, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 24, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "convert_date") < 0)) __PYX_ERR(0, 18, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "convert_date") < 0)) __PYX_ERR(0, 24, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -3233,7 +3410,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("convert_date", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 18, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("convert_date", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 24, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -3276,18 +3453,18 @@ static PyObject *__pyx_pf_8m_window_16BarcodeProcessor_2convert_date(CYTHON_UNUS
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("convert_date", 1);
 
-  /* "m_window.py":20
+  /* "m_window.py":26
  *     @staticmethod
  *     def convert_date(date):
  *         if len(date) != 6:             # <<<<<<<<<<<<<<
  *             return ""
  *         yy = date[0:2]
  */
-  __pyx_t_1 = PyObject_Length(__pyx_v_date); if (unlikely(__pyx_t_1 == ((Py_ssize_t)-1))) __PYX_ERR(0, 20, __pyx_L1_error)
+  __pyx_t_1 = PyObject_Length(__pyx_v_date); if (unlikely(__pyx_t_1 == ((Py_ssize_t)-1))) __PYX_ERR(0, 26, __pyx_L1_error)
   __pyx_t_2 = (__pyx_t_1 != 6);
   if (__pyx_t_2) {
 
-    /* "m_window.py":21
+    /* "m_window.py":27
  *     def convert_date(date):
  *         if len(date) != 6:
  *             return ""             # <<<<<<<<<<<<<<
@@ -3299,7 +3476,7 @@ static PyObject *__pyx_pf_8m_window_16BarcodeProcessor_2convert_date(CYTHON_UNUS
     __pyx_r = __pyx_kp_u__3;
     goto __pyx_L0;
 
-    /* "m_window.py":20
+    /* "m_window.py":26
  *     @staticmethod
  *     def convert_date(date):
  *         if len(date) != 6:             # <<<<<<<<<<<<<<
@@ -3308,43 +3485,43 @@ static PyObject *__pyx_pf_8m_window_16BarcodeProcessor_2convert_date(CYTHON_UNUS
  */
   }
 
-  /* "m_window.py":22
+  /* "m_window.py":28
  *         if len(date) != 6:
  *             return ""
  *         yy = date[0:2]             # <<<<<<<<<<<<<<
  *         mm = date[2:4]
  *         dd = date[4:6]
  */
-  __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_v_date, 0, 2, NULL, NULL, &__pyx_slice__6, 1, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 22, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_v_date, 0, 2, NULL, NULL, &__pyx_slice__8, 1, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_v_yy = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "m_window.py":23
+  /* "m_window.py":29
  *             return ""
  *         yy = date[0:2]
  *         mm = date[2:4]             # <<<<<<<<<<<<<<
  *         dd = date[4:6]
  *         return f'20{yy}-{mm}-{dd}'
  */
-  __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_v_date, 2, 4, NULL, NULL, &__pyx_slice__7, 1, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_v_date, 2, 4, NULL, NULL, &__pyx_slice__9, 1, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 29, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_v_mm = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "m_window.py":24
+  /* "m_window.py":30
  *         yy = date[0:2]
  *         mm = date[2:4]
  *         dd = date[4:6]             # <<<<<<<<<<<<<<
  *         return f'20{yy}-{mm}-{dd}'
  * 
  */
-  __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_v_date, 4, 6, NULL, NULL, &__pyx_slice__8, 1, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 24, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_v_date, 4, 6, NULL, NULL, &__pyx_slice__10, 1, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 30, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_v_dd = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "m_window.py":25
+  /* "m_window.py":31
  *         mm = date[2:4]
  *         dd = date[4:6]
  *         return f'20{yy}-{mm}-{dd}'             # <<<<<<<<<<<<<<
@@ -3352,7 +3529,7 @@ static PyObject *__pyx_pf_8m_window_16BarcodeProcessor_2convert_date(CYTHON_UNUS
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = PyTuple_New(6); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(6); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_1 = 0;
   __pyx_t_4 = 127;
@@ -3360,43 +3537,43 @@ static PyObject *__pyx_pf_8m_window_16BarcodeProcessor_2convert_date(CYTHON_UNUS
   __pyx_t_1 += 2;
   __Pyx_GIVEREF(__pyx_kp_u_20);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_20);
-  __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_v_yy, __pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_v_yy, __pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_4 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) > __pyx_t_4) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) : __pyx_t_4;
   __pyx_t_1 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_5);
   PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_5);
   __pyx_t_5 = 0;
-  __Pyx_INCREF(__pyx_kp_u__9);
+  __Pyx_INCREF(__pyx_kp_u__11);
   __pyx_t_1 += 1;
-  __Pyx_GIVEREF(__pyx_kp_u__9);
-  PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_kp_u__9);
-  __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_v_mm, __pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __Pyx_GIVEREF(__pyx_kp_u__11);
+  PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_kp_u__11);
+  __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_v_mm, __pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_4 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) > __pyx_t_4) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) : __pyx_t_4;
   __pyx_t_1 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_5);
   PyTuple_SET_ITEM(__pyx_t_3, 3, __pyx_t_5);
   __pyx_t_5 = 0;
-  __Pyx_INCREF(__pyx_kp_u__9);
+  __Pyx_INCREF(__pyx_kp_u__11);
   __pyx_t_1 += 1;
-  __Pyx_GIVEREF(__pyx_kp_u__9);
-  PyTuple_SET_ITEM(__pyx_t_3, 4, __pyx_kp_u__9);
-  __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_v_dd, __pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __Pyx_GIVEREF(__pyx_kp_u__11);
+  PyTuple_SET_ITEM(__pyx_t_3, 4, __pyx_kp_u__11);
+  __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_v_dd, __pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_4 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) > __pyx_t_4) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) : __pyx_t_4;
   __pyx_t_1 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_5);
   PyTuple_SET_ITEM(__pyx_t_3, 5, __pyx_t_5);
   __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyUnicode_Join(__pyx_t_3, 6, __pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyUnicode_Join(__pyx_t_3, 6, __pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_r = __pyx_t_5;
   __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "m_window.py":18
+  /* "m_window.py":24
  *         return gtin, expires, serial
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
@@ -3419,7 +3596,7 @@ static PyObject *__pyx_pf_8m_window_16BarcodeProcessor_2convert_date(CYTHON_UNUS
   return __pyx_r;
 }
 
-/* "m_window.py":29
+/* "m_window.py":35
  * 
  * class MainWindow(QMainWindow, Ui_MainWindow):
  *     def __init__(self):             # <<<<<<<<<<<<<<
@@ -3480,12 +3657,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 29, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 35, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__init__") < 0)) __PYX_ERR(0, 29, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__init__") < 0)) __PYX_ERR(0, 35, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -3496,7 +3673,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 29, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 35, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -3535,7 +3712,7 @@ static PyObject *__pyx_pf_8m_window_10MainWindow___init__(CYTHON_UNUSED PyObject
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 1);
 
-  /* "m_window.py":30
+  /* "m_window.py":36
  * class MainWindow(QMainWindow, Ui_MainWindow):
  *     def __init__(self):
  *         super().__init__()             # <<<<<<<<<<<<<<
@@ -3543,20 +3720,20 @@ static PyObject *__pyx_pf_8m_window_10MainWindow___init__(CYTHON_UNUSED PyObject
  *         self.ui.setupUi(self)
  */
   __pyx_t_2 = __Pyx_CyFunction_GetClassObj(__pyx_self);
-  if (!__pyx_t_2) { PyErr_SetString(PyExc_SystemError, "super(): empty __class__ cell"); __PYX_ERR(0, 30, __pyx_L1_error) }
+  if (!__pyx_t_2) { PyErr_SetString(PyExc_SystemError, "super(): empty __class__ cell"); __PYX_ERR(0, 36, __pyx_L1_error) }
   __Pyx_INCREF(__pyx_t_2);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_2);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2)) __PYX_ERR(0, 30, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2)) __PYX_ERR(0, 36, __pyx_L1_error);
   __Pyx_INCREF(__pyx_v_self);
   __Pyx_GIVEREF(__pyx_v_self);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_v_self)) __PYX_ERR(0, 30, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_v_self)) __PYX_ERR(0, 36, __pyx_L1_error);
   __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_super, __pyx_t_3, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_super, __pyx_t_3, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_init); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_init); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -3577,20 +3754,20 @@ static PyObject *__pyx_pf_8m_window_10MainWindow___init__(CYTHON_UNUSED PyObject
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 30, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "m_window.py":31
+  /* "m_window.py":37
  *     def __init__(self):
  *         super().__init__()
  *         self.ui = Ui_MainWindow()             # <<<<<<<<<<<<<<
  *         self.ui.setupUi(self)
  *         # Verbindungen einrichten
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Ui_MainWindow); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 31, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Ui_MainWindow); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = NULL;
   __pyx_t_4 = 0;
@@ -3610,23 +3787,23 @@ static PyObject *__pyx_pf_8m_window_10MainWindow___init__(CYTHON_UNUSED PyObject
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_ui, __pyx_t_1) < 0) __PYX_ERR(0, 31, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_ui, __pyx_t_1) < 0) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "m_window.py":32
+  /* "m_window.py":38
  *         super().__init__()
  *         self.ui = Ui_MainWindow()
  *         self.ui.setupUi(self)             # <<<<<<<<<<<<<<
  *         # Verbindungen einrichten
  *         self._setup_connections()
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 38, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setupUi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setupUi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 38, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -3647,20 +3824,20 @@ static PyObject *__pyx_pf_8m_window_10MainWindow___init__(CYTHON_UNUSED PyObject
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_self};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "m_window.py":34
+  /* "m_window.py":40
  *         self.ui.setupUi(self)
  *         # Verbindungen einrichten
  *         self._setup_connections()             # <<<<<<<<<<<<<<
  *         # Barcode-Prozessor initialisieren
  *         self.barcode_processor = BarcodeProcessor()
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_setup_connections); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_setup_connections); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 40, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -3680,20 +3857,20 @@ static PyObject *__pyx_pf_8m_window_10MainWindow___init__(CYTHON_UNUSED PyObject
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 40, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "m_window.py":36
+  /* "m_window.py":42
  *         self._setup_connections()
  *         # Barcode-Prozessor initialisieren
  *         self.barcode_processor = BarcodeProcessor()             # <<<<<<<<<<<<<<
+ *         self.data = data.init_search('table-EP_ARTIKEL2.json')
  * 
- *     def _setup_connections(self):
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_BarcodeProcessor); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_BarcodeProcessor); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -3713,14 +3890,51 @@ static PyObject *__pyx_pf_8m_window_10MainWindow___init__(CYTHON_UNUSED PyObject
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_barcode_processor, __pyx_t_1) < 0) __PYX_ERR(0, 36, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_barcode_processor, __pyx_t_1) < 0) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "m_window.py":29
+  /* "m_window.py":43
+ *         # Barcode-Prozessor initialisieren
+ *         self.barcode_processor = BarcodeProcessor()
+ *         self.data = data.init_search('table-EP_ARTIKEL2.json')             # <<<<<<<<<<<<<<
+ * 
+ *     def _setup_connections(self):
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_data); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 43, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_init_search); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 43, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (unlikely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_2)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_2);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_kp_u_table_EP_ARTIKEL2_json};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  }
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_data, __pyx_t_1) < 0) __PYX_ERR(0, 43, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "m_window.py":35
  * 
  * class MainWindow(QMainWindow, Ui_MainWindow):
  *     def __init__(self):             # <<<<<<<<<<<<<<
@@ -3743,8 +3957,8 @@ static PyObject *__pyx_pf_8m_window_10MainWindow___init__(CYTHON_UNUSED PyObject
   return __pyx_r;
 }
 
-/* "m_window.py":38
- *         self.barcode_processor = BarcodeProcessor()
+/* "m_window.py":45
+ *         self.data = data.init_search('table-EP_ARTIKEL2.json')
  * 
  *     def _setup_connections(self):             # <<<<<<<<<<<<<<
  *         """Stellt alle Signal-Slot-Verbindungen her"""
@@ -3805,12 +4019,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 38, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 45, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "_setup_connections") < 0)) __PYX_ERR(0, 38, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "_setup_connections") < 0)) __PYX_ERR(0, 45, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -3821,7 +4035,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_setup_connections", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 38, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_setup_connections", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 45, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -3861,25 +4075,25 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_2_setup_connections(CYTHON_UNUS
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_setup_connections", 1);
 
-  /* "m_window.py":40
+  /* "m_window.py":47
  *     def _setup_connections(self):
  *         """Stellt alle Signal-Slot-Verbindungen her"""
  *         self.ui.pushButton_ok.clicked.connect(self.close)             # <<<<<<<<<<<<<<
  *         self.ui.pushButton_decode.clicked.connect(self.barcode_decode)
- * 
+ *         self.ui.actionBeenden.triggered.connect(self.close)
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 40, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_pushButton_ok); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 40, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_pushButton_ok); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_clicked); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 40, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_clicked); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_connect); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 40, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_connect); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_close); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 40, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_close); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -3900,31 +4114,31 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_2_setup_connections(CYTHON_UNUS
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 40, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "m_window.py":41
+  /* "m_window.py":48
  *         """Stellt alle Signal-Slot-Verbindungen her"""
  *         self.ui.pushButton_ok.clicked.connect(self.close)
  *         self.ui.pushButton_decode.clicked.connect(self.barcode_decode)             # <<<<<<<<<<<<<<
+ *         self.ui.actionBeenden.triggered.connect(self.close)
  * 
- *     def barcode_decode(self):
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_pushButton_decode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_pushButton_decode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_clicked); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_clicked); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_connect); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_connect); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_barcode_decode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_barcode_decode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -3945,14 +4159,59 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_2_setup_connections(CYTHON_UNUS
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 48, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "m_window.py":38
- *         self.barcode_processor = BarcodeProcessor()
+  /* "m_window.py":49
+ *         self.ui.pushButton_ok.clicked.connect(self.close)
+ *         self.ui.pushButton_decode.clicked.connect(self.barcode_decode)
+ *         self.ui.actionBeenden.triggered.connect(self.close)             # <<<<<<<<<<<<<<
+ * 
+ *     def barcode_decode(self):
+ */
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_actionBeenden); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_triggered); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_connect); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_close); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_4 = NULL;
+  __pyx_t_5 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __pyx_t_5 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_t_2};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 49, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "m_window.py":45
+ *         self.data = data.init_search('table-EP_ARTIKEL2.json')
  * 
  *     def _setup_connections(self):             # <<<<<<<<<<<<<<
  *         """Stellt alle Signal-Slot-Verbindungen her"""
@@ -3975,8 +4234,8 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_2_setup_connections(CYTHON_UNUS
   return __pyx_r;
 }
 
-/* "m_window.py":43
- *         self.ui.pushButton_decode.clicked.connect(self.barcode_decode)
+/* "m_window.py":51
+ *         self.ui.actionBeenden.triggered.connect(self.close)
  * 
  *     def barcode_decode(self):             # <<<<<<<<<<<<<<
  *         barcode = self.ui.lineEdit_barcode.text()
@@ -4036,12 +4295,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 43, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 51, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "barcode_decode") < 0)) __PYX_ERR(0, 43, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "barcode_decode") < 0)) __PYX_ERR(0, 51, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -4052,7 +4311,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("barcode_decode", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 43, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("barcode_decode", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 51, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -4114,19 +4373,19 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_4barcode_decode(CYTHON_UNUSED P
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("barcode_decode", 1);
 
-  /* "m_window.py":44
+  /* "m_window.py":52
  * 
  *     def barcode_decode(self):
  *         barcode = self.ui.lineEdit_barcode.text()             # <<<<<<<<<<<<<<
  *         self.ui.plainTextEdit_output.clear()
  *         if not barcode:
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 44, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_lineEdit_barcode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 44, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_lineEdit_barcode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_text); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 44, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_text); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -4147,26 +4406,26 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_4barcode_decode(CYTHON_UNUSED P
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 44, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 52, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __pyx_v_barcode = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "m_window.py":45
+  /* "m_window.py":53
  *     def barcode_decode(self):
  *         barcode = self.ui.lineEdit_barcode.text()
  *         self.ui.plainTextEdit_output.clear()             # <<<<<<<<<<<<<<
  *         if not barcode:
  *             # Zeigen Sie eine Fehlermeldung an oder geben Sie eine Warnung aus
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_plainTextEdit_output); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_plainTextEdit_output); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_clear); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_clear); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -4187,36 +4446,36 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_4barcode_decode(CYTHON_UNUSED P
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "m_window.py":46
+  /* "m_window.py":54
  *         barcode = self.ui.lineEdit_barcode.text()
  *         self.ui.plainTextEdit_output.clear()
  *         if not barcode:             # <<<<<<<<<<<<<<
  *             # Zeigen Sie eine Fehlermeldung an oder geben Sie eine Warnung aus
  *             self.ui.plainTextEdit_output.appendPlainText(f"Kein Barcode eingegeben")
  */
-  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_barcode); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 46, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_barcode); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 54, __pyx_L1_error)
   __pyx_t_6 = (!__pyx_t_5);
   if (__pyx_t_6) {
 
-    /* "m_window.py":48
+    /* "m_window.py":56
  *         if not barcode:
  *             # Zeigen Sie eine Fehlermeldung an oder geben Sie eine Warnung aus
  *             self.ui.plainTextEdit_output.appendPlainText(f"Kein Barcode eingegeben")             # <<<<<<<<<<<<<<
  *             return
  *         try:
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 48, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 56, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_plainTextEdit_output); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 48, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_plainTextEdit_output); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 56, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_appendPlainText); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 48, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_appendPlainText); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 56, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_3 = NULL;
@@ -4237,24 +4496,24 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_4barcode_decode(CYTHON_UNUSED P
       PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_kp_u_Kein_Barcode_eingegeben};
       __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 48, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "m_window.py":49
+    /* "m_window.py":57
  *             # Zeigen Sie eine Fehlermeldung an oder geben Sie eine Warnung aus
  *             self.ui.plainTextEdit_output.appendPlainText(f"Kein Barcode eingegeben")
  *             return             # <<<<<<<<<<<<<<
  *         try:
- *             gtin, expires, serial = self.barcode_processor.process_barcode(barcode)
+ *             gtin, expires, serial = self.barcode_processor.process_barcode(barcode, self.ui.radioButton_djo.isChecked())
  */
     __Pyx_XDECREF(__pyx_r);
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "m_window.py":46
+    /* "m_window.py":54
  *         barcode = self.ui.lineEdit_barcode.text()
  *         self.ui.plainTextEdit_output.clear()
  *         if not barcode:             # <<<<<<<<<<<<<<
@@ -4263,11 +4522,11 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_4barcode_decode(CYTHON_UNUSED P
  */
   }
 
-  /* "m_window.py":50
+  /* "m_window.py":58
  *             self.ui.plainTextEdit_output.appendPlainText(f"Kein Barcode eingegeben")
  *             return
  *         try:             # <<<<<<<<<<<<<<
- *             gtin, expires, serial = self.barcode_processor.process_barcode(barcode)
+ *             gtin, expires, serial = self.barcode_processor.process_barcode(barcode, self.ui.radioButton_djo.isChecked())
  *             # UI aktualisieren
  */
   {
@@ -4279,26 +4538,56 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_4barcode_decode(CYTHON_UNUSED P
     __Pyx_XGOTREF(__pyx_t_9);
     /*try:*/ {
 
-      /* "m_window.py":51
+      /* "m_window.py":59
  *             return
  *         try:
- *             gtin, expires, serial = self.barcode_processor.process_barcode(barcode)             # <<<<<<<<<<<<<<
+ *             gtin, expires, serial = self.barcode_processor.process_barcode(barcode, self.ui.radioButton_djo.isChecked())             # <<<<<<<<<<<<<<
  *             # UI aktualisieren
  *             self.ui.lineEdit_gtin.setText(gtin)
  */
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_barcode_processor); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 51, __pyx_L4_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_barcode_processor); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 59, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_process_barcode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 51, __pyx_L4_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_process_barcode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 59, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = NULL;
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 59, __pyx_L4_error)
+      __Pyx_GOTREF(__pyx_t_10);
+      __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_radioButton_djo); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 59, __pyx_L4_error)
+      __Pyx_GOTREF(__pyx_t_11);
+      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_isChecked); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 59, __pyx_L4_error)
+      __Pyx_GOTREF(__pyx_t_10);
+      __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+      __pyx_t_11 = NULL;
+      __pyx_t_4 = 0;
+      #if CYTHON_UNPACK_METHODS
+      if (likely(PyMethod_Check(__pyx_t_10))) {
+        __pyx_t_11 = PyMethod_GET_SELF(__pyx_t_10);
+        if (likely(__pyx_t_11)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_10);
+          __Pyx_INCREF(__pyx_t_11);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_10, function);
+          __pyx_t_4 = 1;
+        }
+      }
+      #endif
+      {
+        PyObject *__pyx_callargs[2] = {__pyx_t_11, NULL};
+        __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
+        __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 59, __pyx_L4_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+      }
+      __pyx_t_10 = NULL;
       __pyx_t_4 = 0;
       #if CYTHON_UNPACK_METHODS
       if (likely(PyMethod_Check(__pyx_t_3))) {
-        __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
-        if (likely(__pyx_t_2)) {
+        __pyx_t_10 = PyMethod_GET_SELF(__pyx_t_3);
+        if (likely(__pyx_t_10)) {
           PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-          __Pyx_INCREF(__pyx_t_2);
+          __Pyx_INCREF(__pyx_t_10);
           __Pyx_INCREF(function);
           __Pyx_DECREF_SET(__pyx_t_3, function);
           __pyx_t_4 = 1;
@@ -4306,10 +4595,11 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_4barcode_decode(CYTHON_UNUSED P
       }
       #endif
       {
-        PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_v_barcode};
-        __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
-        __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L4_error)
+        PyObject *__pyx_callargs[3] = {__pyx_t_10, __pyx_v_barcode, __pyx_t_2};
+        __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 2+__pyx_t_4);
+        __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 59, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       }
@@ -4319,7 +4609,7 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_4barcode_decode(CYTHON_UNUSED P
         if (unlikely(size != 3)) {
           if (size > 3) __Pyx_RaiseTooManyValuesError(3);
           else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-          __PYX_ERR(0, 51, __pyx_L4_error)
+          __PYX_ERR(0, 59, __pyx_L4_error)
         }
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
         if (likely(PyTuple_CheckExact(sequence))) {
@@ -4335,17 +4625,17 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_4barcode_decode(CYTHON_UNUSED P
         __Pyx_INCREF(__pyx_t_2);
         __Pyx_INCREF(__pyx_t_10);
         #else
-        __pyx_t_3 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 51, __pyx_L4_error)
+        __pyx_t_3 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 59, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_2 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 51, __pyx_L4_error)
+        __pyx_t_2 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 59, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_10 = PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 51, __pyx_L4_error)
+        __pyx_t_10 = PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 59, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_10);
         #endif
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       } else {
         Py_ssize_t index = -1;
-        __pyx_t_11 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 51, __pyx_L4_error)
+        __pyx_t_11 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 59, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_11);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __pyx_t_12 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_11);
@@ -4355,7 +4645,7 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_4barcode_decode(CYTHON_UNUSED P
         __Pyx_GOTREF(__pyx_t_2);
         index = 2; __pyx_t_10 = __pyx_t_12(__pyx_t_11); if (unlikely(!__pyx_t_10)) goto __pyx_L10_unpacking_failed;
         __Pyx_GOTREF(__pyx_t_10);
-        if (__Pyx_IternextUnpackEndCheck(__pyx_t_12(__pyx_t_11), 3) < 0) __PYX_ERR(0, 51, __pyx_L4_error)
+        if (__Pyx_IternextUnpackEndCheck(__pyx_t_12(__pyx_t_11), 3) < 0) __PYX_ERR(0, 59, __pyx_L4_error)
         __pyx_t_12 = NULL;
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         goto __pyx_L11_unpacking_done;
@@ -4363,7 +4653,7 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_4barcode_decode(CYTHON_UNUSED P
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         __pyx_t_12 = NULL;
         if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-        __PYX_ERR(0, 51, __pyx_L4_error)
+        __PYX_ERR(0, 59, __pyx_L4_error)
         __pyx_L11_unpacking_done:;
       }
       __pyx_v_gtin = __pyx_t_3;
@@ -4373,19 +4663,19 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_4barcode_decode(CYTHON_UNUSED P
       __pyx_v_serial = __pyx_t_10;
       __pyx_t_10 = 0;
 
-      /* "m_window.py":53
- *             gtin, expires, serial = self.barcode_processor.process_barcode(barcode)
+      /* "m_window.py":61
+ *             gtin, expires, serial = self.barcode_processor.process_barcode(barcode, self.ui.radioButton_djo.isChecked())
  *             # UI aktualisieren
  *             self.ui.lineEdit_gtin.setText(gtin)             # <<<<<<<<<<<<<<
  *             self.ui.lineEdit_expire.setText(expires)
  *             self.ui.lineEdit_serial.setText(serial)
  */
-      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 53, __pyx_L4_error)
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 61, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_lineEdit_gtin); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 53, __pyx_L4_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_lineEdit_gtin); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 61, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setText); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 53, __pyx_L4_error)
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setText); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 61, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_t_2 = NULL;
@@ -4406,25 +4696,25 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_4barcode_decode(CYTHON_UNUSED P
         PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_v_gtin};
         __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L4_error)
+        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 61, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "m_window.py":54
+      /* "m_window.py":62
  *             # UI aktualisieren
  *             self.ui.lineEdit_gtin.setText(gtin)
  *             self.ui.lineEdit_expire.setText(expires)             # <<<<<<<<<<<<<<
  *             self.ui.lineEdit_serial.setText(serial)
  *             self.ui.lineEdit_barcode.setText('')
  */
-      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 54, __pyx_L4_error)
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 62, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_lineEdit_expire); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 54, __pyx_L4_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_lineEdit_expire); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 62, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setText); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 54, __pyx_L4_error)
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setText); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 62, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_t_2 = NULL;
@@ -4445,25 +4735,25 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_4barcode_decode(CYTHON_UNUSED P
         PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_v_expires};
         __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 54, __pyx_L4_error)
+        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 62, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "m_window.py":55
+      /* "m_window.py":63
  *             self.ui.lineEdit_gtin.setText(gtin)
  *             self.ui.lineEdit_expire.setText(expires)
  *             self.ui.lineEdit_serial.setText(serial)             # <<<<<<<<<<<<<<
  *             self.ui.lineEdit_barcode.setText('')
- *         except Exception as e:
+ *             self.ui.lineEdit_ref.setText(data.search_refnumber(gtin, self.data))
  */
-      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 55, __pyx_L4_error)
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 63, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_lineEdit_serial); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 55, __pyx_L4_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_lineEdit_serial); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 63, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setText); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 55, __pyx_L4_error)
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setText); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 63, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_t_2 = NULL;
@@ -4484,25 +4774,25 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_4barcode_decode(CYTHON_UNUSED P
         PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_v_serial};
         __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 55, __pyx_L4_error)
+        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 63, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "m_window.py":56
+      /* "m_window.py":64
  *             self.ui.lineEdit_expire.setText(expires)
  *             self.ui.lineEdit_serial.setText(serial)
  *             self.ui.lineEdit_barcode.setText('')             # <<<<<<<<<<<<<<
- *         except Exception as e:
- *             # Behandeln Sie den Fehler ordnungsgem
+ *             self.ui.lineEdit_ref.setText(data.search_refnumber(gtin, self.data))
+ * 
  */
-      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 56, __pyx_L4_error)
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 64, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_lineEdit_barcode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 56, __pyx_L4_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_lineEdit_barcode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 64, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setText); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 56, __pyx_L4_error)
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setText); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 64, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_t_2 = NULL;
@@ -4523,17 +4813,87 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_4barcode_decode(CYTHON_UNUSED P
         PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_kp_u__3};
         __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L4_error)
+        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 64, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "m_window.py":50
+      /* "m_window.py":65
+ *             self.ui.lineEdit_serial.setText(serial)
+ *             self.ui.lineEdit_barcode.setText('')
+ *             self.ui.lineEdit_ref.setText(data.search_refnumber(gtin, self.data))             # <<<<<<<<<<<<<<
+ * 
+ *         except Exception as e:
+ */
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 65, __pyx_L4_error)
+      __Pyx_GOTREF(__pyx_t_10);
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_lineEdit_ref); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 65, __pyx_L4_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setText); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 65, __pyx_L4_error)
+      __Pyx_GOTREF(__pyx_t_10);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_data); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 65, __pyx_L4_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_search_refnumber); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 65, __pyx_L4_error)
+      __Pyx_GOTREF(__pyx_t_11);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_data); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 65, __pyx_L4_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_13 = NULL;
+      __pyx_t_4 = 0;
+      #if CYTHON_UNPACK_METHODS
+      if (unlikely(PyMethod_Check(__pyx_t_11))) {
+        __pyx_t_13 = PyMethod_GET_SELF(__pyx_t_11);
+        if (likely(__pyx_t_13)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_11);
+          __Pyx_INCREF(__pyx_t_13);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_11, function);
+          __pyx_t_4 = 1;
+        }
+      }
+      #endif
+      {
+        PyObject *__pyx_callargs[3] = {__pyx_t_13, __pyx_v_gtin, __pyx_t_3};
+        __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_11, __pyx_callargs+1-__pyx_t_4, 2+__pyx_t_4);
+        __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 65, __pyx_L4_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+      }
+      __pyx_t_11 = NULL;
+      __pyx_t_4 = 0;
+      #if CYTHON_UNPACK_METHODS
+      if (likely(PyMethod_Check(__pyx_t_10))) {
+        __pyx_t_11 = PyMethod_GET_SELF(__pyx_t_10);
+        if (likely(__pyx_t_11)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_10);
+          __Pyx_INCREF(__pyx_t_11);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_10, function);
+          __pyx_t_4 = 1;
+        }
+      }
+      #endif
+      {
+        PyObject *__pyx_callargs[2] = {__pyx_t_11, __pyx_t_2};
+        __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
+        __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 65, __pyx_L4_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+      /* "m_window.py":58
  *             self.ui.plainTextEdit_output.appendPlainText(f"Kein Barcode eingegeben")
  *             return
  *         try:             # <<<<<<<<<<<<<<
- *             gtin, expires, serial = self.barcode_processor.process_barcode(barcode)
+ *             gtin, expires, serial = self.barcode_processor.process_barcode(barcode, self.ui.radioButton_djo.isChecked())
  *             # UI aktualisieren
  */
     }
@@ -4545,12 +4905,13 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_4barcode_decode(CYTHON_UNUSED P
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
     __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
+    __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "m_window.py":57
- *             self.ui.lineEdit_serial.setText(serial)
- *             self.ui.lineEdit_barcode.setText('')
+    /* "m_window.py":67
+ *             self.ui.lineEdit_ref.setText(data.search_refnumber(gtin, self.data))
+ * 
  *         except Exception as e:             # <<<<<<<<<<<<<<
  *             # Behandeln Sie den Fehler ordnungsgem
  *             self.ui.plainTextEdit_output.appendPlainText(f"Fehler bei der Barcode-Verarbeitung: {e}")
@@ -4558,7 +4919,7 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_4barcode_decode(CYTHON_UNUSED P
     __pyx_t_4 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])));
     if (__pyx_t_4) {
       __Pyx_AddTraceback("m_window.MainWindow.barcode_decode", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_1, &__pyx_t_10, &__pyx_t_2) < 0) __PYX_ERR(0, 57, __pyx_L6_except_error)
+      if (__Pyx_GetException(&__pyx_t_1, &__pyx_t_10, &__pyx_t_2) < 0) __PYX_ERR(0, 67, __pyx_L6_except_error)
       __Pyx_XGOTREF(__pyx_t_1);
       __Pyx_XGOTREF(__pyx_t_10);
       __Pyx_XGOTREF(__pyx_t_2);
@@ -4566,55 +4927,55 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_4barcode_decode(CYTHON_UNUSED P
       __pyx_v_e = __pyx_t_10;
       /*try:*/ {
 
-        /* "m_window.py":59
+        /* "m_window.py":69
  *         except Exception as e:
  *             # Behandeln Sie den Fehler ordnungsgem
  *             self.ui.plainTextEdit_output.appendPlainText(f"Fehler bei der Barcode-Verarbeitung: {e}")             # <<<<<<<<<<<<<<
  * 
  * 
  */
-        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 59, __pyx_L17_error)
-        __Pyx_GOTREF(__pyx_t_11);
-        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_plainTextEdit_output); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 59, __pyx_L17_error)
+        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ui); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 69, __pyx_L17_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_plainTextEdit_output); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 69, __pyx_L17_error)
         __Pyx_GOTREF(__pyx_t_13);
-        __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_appendPlainText); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 59, __pyx_L17_error)
-        __Pyx_GOTREF(__pyx_t_11);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_appendPlainText); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 69, __pyx_L17_error)
+        __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-        __pyx_t_13 = __Pyx_PyObject_FormatSimple(__pyx_v_e, __pyx_empty_unicode); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 59, __pyx_L17_error)
+        __pyx_t_13 = __Pyx_PyObject_FormatSimple(__pyx_v_e, __pyx_empty_unicode); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 69, __pyx_L17_error)
         __Pyx_GOTREF(__pyx_t_13);
-        __pyx_t_14 = __Pyx_PyUnicode_Concat(__pyx_kp_u_Fehler_bei_der_Barcode_Verarbeit, __pyx_t_13); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 59, __pyx_L17_error)
+        __pyx_t_14 = __Pyx_PyUnicode_Concat(__pyx_kp_u_Fehler_bei_der_Barcode_Verarbeit, __pyx_t_13); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 69, __pyx_L17_error)
         __Pyx_GOTREF(__pyx_t_14);
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
         __pyx_t_13 = NULL;
         __pyx_t_4 = 0;
         #if CYTHON_UNPACK_METHODS
-        if (likely(PyMethod_Check(__pyx_t_11))) {
-          __pyx_t_13 = PyMethod_GET_SELF(__pyx_t_11);
+        if (likely(PyMethod_Check(__pyx_t_3))) {
+          __pyx_t_13 = PyMethod_GET_SELF(__pyx_t_3);
           if (likely(__pyx_t_13)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_11);
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
             __Pyx_INCREF(__pyx_t_13);
             __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_11, function);
+            __Pyx_DECREF_SET(__pyx_t_3, function);
             __pyx_t_4 = 1;
           }
         }
         #endif
         {
           PyObject *__pyx_callargs[2] = {__pyx_t_13, __pyx_t_14};
-          __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_11, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
+          __pyx_t_11 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
           __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-          if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 59, __pyx_L17_error)
-          __Pyx_GOTREF(__pyx_t_3);
-          __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+          if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 69, __pyx_L17_error)
+          __Pyx_GOTREF(__pyx_t_11);
+          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         }
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
       }
 
-      /* "m_window.py":57
- *             self.ui.lineEdit_serial.setText(serial)
- *             self.ui.lineEdit_barcode.setText('')
+      /* "m_window.py":67
+ *             self.ui.lineEdit_ref.setText(data.search_refnumber(gtin, self.data))
+ * 
  *         except Exception as e:             # <<<<<<<<<<<<<<
  *             # Behandeln Sie den Fehler ordnungsgem
  *             self.ui.plainTextEdit_output.appendPlainText(f"Fehler bei der Barcode-Verarbeitung: {e}")
@@ -4668,11 +5029,11 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_4barcode_decode(CYTHON_UNUSED P
     }
     goto __pyx_L6_except_error;
 
-    /* "m_window.py":50
+    /* "m_window.py":58
  *             self.ui.plainTextEdit_output.appendPlainText(f"Kein Barcode eingegeben")
  *             return
  *         try:             # <<<<<<<<<<<<<<
- *             gtin, expires, serial = self.barcode_processor.process_barcode(barcode)
+ *             gtin, expires, serial = self.barcode_processor.process_barcode(barcode, self.ui.radioButton_djo.isChecked())
  *             # UI aktualisieren
  */
     __pyx_L6_except_error:;
@@ -4689,8 +5050,8 @@ static PyObject *__pyx_pf_8m_window_10MainWindow_4barcode_decode(CYTHON_UNUSED P
     __pyx_L9_try_end:;
   }
 
-  /* "m_window.py":43
- *         self.ui.pushButton_decode.clicked.connect(self.barcode_decode)
+  /* "m_window.py":51
+ *         self.ui.actionBeenden.triggered.connect(self.close)
  * 
  *     def barcode_decode(self):             # <<<<<<<<<<<<<<
  *         barcode = self.ui.lineEdit_barcode.text()
@@ -4753,11 +5114,12 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_QMainWindow, __pyx_k_QMainWindow, sizeof(__pyx_k_QMainWindow), 0, 0, 1, 1},
     {&__pyx_n_s_QtWidgets, __pyx_k_QtWidgets, sizeof(__pyx_k_QtWidgets), 0, 0, 1, 1},
     {&__pyx_n_s_Ui_MainWindow, __pyx_k_Ui_MainWindow, sizeof(__pyx_k_Ui_MainWindow), 0, 0, 1, 1},
-    {&__pyx_n_s__10, __pyx_k__10, sizeof(__pyx_k__10), 0, 0, 1, 1},
     {&__pyx_kp_u__11, __pyx_k__11, sizeof(__pyx_k__11), 0, 1, 0, 0},
-    {&__pyx_n_s__21, __pyx_k__21, sizeof(__pyx_k__21), 0, 0, 1, 1},
+    {&__pyx_n_s__12, __pyx_k__12, sizeof(__pyx_k__12), 0, 0, 1, 1},
+    {&__pyx_kp_u__13, __pyx_k__13, sizeof(__pyx_k__13), 0, 1, 0, 0},
+    {&__pyx_n_s__23, __pyx_k__23, sizeof(__pyx_k__23), 0, 0, 1, 1},
     {&__pyx_kp_u__3, __pyx_k__3, sizeof(__pyx_k__3), 0, 1, 0, 0},
-    {&__pyx_kp_u__9, __pyx_k__9, sizeof(__pyx_k__9), 0, 1, 0, 0},
+    {&__pyx_n_s_actionBeenden, __pyx_k_actionBeenden, sizeof(__pyx_k_actionBeenden), 0, 0, 1, 1},
     {&__pyx_n_s_app, __pyx_k_app, sizeof(__pyx_k_app), 0, 0, 1, 1},
     {&__pyx_n_s_appendPlainText, __pyx_k_appendPlainText, sizeof(__pyx_k_appendPlainText), 0, 0, 1, 1},
     {&__pyx_n_s_argv, __pyx_k_argv, sizeof(__pyx_k_argv), 0, 0, 1, 1},
@@ -4771,9 +5133,11 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_close, __pyx_k_close, sizeof(__pyx_k_close), 0, 0, 1, 1},
     {&__pyx_n_s_connect, __pyx_k_connect, sizeof(__pyx_k_connect), 0, 0, 1, 1},
     {&__pyx_n_s_convert_date, __pyx_k_convert_date, sizeof(__pyx_k_convert_date), 0, 0, 1, 1},
+    {&__pyx_n_s_data, __pyx_k_data, sizeof(__pyx_k_data), 0, 0, 1, 1},
     {&__pyx_n_s_date, __pyx_k_date, sizeof(__pyx_k_date), 0, 0, 1, 1},
     {&__pyx_n_s_dd, __pyx_k_dd, sizeof(__pyx_k_dd), 0, 0, 1, 1},
     {&__pyx_n_s_dict, __pyx_k_dict, sizeof(__pyx_k_dict), 0, 0, 1, 1},
+    {&__pyx_n_s_djo, __pyx_k_djo, sizeof(__pyx_k_djo), 0, 0, 1, 1},
     {&__pyx_n_s_doc, __pyx_k_doc, sizeof(__pyx_k_doc), 0, 0, 1, 1},
     {&__pyx_n_s_e, __pyx_k_e, sizeof(__pyx_k_e), 0, 0, 1, 1},
     {&__pyx_n_s_exec, __pyx_k_exec, sizeof(__pyx_k_exec), 0, 0, 1, 1},
@@ -4782,12 +5146,15 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_gtin, __pyx_k_gtin, sizeof(__pyx_k_gtin), 0, 0, 1, 1},
     {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
     {&__pyx_n_s_init, __pyx_k_init, sizeof(__pyx_k_init), 0, 0, 1, 1},
+    {&__pyx_n_s_init_search, __pyx_k_init_search, sizeof(__pyx_k_init_search), 0, 0, 1, 1},
     {&__pyx_n_s_init_subclass, __pyx_k_init_subclass, sizeof(__pyx_k_init_subclass), 0, 0, 1, 1},
     {&__pyx_n_s_initializing, __pyx_k_initializing, sizeof(__pyx_k_initializing), 0, 0, 1, 1},
+    {&__pyx_n_s_isChecked, __pyx_k_isChecked, sizeof(__pyx_k_isChecked), 0, 0, 1, 1},
     {&__pyx_n_s_is_coroutine, __pyx_k_is_coroutine, sizeof(__pyx_k_is_coroutine), 0, 0, 1, 1},
     {&__pyx_n_s_lineEdit_barcode, __pyx_k_lineEdit_barcode, sizeof(__pyx_k_lineEdit_barcode), 0, 0, 1, 1},
     {&__pyx_n_s_lineEdit_expire, __pyx_k_lineEdit_expire, sizeof(__pyx_k_lineEdit_expire), 0, 0, 1, 1},
     {&__pyx_n_s_lineEdit_gtin, __pyx_k_lineEdit_gtin, sizeof(__pyx_k_lineEdit_gtin), 0, 0, 1, 1},
+    {&__pyx_n_s_lineEdit_ref, __pyx_k_lineEdit_ref, sizeof(__pyx_k_lineEdit_ref), 0, 0, 1, 1},
     {&__pyx_n_s_lineEdit_serial, __pyx_k_lineEdit_serial, sizeof(__pyx_k_lineEdit_serial), 0, 0, 1, 1},
     {&__pyx_n_s_m_window, __pyx_k_m_window, sizeof(__pyx_k_m_window), 0, 0, 1, 1},
     {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
@@ -4807,6 +5174,8 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_pushButton_ok, __pyx_k_pushButton_ok, sizeof(__pyx_k_pushButton_ok), 0, 0, 1, 1},
     {&__pyx_n_s_qtw, __pyx_k_qtw, sizeof(__pyx_k_qtw), 0, 0, 1, 1},
     {&__pyx_n_s_qualname, __pyx_k_qualname, sizeof(__pyx_k_qualname), 0, 0, 1, 1},
+    {&__pyx_n_s_radioButton_djo, __pyx_k_radioButton_djo, sizeof(__pyx_k_radioButton_djo), 0, 0, 1, 1},
+    {&__pyx_n_s_search_refnumber, __pyx_k_search_refnumber, sizeof(__pyx_k_search_refnumber), 0, 0, 1, 1},
     {&__pyx_n_s_self, __pyx_k_self, sizeof(__pyx_k_self), 0, 0, 1, 1},
     {&__pyx_n_s_serial, __pyx_k_serial, sizeof(__pyx_k_serial), 0, 0, 1, 1},
     {&__pyx_n_s_setText, __pyx_k_setText, sizeof(__pyx_k_setText), 0, 0, 1, 1},
@@ -4818,8 +5187,10 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_staticmethod, __pyx_k_staticmethod, sizeof(__pyx_k_staticmethod), 0, 0, 1, 1},
     {&__pyx_n_s_super, __pyx_k_super, sizeof(__pyx_k_super), 0, 0, 1, 1},
     {&__pyx_n_s_sys, __pyx_k_sys, sizeof(__pyx_k_sys), 0, 0, 1, 1},
+    {&__pyx_kp_u_table_EP_ARTIKEL2_json, __pyx_k_table_EP_ARTIKEL2_json, sizeof(__pyx_k_table_EP_ARTIKEL2_json), 0, 1, 0, 0},
     {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
     {&__pyx_n_s_text, __pyx_k_text, sizeof(__pyx_k_text), 0, 0, 1, 1},
+    {&__pyx_n_s_triggered, __pyx_k_triggered, sizeof(__pyx_k_triggered), 0, 0, 1, 1},
     {&__pyx_n_s_ui, __pyx_k_ui, sizeof(__pyx_k_ui), 0, 0, 1, 1},
     {&__pyx_n_s_yy, __pyx_k_yy, sizeof(__pyx_k_yy), 0, 0, 1, 1},
     {0, 0, 0, 0, 0, 0, 0}
@@ -4828,8 +5199,8 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
 }
 /* #### Code section: cached_builtins ### */
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_staticmethod = __Pyx_GetBuiltinName(__pyx_n_s_staticmethod); if (!__pyx_builtin_staticmethod) __PYX_ERR(0, 8, __pyx_L1_error)
-  __pyx_builtin_super = __Pyx_GetBuiltinName(__pyx_n_s_super); if (!__pyx_builtin_super) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_builtin_staticmethod = __Pyx_GetBuiltinName(__pyx_n_s_staticmethod); if (!__pyx_builtin_staticmethod) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_builtin_super = __Pyx_GetBuiltinName(__pyx_n_s_super); if (!__pyx_builtin_super) __PYX_ERR(0, 36, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -4840,139 +5211,161 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "m_window.py":11
- *     def process_barcode(barcode):
+  /* "m_window.py":12
+ *     def process_barcode(barcode, djo):
  *         if not barcode:
  *             return None, None, None             # <<<<<<<<<<<<<<
- *         gtin = barcode[2:16] if len(barcode) > 16 else ""
- *         expires = barcode[18:24] if len(barcode) > 24 else ""
+ *         if djo == False:
+ *             gtin = barcode[2:16] if len(barcode) > 16 else ""
  */
-  __pyx_tuple_ = PyTuple_Pack(3, Py_None, Py_None, Py_None); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 11, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(3, Py_None, Py_None, Py_None); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "m_window.py":12
- *         if not barcode:
+  /* "m_window.py":14
  *             return None, None, None
- *         gtin = barcode[2:16] if len(barcode) > 16 else ""             # <<<<<<<<<<<<<<
- *         expires = barcode[18:24] if len(barcode) > 24 else ""
- *         serial = barcode[26:] if len(barcode) > 26 else ""
+ *         if djo == False:
+ *             gtin = barcode[2:16] if len(barcode) > 16 else ""             # <<<<<<<<<<<<<<
+ *             expires = barcode[18:24] if len(barcode) > 24 else ""
+ *             serial = barcode[26:] if len(barcode) > 26 else ""
  */
-  __pyx_slice__2 = PySlice_New(__pyx_int_2, __pyx_int_16, Py_None); if (unlikely(!__pyx_slice__2)) __PYX_ERR(0, 12, __pyx_L1_error)
+  __pyx_slice__2 = PySlice_New(__pyx_int_2, __pyx_int_16, Py_None); if (unlikely(!__pyx_slice__2)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_slice__2);
   __Pyx_GIVEREF(__pyx_slice__2);
 
-  /* "m_window.py":13
- *             return None, None, None
- *         gtin = barcode[2:16] if len(barcode) > 16 else ""
- *         expires = barcode[18:24] if len(barcode) > 24 else ""             # <<<<<<<<<<<<<<
- *         serial = barcode[26:] if len(barcode) > 26 else ""
- *         expires = BarcodeProcessor.convert_date(expires) if expires else ""
+  /* "m_window.py":15
+ *         if djo == False:
+ *             gtin = barcode[2:16] if len(barcode) > 16 else ""
+ *             expires = barcode[18:24] if len(barcode) > 24 else ""             # <<<<<<<<<<<<<<
+ *             serial = barcode[26:] if len(barcode) > 26 else ""
+ *         else:
  */
-  __pyx_slice__4 = PySlice_New(__pyx_int_18, __pyx_int_24, Py_None); if (unlikely(!__pyx_slice__4)) __PYX_ERR(0, 13, __pyx_L1_error)
+  __pyx_slice__4 = PySlice_New(__pyx_int_18, __pyx_int_24, Py_None); if (unlikely(!__pyx_slice__4)) __PYX_ERR(0, 15, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_slice__4);
   __Pyx_GIVEREF(__pyx_slice__4);
 
-  /* "m_window.py":14
- *         gtin = barcode[2:16] if len(barcode) > 16 else ""
- *         expires = barcode[18:24] if len(barcode) > 24 else ""
- *         serial = barcode[26:] if len(barcode) > 26 else ""             # <<<<<<<<<<<<<<
- *         expires = BarcodeProcessor.convert_date(expires) if expires else ""
- *         return gtin, expires, serial
+  /* "m_window.py":16
+ *             gtin = barcode[2:16] if len(barcode) > 16 else ""
+ *             expires = barcode[18:24] if len(barcode) > 24 else ""
+ *             serial = barcode[26:] if len(barcode) > 26 else ""             # <<<<<<<<<<<<<<
+ *         else:
+ *             gtin = barcode[2:16] if len(barcode) > 16 else ""
  */
-  __pyx_slice__5 = PySlice_New(__pyx_int_26, Py_None, Py_None); if (unlikely(!__pyx_slice__5)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __pyx_slice__5 = PySlice_New(__pyx_int_26, Py_None, Py_None); if (unlikely(!__pyx_slice__5)) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_slice__5);
   __Pyx_GIVEREF(__pyx_slice__5);
 
-  /* "m_window.py":22
+  /* "m_window.py":19
+ *         else:
+ *             gtin = barcode[2:16] if len(barcode) > 16 else ""
+ *             expires = barcode[29:34] if len(barcode) > 34 else ""             # <<<<<<<<<<<<<<
+ *             serial = barcode[19:27] if len(barcode) > 27 else ""
+ *         expires = BarcodeProcessor.convert_date(expires) if expires else ""
+ */
+  __pyx_slice__6 = PySlice_New(__pyx_int_29, __pyx_int_34, Py_None); if (unlikely(!__pyx_slice__6)) __PYX_ERR(0, 19, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_slice__6);
+  __Pyx_GIVEREF(__pyx_slice__6);
+
+  /* "m_window.py":20
+ *             gtin = barcode[2:16] if len(barcode) > 16 else ""
+ *             expires = barcode[29:34] if len(barcode) > 34 else ""
+ *             serial = barcode[19:27] if len(barcode) > 27 else ""             # <<<<<<<<<<<<<<
+ *         expires = BarcodeProcessor.convert_date(expires) if expires else ""
+ *         return gtin, expires, serial
+ */
+  __pyx_slice__7 = PySlice_New(__pyx_int_19, __pyx_int_27, Py_None); if (unlikely(!__pyx_slice__7)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_slice__7);
+  __Pyx_GIVEREF(__pyx_slice__7);
+
+  /* "m_window.py":28
  *         if len(date) != 6:
  *             return ""
  *         yy = date[0:2]             # <<<<<<<<<<<<<<
  *         mm = date[2:4]
  *         dd = date[4:6]
  */
-  __pyx_slice__6 = PySlice_New(__pyx_int_0, __pyx_int_2, Py_None); if (unlikely(!__pyx_slice__6)) __PYX_ERR(0, 22, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_slice__6);
-  __Pyx_GIVEREF(__pyx_slice__6);
+  __pyx_slice__8 = PySlice_New(__pyx_int_0, __pyx_int_2, Py_None); if (unlikely(!__pyx_slice__8)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_slice__8);
+  __Pyx_GIVEREF(__pyx_slice__8);
 
-  /* "m_window.py":23
+  /* "m_window.py":29
  *             return ""
  *         yy = date[0:2]
  *         mm = date[2:4]             # <<<<<<<<<<<<<<
  *         dd = date[4:6]
  *         return f'20{yy}-{mm}-{dd}'
  */
-  __pyx_slice__7 = PySlice_New(__pyx_int_2, __pyx_int_4, Py_None); if (unlikely(!__pyx_slice__7)) __PYX_ERR(0, 23, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_slice__7);
-  __Pyx_GIVEREF(__pyx_slice__7);
+  __pyx_slice__9 = PySlice_New(__pyx_int_2, __pyx_int_4, Py_None); if (unlikely(!__pyx_slice__9)) __PYX_ERR(0, 29, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_slice__9);
+  __Pyx_GIVEREF(__pyx_slice__9);
 
-  /* "m_window.py":24
+  /* "m_window.py":30
  *         yy = date[0:2]
  *         mm = date[2:4]
  *         dd = date[4:6]             # <<<<<<<<<<<<<<
  *         return f'20{yy}-{mm}-{dd}'
  * 
  */
-  __pyx_slice__8 = PySlice_New(__pyx_int_4, __pyx_int_6, Py_None); if (unlikely(!__pyx_slice__8)) __PYX_ERR(0, 24, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_slice__8);
-  __Pyx_GIVEREF(__pyx_slice__8);
+  __pyx_slice__10 = PySlice_New(__pyx_int_4, __pyx_int_6, Py_None); if (unlikely(!__pyx_slice__10)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_slice__10);
+  __Pyx_GIVEREF(__pyx_slice__10);
 
-  /* "m_window.py":8
+  /* "m_window.py":9
  * 
  * class BarcodeProcessor:
  *     @staticmethod             # <<<<<<<<<<<<<<
- *     def process_barcode(barcode):
+ *     def process_barcode(barcode, djo):
  *         if not barcode:
  */
-  __pyx_tuple__12 = PyTuple_Pack(4, __pyx_n_s_barcode, __pyx_n_s_gtin, __pyx_n_s_expires, __pyx_n_s_serial); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 8, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__12);
-  __Pyx_GIVEREF(__pyx_tuple__12);
-  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_mainwindow_m_window_py, __pyx_n_s_process_barcode, 8, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 8, __pyx_L1_error)
+  __pyx_tuple__14 = PyTuple_Pack(5, __pyx_n_s_barcode, __pyx_n_s_djo, __pyx_n_s_gtin, __pyx_n_s_expires, __pyx_n_s_serial); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 9, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__14);
+  __Pyx_GIVEREF(__pyx_tuple__14);
+  __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_mainwindow_m_window_py, __pyx_n_s_process_barcode, 9, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 9, __pyx_L1_error)
 
-  /* "m_window.py":18
+  /* "m_window.py":24
  *         return gtin, expires, serial
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def convert_date(date):
  *         if len(date) != 6:
  */
-  __pyx_tuple__14 = PyTuple_Pack(4, __pyx_n_s_date, __pyx_n_s_yy, __pyx_n_s_mm, __pyx_n_s_dd); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 18, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__14);
-  __Pyx_GIVEREF(__pyx_tuple__14);
-  __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_mainwindow_m_window_py, __pyx_n_s_convert_date, 18, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_tuple__16 = PyTuple_Pack(4, __pyx_n_s_date, __pyx_n_s_yy, __pyx_n_s_mm, __pyx_n_s_dd); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(0, 24, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__16);
+  __Pyx_GIVEREF(__pyx_tuple__16);
+  __pyx_codeobj__17 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_mainwindow_m_window_py, __pyx_n_s_convert_date, 24, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__17)) __PYX_ERR(0, 24, __pyx_L1_error)
 
-  /* "m_window.py":29
+  /* "m_window.py":35
  * 
  * class MainWindow(QMainWindow, Ui_MainWindow):
  *     def __init__(self):             # <<<<<<<<<<<<<<
  *         super().__init__()
  *         self.ui = Ui_MainWindow()
  */
-  __pyx_tuple__16 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(0, 29, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__16);
-  __Pyx_GIVEREF(__pyx_tuple__16);
-  __pyx_codeobj__17 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_mainwindow_m_window_py, __pyx_n_s_init, 29, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__17)) __PYX_ERR(0, 29, __pyx_L1_error)
+  __pyx_tuple__18 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__18);
+  __Pyx_GIVEREF(__pyx_tuple__18);
+  __pyx_codeobj__19 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_mainwindow_m_window_py, __pyx_n_s_init, 35, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__19)) __PYX_ERR(0, 35, __pyx_L1_error)
 
-  /* "m_window.py":38
- *         self.barcode_processor = BarcodeProcessor()
+  /* "m_window.py":45
+ *         self.data = data.init_search('table-EP_ARTIKEL2.json')
  * 
  *     def _setup_connections(self):             # <<<<<<<<<<<<<<
  *         """Stellt alle Signal-Slot-Verbindungen her"""
  *         self.ui.pushButton_ok.clicked.connect(self.close)
  */
-  __pyx_codeobj__18 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_mainwindow_m_window_py, __pyx_n_s_setup_connections, 38, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__18)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_codeobj__20 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_mainwindow_m_window_py, __pyx_n_s_setup_connections, 45, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__20)) __PYX_ERR(0, 45, __pyx_L1_error)
 
-  /* "m_window.py":43
- *         self.ui.pushButton_decode.clicked.connect(self.barcode_decode)
+  /* "m_window.py":51
+ *         self.ui.actionBeenden.triggered.connect(self.close)
  * 
  *     def barcode_decode(self):             # <<<<<<<<<<<<<<
  *         barcode = self.ui.lineEdit_barcode.text()
  *         self.ui.plainTextEdit_output.clear()
  */
-  __pyx_tuple__19 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_barcode, __pyx_n_s_gtin, __pyx_n_s_expires, __pyx_n_s_serial, __pyx_n_s_e); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(0, 43, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__19);
-  __Pyx_GIVEREF(__pyx_tuple__19);
-  __pyx_codeobj__20 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__19, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_mainwindow_m_window_py, __pyx_n_s_barcode_decode, 43, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__20)) __PYX_ERR(0, 43, __pyx_L1_error)
+  __pyx_tuple__21 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_barcode, __pyx_n_s_gtin, __pyx_n_s_expires, __pyx_n_s_serial, __pyx_n_s_e); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 51, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__21);
+  __Pyx_GIVEREF(__pyx_tuple__21);
+  __pyx_codeobj__22 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_mainwindow_m_window_py, __pyx_n_s_barcode_decode, 51, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__22)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -4989,8 +5382,12 @@ static CYTHON_SMALL_CODE int __Pyx_InitConstants(void) {
   __pyx_int_6 = PyInt_FromLong(6); if (unlikely(!__pyx_int_6)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_16 = PyInt_FromLong(16); if (unlikely(!__pyx_int_16)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_18 = PyInt_FromLong(18); if (unlikely(!__pyx_int_18)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_19 = PyInt_FromLong(19); if (unlikely(!__pyx_int_19)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_24 = PyInt_FromLong(24); if (unlikely(!__pyx_int_24)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_26 = PyInt_FromLong(26); if (unlikely(!__pyx_int_26)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_27 = PyInt_FromLong(27); if (unlikely(!__pyx_int_27)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_29 = PyInt_FromLong(29); if (unlikely(!__pyx_int_29)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_34 = PyInt_FromLong(34); if (unlikely(!__pyx_int_34)) __PYX_ERR(0, 1, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -5384,7 +5781,7 @@ if (!__Pyx_RefNanny) {
  * from PyQt5 import QtWidgets as qtw
  * from PyQt5.QtWidgets import QMainWindow             # <<<<<<<<<<<<<<
  * from mainwindow import Ui_MainWindow
- * 
+ * import data
  */
   __pyx_t_3 = PyList_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -5404,7 +5801,7 @@ if (!__Pyx_RefNanny) {
  * from PyQt5 import QtWidgets as qtw
  * from PyQt5.QtWidgets import QMainWindow
  * from mainwindow import Ui_MainWindow             # <<<<<<<<<<<<<<
- * 
+ * import data
  * 
  */
   __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 4, __pyx_L1_error)
@@ -5421,240 +5818,252 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "m_window.py":7
+  /* "m_window.py":5
+ * from PyQt5.QtWidgets import QMainWindow
+ * from mainwindow import Ui_MainWindow
+ * import data             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+  __pyx_t_3 = __Pyx_ImportDottedModule(__pyx_n_s_data, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 5, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_data, __pyx_t_3) < 0) __PYX_ERR(0, 5, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+
+  /* "m_window.py":8
  * 
  * 
  * class BarcodeProcessor:             # <<<<<<<<<<<<<<
  *     @staticmethod
- *     def process_barcode(barcode):
+ *     def process_barcode(barcode, djo):
  */
-  __pyx_t_3 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_BarcodeProcessor, __pyx_n_s_BarcodeProcessor, (PyObject *) NULL, __pyx_n_s_m_window, (PyObject *) NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 7, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_BarcodeProcessor, __pyx_n_s_BarcodeProcessor, (PyObject *) NULL, __pyx_n_s_m_window, (PyObject *) NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "m_window.py":8
+  /* "m_window.py":9
  * 
  * class BarcodeProcessor:
  *     @staticmethod             # <<<<<<<<<<<<<<
- *     def process_barcode(barcode):
+ *     def process_barcode(barcode, djo):
  *         if not barcode:
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_8m_window_16BarcodeProcessor_1process_barcode, __Pyx_CYFUNCTION_STATICMETHOD, __pyx_n_s_BarcodeProcessor_process_barcode, NULL, __pyx_n_s_m_window, __pyx_d, ((PyObject *)__pyx_codeobj__13)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 8, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_8m_window_16BarcodeProcessor_1process_barcode, __Pyx_CYFUNCTION_STATICMETHOD, __pyx_n_s_BarcodeProcessor_process_barcode, NULL, __pyx_n_s_m_window, __pyx_d, ((PyObject *)__pyx_codeobj__15)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 8, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_process_barcode, __pyx_t_4) < 0) __PYX_ERR(0, 8, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_process_barcode, __pyx_t_4) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "m_window.py":18
+  /* "m_window.py":24
  *         return gtin, expires, serial
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def convert_date(date):
  *         if len(date) != 6:
  */
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_8m_window_16BarcodeProcessor_3convert_date, __Pyx_CYFUNCTION_STATICMETHOD, __pyx_n_s_BarcodeProcessor_convert_date, NULL, __pyx_n_s_m_window, __pyx_d, ((PyObject *)__pyx_codeobj__15)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_8m_window_16BarcodeProcessor_3convert_date, __Pyx_CYFUNCTION_STATICMETHOD, __pyx_n_s_BarcodeProcessor_convert_date, NULL, __pyx_n_s_m_window, __pyx_d, ((PyObject *)__pyx_codeobj__17)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_convert_date, __pyx_t_2) < 0) __PYX_ERR(0, 18, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_convert_date, __pyx_t_2) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "m_window.py":7
+  /* "m_window.py":8
  * 
  * 
  * class BarcodeProcessor:             # <<<<<<<<<<<<<<
  *     @staticmethod
- *     def process_barcode(barcode):
+ *     def process_barcode(barcode, djo):
  */
-  __pyx_t_2 = __Pyx_Py3ClassCreate(((PyObject*)&PyType_Type), __pyx_n_s_BarcodeProcessor, __pyx_empty_tuple, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 7, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Py3ClassCreate(((PyObject*)&PyType_Type), __pyx_n_s_BarcodeProcessor, __pyx_empty_tuple, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_BarcodeProcessor, __pyx_t_2) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_BarcodeProcessor, __pyx_t_2) < 0) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "m_window.py":28
+  /* "m_window.py":34
  * 
  * 
  * class MainWindow(QMainWindow, Ui_MainWindow):             # <<<<<<<<<<<<<<
  *     def __init__(self):
  *         super().__init__()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_QMainWindow); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_QMainWindow); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Ui_MainWindow); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Ui_MainWindow); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_3);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3)) __PYX_ERR(0, 28, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3)) __PYX_ERR(0, 34, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_2);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_2)) __PYX_ERR(0, 28, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error);
   __pyx_t_3 = 0;
   __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PEP560_update_bases(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PEP560_update_bases(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_Py3MetaclassPrepare(__pyx_t_3, __pyx_t_2, __pyx_n_s_MainWindow, __pyx_n_s_MainWindow, (PyObject *) NULL, __pyx_n_s_m_window, (PyObject *) NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Py3MetaclassPrepare(__pyx_t_3, __pyx_t_2, __pyx_n_s_MainWindow, __pyx_n_s_MainWindow, (PyObject *) NULL, __pyx_n_s_m_window, (PyObject *) NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (__pyx_t_2 != __pyx_t_4) {
-    if (unlikely((PyDict_SetItemString(__pyx_t_5, "__orig_bases__", __pyx_t_4) < 0))) __PYX_ERR(0, 28, __pyx_L1_error)
+    if (unlikely((PyDict_SetItemString(__pyx_t_5, "__orig_bases__", __pyx_t_4) < 0))) __PYX_ERR(0, 34, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
 
-  /* "m_window.py":29
+  /* "m_window.py":35
  * 
  * class MainWindow(QMainWindow, Ui_MainWindow):
  *     def __init__(self):             # <<<<<<<<<<<<<<
  *         super().__init__()
  *         self.ui = Ui_MainWindow()
  */
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_8m_window_10MainWindow_1__init__, 0, __pyx_n_s_MainWindow___init, NULL, __pyx_n_s_m_window, __pyx_d, ((PyObject *)__pyx_codeobj__17)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 29, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_8m_window_10MainWindow_1__init__, 0, __pyx_n_s_MainWindow___init, NULL, __pyx_n_s_m_window, __pyx_d, ((PyObject *)__pyx_codeobj__19)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_INCREF(__pyx_t_6);
   PyList_Append(__pyx_t_4, __pyx_t_6);
   __Pyx_GIVEREF(__pyx_t_6);
-  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_init, __pyx_t_6) < 0) __PYX_ERR(0, 29, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_init, __pyx_t_6) < 0) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "m_window.py":38
- *         self.barcode_processor = BarcodeProcessor()
+  /* "m_window.py":45
+ *         self.data = data.init_search('table-EP_ARTIKEL2.json')
  * 
  *     def _setup_connections(self):             # <<<<<<<<<<<<<<
  *         """Stellt alle Signal-Slot-Verbindungen her"""
  *         self.ui.pushButton_ok.clicked.connect(self.close)
  */
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_8m_window_10MainWindow_3_setup_connections, 0, __pyx_n_s_MainWindow__setup_connections, NULL, __pyx_n_s_m_window, __pyx_d, ((PyObject *)__pyx_codeobj__18)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_8m_window_10MainWindow_3_setup_connections, 0, __pyx_n_s_MainWindow__setup_connections, NULL, __pyx_n_s_m_window, __pyx_d, ((PyObject *)__pyx_codeobj__20)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_setup_connections, __pyx_t_6) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_setup_connections, __pyx_t_6) < 0) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "m_window.py":43
- *         self.ui.pushButton_decode.clicked.connect(self.barcode_decode)
+  /* "m_window.py":51
+ *         self.ui.actionBeenden.triggered.connect(self.close)
  * 
  *     def barcode_decode(self):             # <<<<<<<<<<<<<<
  *         barcode = self.ui.lineEdit_barcode.text()
  *         self.ui.plainTextEdit_output.clear()
  */
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_8m_window_10MainWindow_5barcode_decode, 0, __pyx_n_s_MainWindow_barcode_decode, NULL, __pyx_n_s_m_window, __pyx_d, ((PyObject *)__pyx_codeobj__20)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 43, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_8m_window_10MainWindow_5barcode_decode, 0, __pyx_n_s_MainWindow_barcode_decode, NULL, __pyx_n_s_m_window, __pyx_d, ((PyObject *)__pyx_codeobj__22)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_barcode_decode, __pyx_t_6) < 0) __PYX_ERR(0, 43, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_barcode_decode, __pyx_t_6) < 0) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "m_window.py":28
+  /* "m_window.py":34
  * 
  * 
  * class MainWindow(QMainWindow, Ui_MainWindow):             # <<<<<<<<<<<<<<
  *     def __init__(self):
  *         super().__init__()
  */
-  __pyx_t_6 = __Pyx_Py3ClassCreate(__pyx_t_3, __pyx_n_s_MainWindow, __pyx_t_2, __pyx_t_5, NULL, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Py3ClassCreate(__pyx_t_3, __pyx_n_s_MainWindow, __pyx_t_2, __pyx_t_5, NULL, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (__Pyx_CyFunction_InitClassCell(__pyx_t_4, __pyx_t_6) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
+  if (__Pyx_CyFunction_InitClassCell(__pyx_t_4, __pyx_t_6) < 0) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_MainWindow, __pyx_t_6) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_MainWindow, __pyx_t_6) < 0) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "m_window.py":62
+  /* "m_window.py":72
  * 
  * 
  * if __name__ == '__main__':             # <<<<<<<<<<<<<<
  *     app = qtw.QApplication(sys.argv)
  *     mw = MainWindow()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_name); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_name); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 72, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_7 = (__Pyx_PyUnicode_Equals(__pyx_t_2, __pyx_n_u_main, Py_EQ)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 62, __pyx_L1_error)
+  __pyx_t_7 = (__Pyx_PyUnicode_Equals(__pyx_t_2, __pyx_n_u_main, Py_EQ)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 72, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_7) {
 
-    /* "m_window.py":63
+    /* "m_window.py":73
  * 
  * if __name__ == '__main__':
  *     app = qtw.QApplication(sys.argv)             # <<<<<<<<<<<<<<
  *     mw = MainWindow()
  *     mw.show()
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_qtw); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 63, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_qtw); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 73, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_QApplication); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 63, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_QApplication); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 73, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_sys); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 63, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_sys); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 73, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_argv); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 63, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_argv); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 73, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 63, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 73, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (PyDict_SetItem(__pyx_d, __pyx_n_s_app, __pyx_t_2) < 0) __PYX_ERR(0, 63, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_d, __pyx_n_s_app, __pyx_t_2) < 0) __PYX_ERR(0, 73, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "m_window.py":64
+    /* "m_window.py":74
  * if __name__ == '__main__':
  *     app = qtw.QApplication(sys.argv)
  *     mw = MainWindow()             # <<<<<<<<<<<<<<
  *     mw.show()
  *     sys.exit(app.exec())
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_MainWindow); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 64, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_MainWindow); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 74, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 64, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 74, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (PyDict_SetItem(__pyx_d, __pyx_n_s_mw, __pyx_t_5) < 0) __PYX_ERR(0, 64, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_d, __pyx_n_s_mw, __pyx_t_5) < 0) __PYX_ERR(0, 74, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "m_window.py":65
+    /* "m_window.py":75
  *     app = qtw.QApplication(sys.argv)
  *     mw = MainWindow()
  *     mw.show()             # <<<<<<<<<<<<<<
  *     sys.exit(app.exec())
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_mw); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 65, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_mw); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 75, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_show); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 65, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_show); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 75, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 65, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 75, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "m_window.py":66
+    /* "m_window.py":76
  *     mw = MainWindow()
  *     mw.show()
  *     sys.exit(app.exec())             # <<<<<<<<<<<<<<
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_sys); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 66, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_sys); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 76, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_exit); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 66, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_exit); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 76, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_app); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 66, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_app); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 76, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_exec); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_exec); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 76, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 66, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 76, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 76, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "m_window.py":62
+    /* "m_window.py":72
  * 
  * 
  * if __name__ == '__main__':             # <<<<<<<<<<<<<<
@@ -6129,6 +6538,32 @@ bad:
 #endif
 #endif
 
+/* RaiseArgTupleInvalid */
+static void __Pyx_RaiseArgtupleInvalid(
+    const char* func_name,
+    int exact,
+    Py_ssize_t num_min,
+    Py_ssize_t num_max,
+    Py_ssize_t num_found)
+{
+    Py_ssize_t num_expected;
+    const char *more_or_less;
+    if (num_found < num_min) {
+        num_expected = num_min;
+        more_or_less = "at least";
+    } else {
+        num_expected = num_max;
+        more_or_less = "at most";
+    }
+    if (exact) {
+        more_or_less = "exactly";
+    }
+    PyErr_Format(PyExc_TypeError,
+                 "%.200s() takes %.8s %" CYTHON_FORMAT_SSIZE_T "d positional argument%.1s (%" CYTHON_FORMAT_SSIZE_T "d given)",
+                 func_name, more_or_less, num_expected,
+                 (num_expected == 1) ? "" : "s", num_found);
+}
+
 /* RaiseDoubleKeywords */
 static void __Pyx_RaiseDoubleKeywordsError(
     const char* func_name,
@@ -6297,32 +6732,6 @@ bad:
     Py_XDECREF(key);
     Py_XDECREF(value);
     return -1;
-}
-
-/* RaiseArgTupleInvalid */
-static void __Pyx_RaiseArgtupleInvalid(
-    const char* func_name,
-    int exact,
-    Py_ssize_t num_min,
-    Py_ssize_t num_max,
-    Py_ssize_t num_found)
-{
-    Py_ssize_t num_expected;
-    const char *more_or_less;
-    if (num_found < num_min) {
-        num_expected = num_min;
-        more_or_less = "at least";
-    } else {
-        num_expected = num_max;
-        more_or_less = "at most";
-    }
-    if (exact) {
-        more_or_less = "exactly";
-    }
-    PyErr_Format(PyExc_TypeError,
-                 "%.200s() takes %.8s %" CYTHON_FORMAT_SSIZE_T "d positional argument%.1s (%" CYTHON_FORMAT_SSIZE_T "d given)",
-                 func_name, more_or_less, num_expected,
-                 (num_expected == 1) ? "" : "s", num_found);
 }
 
 /* SliceObject */
@@ -7237,7 +7646,7 @@ static PyObject *__Pyx_ImportDottedModule_WalkParts(PyObject *module, PyObject *
 #endif
 static PyObject *__Pyx__ImportDottedModule(PyObject *name, PyObject *parts_tuple) {
 #if PY_MAJOR_VERSION < 3
-    PyObject *module, *from_list, *star = __pyx_n_s__10;
+    PyObject *module, *from_list, *star = __pyx_n_s__12;
     CYTHON_UNUSED_VAR(parts_tuple);
     from_list = PyList_New(1);
     if (unlikely(!from_list))
@@ -7300,7 +7709,7 @@ static PyObject* __Pyx_ImportFrom(PyObject* module, PyObject* name) {
         if (unlikely(!module_name_str)) { goto modbad; }
         module_name = PyUnicode_FromString(module_name_str);
         if (unlikely(!module_name)) { goto modbad; }
-        module_dot = PyUnicode_Concat(module_name, __pyx_kp_u__11);
+        module_dot = PyUnicode_Concat(module_name, __pyx_kp_u__13);
         if (unlikely(!module_dot)) { goto modbad; }
         full_name = PyUnicode_Concat(module_dot, name);
         if (unlikely(!full_name)) { goto modbad; }
@@ -9294,7 +9703,7 @@ __Pyx_PyType_GetName(PyTypeObject* tp)
     if (unlikely(name == NULL) || unlikely(!PyUnicode_Check(name))) {
         PyErr_Clear();
         Py_XDECREF(name);
-        name = __Pyx_NewRef(__pyx_n_s__21);
+        name = __Pyx_NewRef(__pyx_n_s__23);
     }
     return name;
 }

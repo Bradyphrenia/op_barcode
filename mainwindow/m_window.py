@@ -40,7 +40,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self._setup_connections()
         # Barcode-Prozessor initialisieren
         self.barcode_processor = BarcodeProcessor()
-        self.data = data.init_search()
+        self.data = data.init_search('table-EP_ARTIKEL2.json')
 
     def _setup_connections(self):
         """Stellt alle Signal-Slot-Verbindungen her"""
