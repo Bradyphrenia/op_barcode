@@ -7,3 +7,11 @@
 2025-07-05 23:18:02,851 - __main__ - INFO - Suche nach GTIN: 07611996073546
 2025-07-05 23:18:03,179 - __main__ - INFO - Gefunden: 1 Einträge für GTIN 07611996073546
 2025-07-05 23:18:03,179 - __main__ - INFO - Referenznummer gefunden: 75005179
+2025-07-05 23:38:26,720 - __main__ - INFO - Reading JSON file: ../table-EP_ARTIKEL2.json
+2025-07-05 23:38:27,031 - __main__ - INFO - Suche nach GTIN: 07611996073546
+2025-07-05 23:38:27,364 - __main__ - INFO - Gefunden: 1 Einträge für GTIN 07611996073546
+2025-07-05 23:38:27,364 - __main__ - INFO - Referenznummer gefunden: 75005179
+2025-07-05 23:51:06,662 - __main__ - INFO - Reading JSON file: ../table-EP_ARTIKEL2.json
+2025-07-05 23:51:06,949 - __main__ - INFO - Suche nach GTIN: 07611996073546
+2025-07-05 23:51:07,279 - __main__ - INFO - Gefunden: 1 Einträge für GTIN 07611996073546
+2025-07-05 23:51:07,279 - __main__ - INFO - Referenznummer gefunden: 75005179

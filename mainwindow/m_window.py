@@ -11,7 +11,7 @@ class BarcodeProcessor:
         if not barcode:
             return None, None, None
         gtin = barcode[2:16] if len(barcode) > 16 else ""
-        djo = barcode[4:8] == "9044"
+        djo = barcode[4:7] == "044"  # DJO-GTIN-CODE
         if djo == False:
             expires = barcode[18:24] if len(barcode) > 24 else ""
             serial = barcode[26:] if len(barcode) > 26 else ""
