@@ -14,6 +14,8 @@ setup(
                       ["mainwindow/m_window.py"]),
             Extension("mainwindow",
                       ["mainwindow/mainwindow.py"]),
+            Extension("data",
+                      ["data/import_ep.py"]),
         ],
         build_dir="build_cythonize",
         compiler_directives={

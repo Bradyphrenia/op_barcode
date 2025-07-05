@@ -2,6 +2,7 @@ import sys
 from PyQt5 import QtWidgets as qtw
 from PyQt5.QtWidgets import QMainWindow
 from mainwindow import Ui_MainWindow
+import data
 
 
 class BarcodeProcessor:
@@ -39,6 +40,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self._setup_connections()
         # Barcode-Prozessor initialisieren
         self.barcode_processor = BarcodeProcessor()
+        self.data = data.init_search()
 
     def _setup_connections(self):
         """Stellt alle Signal-Slot-Verbindungen her"""
@@ -60,6 +62,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.ui.lineEdit_expire.setText(expires)
             self.ui.lineEdit_serial.setText(serial)
             self.ui.lineEdit_barcode.setText('')
+            self.ui.lineEdit_ref.setText(data.search_refnumber(gtin, self.data))
+
         except Exception as e:
             # Behandeln Sie den Fehler ordnungsgemäß
             self.ui.plainTextEdit_output.appendPlainText(f"Fehler bei der Barcode-Verarbeitung: {e}")
