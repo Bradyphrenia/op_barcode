@@ -7,10 +7,8 @@ def import_json_file(file_path: str) -> Dict[str, Any]:
     try:
         if not os.path.exists(file_path):
             raise FileNotFoundError(f"File not found: {file_path}")
-
         with open(file_path, 'r', encoding='utf-8') as file:
             return json.load(file)
-
     except json.JSONDecodeError as e:
         raise json.JSONDecodeError(f"Invalid JSON format: {str(e)}", e.doc, e.pos)
     except Exception as e:
@@ -27,7 +25,6 @@ def suche_in_dictionary(dictionary, suchbegriff):
             if isinstance(value, list) and len(value) > 0 and isinstance(value[0], dict):
                 root_elements = value
                 break
-
         if root_elements is None:
             root_elements = [dictionary]
     for idx, root_element in enumerate(root_elements):
