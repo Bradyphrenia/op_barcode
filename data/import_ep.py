@@ -206,6 +206,6 @@ def _extract_refnumber_from_json(json_str: str) -> str:
 
 
 if __name__ == '__main__':
-    data = init_search()
+    data = init_search('../table-EP_ARTIKEL2.json')
     test = "07611996073546"
     print(search_refnumber(test, data))
