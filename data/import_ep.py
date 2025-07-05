@@ -209,3 +209,4 @@ if __name__ == '__main__':
     data = init_search('../table-EP_ARTIKEL2.json')
     test = "07611996073546"
     print(search_refnumber(test, data))
+    print(search_in_dictionary(data, 'DJO'))

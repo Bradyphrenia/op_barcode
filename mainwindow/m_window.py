@@ -7,15 +7,15 @@ import data
 
 class BarcodeProcessor:
     @staticmethod
-    def process_barcode(barcode, djo):
+    def process_barcode(barcode):
         if not barcode:
             return None, None, None
+        gtin = barcode[2:16] if len(barcode) > 16 else ""
+        djo = barcode[4:8] == "9044"
         if djo == False:
-            gtin = barcode[2:16] if len(barcode) > 16 else ""
             expires = barcode[18:24] if len(barcode) > 24 else ""
             serial = barcode[26:] if len(barcode) > 26 else ""
         else:
-            gtin = barcode[2:16] if len(barcode) > 16 else ""
             expires = barcode[29:34] if len(barcode) > 34 else ""
             serial = barcode[19:27] if len(barcode) > 27 else ""
         expires = BarcodeProcessor.convert_date(expires) if expires else ""
