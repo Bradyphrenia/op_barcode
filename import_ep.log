@@ -226,3 +226,4 @@
 2025-07-06 10:17:00,367 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166959
 2025-07-06 10:17:00,367 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
 2025-07-06 10:17:00,367 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 00888912166959, Ablauf: 2026-04-20, Serial: 112T1091A
+2025-07-06 11:17:27,789 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
