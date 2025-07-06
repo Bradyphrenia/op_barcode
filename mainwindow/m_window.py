@@ -235,6 +235,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.lineEdit_barcode.setText('')
         self.lineEdit_ref.setText(data.search_refnumber(gtin, self.data))
 
+        # Fokus auf lineEdit_barcode setzen und Cursor auf erste Position
+        self.lineEdit_barcode.setFocus()
+        self.lineEdit_barcode.setCursorPosition(0)
 
 if __name__ == '__main__':
     app = qtw.QApplication(sys.argv)
