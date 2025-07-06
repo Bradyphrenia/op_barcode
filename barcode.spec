@@ -4,7 +4,7 @@
 a = Analysis(
     ['barcode.py'],
     pathex=[],
-    binaries=[('m_window.cpython-312-darwin.so', 'mainwindow'), ('mainwindow.cpython-312-darwin.so', 'mainwindow'), ('data.cpython-312-darwin.so', 'data')],
+    binaries=[('m_window.cp312-win_amd64.pyd', 'dist'), ('mainwindow.cp312-win_amd64.pyd', 'dist'), ('data.cp312-win_amd64.pyd', 'dist')],
     datas=[],
     hiddenimports=[],
     hookspath=[],
@@ -35,10 +35,4 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-)
-app = BUNDLE(
-    exe,
-    name='barcode.app',
-    icon=None,
-    bundle_identifier=None,
 )
