@@ -21,30 +21,168 @@ logger = logging.getLogger(__name__)
 class BarcodeProcessor:
     @staticmethod
     def process_barcode(barcode):
-        if not barcode:
-            return None, None, None
-        gtin = barcode[2:16] if len(barcode) > 16 else ""
-        djo = barcode[4:7] == "888"  # DJO-GTIN-CODE
-        logger.debug(f"DJO-Code erkannt: {barcode[4:7]}")
-        if djo == False:
-            expires = barcode[18:24] if len(barcode) > 24 else ""
-            serial = barcode[26:] if len(barcode) > 26 else ""
-        else:
-            logger.debug(f"Barcode-Länge: {len(barcode)}")
-            expires = barcode[29:35] if len(barcode) > 34 else barcode[28:34]
-            logger.debug(f"Ablaufdatum: {expires}")
-            serial = barcode[18:27] if len(barcode) > 34 else barcode[18:26]
-        expires = BarcodeProcessor.convert_date(expires) if expires else ""
-        return gtin, expires, serial
+        try:
+            logger.info(f"Starte Barcode-Verarbeitung für: {barcode}")
+
+            if not barcode:
+                logger.warning("Leerer Barcode übergeben")
+                return None, None, None
+
+            if not isinstance(barcode, str):
+                logger.error(f"Barcode muss ein String sein, erhalten: {type(barcode)}")
+                raise TypeError(f"Barcode muss ein String sein, erhalten: {type(barcode)}")
+
+            # Mindestlänge prüfen
+            if len(barcode) < 16:
+                logger.error(f"Barcode zu kurz (Länge: {len(barcode)}). Mindestlänge: 16 Zeichen")
+                raise ValueError(f"Barcode zu kurz (Länge: {len(barcode)}). Mindestlänge: 16 Zeichen")
+
+            # GTIN extrahieren
+            try:
+                gtin = barcode[2:16]
+                logger.debug(f"GTIN extrahiert: {gtin}")
+            except IndexError as e:
+                logger.error(f"Fehler beim Extrahieren der GTIN: {e}")
+                raise ValueError(f"Fehler beim Extrahieren der GTIN aus Barcode: {barcode}")
+
+            # DJO-Code prüfen
+            try:
+                djo_code = barcode[4:7]
+                djo = djo_code == "888"  # DJO-GTIN-CODE
+                logger.debug(f"DJO-Code erkannt: {djo_code}, ist DJO: {djo}")
+            except IndexError as e:
+                logger.error(f"Fehler beim Prüfen des DJO-Codes: {e}")
+                raise ValueError(f"Fehler beim Prüfen des DJO-Codes aus Barcode: {barcode}")
+
+            # Ablaufdatum und Seriennummer extrahieren
+            try:
+                if not djo:
+                    # Standard-Format
+                    expires = barcode[18:24] if len(barcode) > 24 else ""
+                    serial = barcode[26:] if len(barcode) > 26 else ""
+                    logger.debug(f"Standard-Format: Ablauf={expires}, Serial={serial}")
+                else:
+                    # DJO-Format
+                    logger.debug(f"DJO-Format erkannt, Barcode-Länge: {len(barcode)}")
+                    expires = barcode[29:35] if len(barcode) > 34 else barcode[28:34]
+                    serial = barcode[18:27] if len(barcode) > 34 else barcode[18:26]
+                    logger.debug(f"DJO-Format: Ablauf={expires}, Serial={serial}")
+
+            except IndexError as e:
+                logger.error(f"Fehler beim Extrahieren von Ablaufdatum/Seriennummer: {e}")
+                expires = ""
+                serial = ""
+
+            # Datum konvertieren
+            try:
+                expires = BarcodeProcessor.convert_date(expires) if expires else ""
+                logger.debug(f"Konvertiertes Ablaufdatum: {expires}")
+            except Exception as e:
+                logger.error(f"Fehler bei der Datumskonvertierung: {e}")
+                expires = ""
+
+            logger.info(f"Barcode erfolgreich verarbeitet - GTIN: {gtin}, Ablauf: {expires}, Serial: {serial}")
+            return gtin, expires, serial
+
+        except (TypeError, ValueError) as e:
+            logger.error(f"Validierungsfehler beim Verarbeiten des Barcodes '{barcode}': {e}")
+            raise
+        except Exception as e:
+            logger.error(f"Unerwarteter Fehler beim Verarbeiten des Barcodes '{barcode}': {e}", exc_info=True)
+            raise RuntimeError(f"Unerwarteter Fehler bei der Barcode-Verarbeitung: {e}")
 
     @staticmethod
     def convert_date(date):
-        if len(date) != 6:
-            return ""
-        yy = date[0:2]
-        mm = date[2:4]
-        dd = date[4:6]
-        return f'20{yy}-{mm}-{dd}'
+        try:
+            logger.debug(f"Starte Datumskonvertierung für: '{date}'")
+
+            # Input-Validierung
+            if not date:
+                logger.warning("Leeres Datum übergeben")
+                return ""
+
+            if not isinstance(date, str):
+                logger.error(f"Datum muss ein String sein, erhalten: {type(date)}")
+                raise TypeError(f"Datum muss ein String sein, erhalten: {type(date)}")
+
+            # Längenprüfung
+            if len(date) != 6:
+                logger.warning(f"Datum hat falsche Länge: {len(date)} (erwartet: 6)")
+                return ""
+
+            # Prüfung auf numerische Zeichen
+            if not date.isdigit():
+                logger.error(f"Datum enthält nicht-numerische Zeichen: '{date}'")
+                raise ValueError(f"Datum muss nur Ziffern enthalten, erhalten: '{date}'")
+
+            # Datum-Komponenten extrahieren
+            try:
+                yy = date[0:2]
+                mm = date[2:4]
+                dd = date[4:6]
+                logger.debug(f"Extrahierte Komponenten - Jahr: {yy}, Monat: {mm}, Tag: {dd}")
+            except IndexError as e:
+                logger.error(f"Fehler beim Extrahieren der Datumskomponenten: {e}")
+                raise ValueError(f"Fehler beim Extrahieren der Datumskomponenten aus: '{date}'")
+
+            # Validierung der Datumskomponenten
+            try:
+                year_int = int(yy)
+                month_int = int(mm)
+                day_int = int(dd)
+
+                # Monatsvalidierung
+                if month_int < 1 or month_int > 12:
+                    logger.error(f"Ungültiger Monat: {month_int}")
+                    raise ValueError(f"Ungültiger Monat: {month_int} (muss zwischen 1 und 12 liegen)")
+
+                # Tagesvalidierung (einfache Prüfung)
+                if day_int < 1 or day_int > 31:
+                    logger.error(f"Ungültiger Tag: {day_int}")
+                    raise ValueError(f"Ungültiger Tag: {day_int} (muss zwischen 1 und 31 liegen)")
+
+                # Erweiterte Tagesvalidierung für bestimmte Monate
+                days_in_month = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]  # Februar mit 29 für Schaltjahre
+                if day_int > days_in_month[month_int - 1]:
+                    logger.error(f"Tag {day_int} ist ungültig für Monat {month_int}")
+                    raise ValueError(f"Tag {day_int} ist ungültig für Monat {month_int}")
+
+            except ValueError as e:
+                if "invalid literal" in str(e):
+                    logger.error(f"Nicht-numerische Datumskomponenten: yy='{yy}', mm='{mm}', dd='{dd}'")
+                    raise ValueError(f"Datumskomponenten müssen numerisch sein: '{date}'")
+                else:
+                    raise  # Re-raise andere ValueError
+
+            # Formatiertes Datum erstellen
+            try:
+                formatted_date = f'20{yy}-{mm}-{dd}'
+                logger.debug(f"Formatiertes Datum: {formatted_date}")
+
+                # Zusätzliche Validierung mit datetime (optional)
+                from datetime import datetime
+                try:
+                    datetime.strptime(formatted_date, '%Y-%m-%d')
+                    logger.info(f"Datum erfolgreich konvertiert: '{date}' -> '{formatted_date}'")
+                except ValueError as e:
+                    logger.error(f"Ungültiges Datum nach Formatierung: {formatted_date}")
+                    raise ValueError(f"Ungültiges Datum: {formatted_date}")
+
+                return formatted_date
+
+            except Exception as e:
+                logger.error(f"Fehler bei der Datumsformatierung: {e}")
+                raise RuntimeError(f"Fehler bei der Datumsformatierung: {e}")
+
+        except TypeError as e:
+            logger.error(f"Typfehler bei Datumskonvertierung: {e}")
+            raise
+        except ValueError as e:
+            logger.error(f"Wertfehler bei Datumskonvertierung: {e}")
+            raise
+        except Exception as e:
+            logger.error(f"Unerwarteter Fehler bei Datumskonvertierung für '{date}': {e}", exc_info=True)
+            raise RuntimeError(f"Unerwarteter Fehler bei der Datumskonvertierung: {e}")
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -82,7 +220,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             logger.info(f"Barcode erfolgreich verarbeitet - GTIN: {gtin}, Ablauf: {expires}, Serial: {serial}")
 
         except Exception as e:
-            # Logging statt plainTextEdit_output
             logger.error(f"Fehler bei der Barcode-Verarbeitung: {e}", exc_info=True)
 
 
