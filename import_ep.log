@@ -4,3 +4,111 @@
 2025-07-05 23:06:33,832 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
 2025-07-05 23:27:51,969 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
 2025-07-05 23:50:22,483 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:20:19,696 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:20:30,059 - data.import_ep - INFO - Suche nach GTIN: 00888912167949
+2025-07-06 08:20:30,697 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912167949
+2025-07-06 08:20:30,698 - data.import_ep - INFO - Referenznummer gefunden: 351-02-107
+2025-07-06 08:21:30,155 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:21:35,963 - data.import_ep - INFO - Suche nach GTIN: 00888912166652
+2025-07-06 08:21:36,613 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166652
+2025-07-06 08:21:36,613 - data.import_ep - INFO - Referenznummer gefunden: 241-01-108
+2025-07-06 08:23:32,694 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:23:40,348 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:23:41,010 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166959
+2025-07-06 08:23:41,011 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:24:36,532 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:24:42,606 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:24:43,254 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166959
+2025-07-06 08:24:43,254 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:25:44,867 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:25:51,223 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:25:51,878 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166959
+2025-07-06 08:25:51,878 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:26:36,487 - data.import_ep - INFO - Suche nach GTIN: 00888912167949
+2025-07-06 08:26:37,137 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912167949
+2025-07-06 08:26:37,137 - data.import_ep - INFO - Referenznummer gefunden: 351-02-107
+2025-07-06 08:26:44,537 - data.import_ep - INFO - Suche nach GTIN: 00888912166744
+2025-07-06 08:26:45,182 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166744
+2025-07-06 08:26:45,182 - data.import_ep - INFO - Referenznummer gefunden: 241-02-107
+2025-07-06 08:27:01,712 - data.import_ep - INFO - Suche nach GTIN: 00888912167949
+2025-07-06 08:27:02,357 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912167949
+2025-07-06 08:27:02,357 - data.import_ep - INFO - Referenznummer gefunden: 351-02-107
+2025-07-06 08:27:12,128 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:27:29,729 - data.import_ep - INFO - Suche nach GTIN: 00888912166744
+2025-07-06 08:27:30,379 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166744
+2025-07-06 08:27:30,379 - data.import_ep - INFO - Referenznummer gefunden: 241-02-107
+2025-07-06 08:28:44,895 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:28:51,233 - data.import_ep - INFO - Suche nach GTIN: 00888912167949
+2025-07-06 08:28:51,887 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912167949
+2025-07-06 08:28:51,887 - data.import_ep - INFO - Referenznummer gefunden: 351-02-107
+2025-07-06 08:28:57,617 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:28:58,267 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166959
+2025-07-06 08:28:58,268 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:29:17,435 - data.import_ep - INFO - Suche nach GTIN: 00888912166744
+2025-07-06 08:29:18,081 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166744
+2025-07-06 08:29:18,081 - data.import_ep - INFO - Referenznummer gefunden: 241-02-107
+2025-07-06 08:30:53,428 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:30:54,087 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166959
+2025-07-06 08:30:54,087 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:31:09,043 - data.import_ep - INFO - Suche nach GTIN: 00888912166744
+2025-07-06 08:31:09,701 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166744
+2025-07-06 08:31:09,701 - data.import_ep - INFO - Referenznummer gefunden: 241-02-107
+2025-07-06 08:32:33,990 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:32:40,134 - data.import_ep - INFO - Suche nach GTIN: 00888912167949
+2025-07-06 08:32:40,816 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912167949
+2025-07-06 08:32:40,816 - data.import_ep - INFO - Referenznummer gefunden: 351-02-107
+2025-07-06 08:33:19,462 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:33:20,111 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166959
+2025-07-06 08:33:20,111 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:33:39,950 - data.import_ep - INFO - Suche nach GTIN: 00888912168052
+2025-07-06 08:33:40,604 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912168052
+2025-07-06 08:33:40,604 - data.import_ep - INFO - Referenznummer gefunden: 351-03-108
+2025-07-06 08:34:53,215 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:34:57,487 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:34:58,138 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166959
+2025-07-06 08:34:58,138 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:35:10,047 - data.import_ep - INFO - Suche nach GTIN: 00888912166744
+2025-07-06 08:35:10,688 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166744
+2025-07-06 08:35:10,688 - data.import_ep - INFO - Referenznummer gefunden: 241-02-107
+2025-07-06 08:36:36,393 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:36:41,393 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:36:42,058 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166959
+2025-07-06 08:36:42,058 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:37:42,276 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:37:47,265 - data.import_ep - INFO - Suche nach GTIN: 00888912167345
+2025-07-06 08:37:47,918 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912167345
+2025-07-06 08:37:47,918 - data.import_ep - INFO - Referenznummer gefunden: 342-10-707
+2025-07-06 08:39:58,824 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:40:04,868 - data.import_ep - INFO - Suche nach GTIN: 00888912166652
+2025-07-06 08:40:05,542 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166652
+2025-07-06 08:40:05,542 - data.import_ep - INFO - Referenznummer gefunden: 241-01-108
+2025-07-06 08:40:13,292 - data.import_ep - INFO - Suche nach GTIN: 00888912166744
+2025-07-06 08:40:13,953 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166744
+2025-07-06 08:40:13,953 - data.import_ep - INFO - Referenznummer gefunden: 241-02-107
+2025-07-06 08:43:01,227 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:43:07,933 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:43:08,574 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166959
+2025-07-06 08:43:08,574 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:44:27,798 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:44:32,351 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:44:33,032 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166959
+2025-07-06 08:44:33,032 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:45:36,603 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:45:41,591 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:45:42,236 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166959
+2025-07-06 08:45:42,237 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:45:57,671 - data.import_ep - INFO - Suche nach GTIN: 00888912166744
+2025-07-06 08:45:58,310 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166744
+2025-07-06 08:45:58,310 - data.import_ep - INFO - Referenznummer gefunden: 241-02-107
+2025-07-06 08:46:43,993 - data.import_ep - INFO - Suche nach GTIN: 00888912166652
+2025-07-06 08:46:44,631 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166652
+2025-07-06 08:46:44,632 - data.import_ep - INFO - Referenznummer gefunden: 241-01-108
+2025-07-06 08:46:53,177 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:46:53,810 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166959
+2025-07-06 08:46:53,810 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:47:41,938 - data.import_ep - INFO - Suche nach GTIN: 00888912167949
+2025-07-06 08:47:42,584 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912167949
+2025-07-06 08:47:42,585 - data.import_ep - INFO - Referenznummer gefunden: 351-02-107
+2025-07-06 08:48:22,747 - data.import_ep - INFO - Suche nach GTIN: 04026575247370
+2025-07-06 08:48:23,382 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 04026575247370
+2025-07-06 08:48:23,382 - data.import_ep - INFO - Referenznummer gefunden: 880-010/50

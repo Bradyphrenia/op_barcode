@@ -11,13 +11,16 @@ class BarcodeProcessor:
         if not barcode:
             return None, None, None
         gtin = barcode[2:16] if len(barcode) > 16 else ""
-        djo = barcode[4:7] == "044"  # DJO-GTIN-CODE
+        djo = barcode[4:7] == "888"  # DJO-GTIN-CODE
+        print (barcode[4:7])
         if djo == False:
             expires = barcode[18:24] if len(barcode) > 24 else ""
             serial = barcode[26:] if len(barcode) > 26 else ""
         else:
-            expires = barcode[29:34] if len(barcode) > 34 else ""
-            serial = barcode[19:27] if len(barcode) > 27 else ""
+            print (len(barcode))
+            expires = barcode[29:35] if len(barcode) > 34 else barcode[28:34]
+            print (expires)
+            serial = barcode[18:27] if len(barcode) > 34 else barcode[18:26]
         expires = BarcodeProcessor.convert_date(expires) if expires else ""
         return gtin, expires, serial
 
@@ -56,7 +59,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.ui.plainTextEdit_output.appendPlainText(f"Kein Barcode eingegeben")
             return
         try:
-            gtin, expires, serial = self.barcode_processor.process_barcode(barcode, self.ui.radioButton_djo.isChecked())
+            gtin, expires, serial = self.barcode_processor.process_barcode(barcode)
             # UI aktualisieren
             self.ui.lineEdit_gtin.setText(gtin)
             self.ui.lineEdit_expire.setText(expires)

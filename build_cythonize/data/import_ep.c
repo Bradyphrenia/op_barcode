@@ -2295,6 +2295,7 @@ static const char __pyx_k__7[] = "\"";
 static const char __pyx_k__8[] = "*";
 static const char __pyx_k_os[] = "os";
 static const char __pyx_k_Any[] = "Any";
+static const char __pyx_k_DJO[] = "DJO";
 static const char __pyx_k_REF[] = "(REF)";
 static const char __pyx_k__22[] = "_";
 static const char __pyx_k__28[] = "?";
@@ -2461,6 +2462,7 @@ typedef struct {
   PyObject *__pyx_kp_u_07611996073546;
   PyObject *__pyx_kp_u_ARI_Artikelkennzeichen;
   PyObject *__pyx_n_s_Any;
+  PyObject *__pyx_n_u_DJO;
   PyObject *__pyx_n_s_Dict;
   PyObject *__pyx_kp_s_Dict_str_Any;
   PyObject *__pyx_kp_u_Eintrge_fr_GTIN;
@@ -2664,6 +2666,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_kp_u_07611996073546);
   Py_CLEAR(clear_module_state->__pyx_kp_u_ARI_Artikelkennzeichen);
   Py_CLEAR(clear_module_state->__pyx_n_s_Any);
+  Py_CLEAR(clear_module_state->__pyx_n_u_DJO);
   Py_CLEAR(clear_module_state->__pyx_n_s_Dict);
   Py_CLEAR(clear_module_state->__pyx_kp_s_Dict_str_Any);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Eintrge_fr_GTIN);
@@ -2845,6 +2848,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_kp_u_07611996073546);
   Py_VISIT(traverse_module_state->__pyx_kp_u_ARI_Artikelkennzeichen);
   Py_VISIT(traverse_module_state->__pyx_n_s_Any);
+  Py_VISIT(traverse_module_state->__pyx_n_u_DJO);
   Py_VISIT(traverse_module_state->__pyx_n_s_Dict);
   Py_VISIT(traverse_module_state->__pyx_kp_s_Dict_str_Any);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Eintrge_fr_GTIN);
@@ -3036,6 +3040,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_kp_u_07611996073546 __pyx_mstate_global->__pyx_kp_u_07611996073546
 #define __pyx_kp_u_ARI_Artikelkennzeichen __pyx_mstate_global->__pyx_kp_u_ARI_Artikelkennzeichen
 #define __pyx_n_s_Any __pyx_mstate_global->__pyx_n_s_Any
+#define __pyx_n_u_DJO __pyx_mstate_global->__pyx_n_u_DJO
 #define __pyx_n_s_Dict __pyx_mstate_global->__pyx_n_s_Dict
 #define __pyx_kp_s_Dict_str_Any __pyx_mstate_global->__pyx_kp_s_Dict_str_Any
 #define __pyx_kp_u_Eintrge_fr_GTIN __pyx_mstate_global->__pyx_kp_u_Eintrge_fr_GTIN
@@ -7741,6 +7746,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_kp_u_07611996073546, __pyx_k_07611996073546, sizeof(__pyx_k_07611996073546), 0, 1, 0, 0},
     {&__pyx_kp_u_ARI_Artikelkennzeichen, __pyx_k_ARI_Artikelkennzeichen, sizeof(__pyx_k_ARI_Artikelkennzeichen), 0, 1, 0, 0},
     {&__pyx_n_s_Any, __pyx_k_Any, sizeof(__pyx_k_Any), 0, 0, 1, 1},
+    {&__pyx_n_u_DJO, __pyx_k_DJO, sizeof(__pyx_k_DJO), 0, 1, 0, 1},
     {&__pyx_n_s_Dict, __pyx_k_Dict, sizeof(__pyx_k_Dict), 0, 0, 1, 1},
     {&__pyx_kp_s_Dict_str_Any, __pyx_k_Dict_str_Any, sizeof(__pyx_k_Dict_str_Any), 0, 0, 1, 0},
     {&__pyx_kp_u_Eintrge_fr_GTIN, __pyx_k_Eintrge_fr_GTIN, sizeof(__pyx_k_Eintrge_fr_GTIN), 0, 1, 0, 0},
@@ -8812,6 +8818,7 @@ if (!__Pyx_RefNanny) {
  *     data = init_search('../table-EP_ARTIKEL2.json')
  *     test = "07611996073546"             # <<<<<<<<<<<<<<
  *     print(search_refnumber(test, data))
+ *     print(search_in_dictionary(data, 'DJO'))
  */
     if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_kp_u_07611996073546) < 0) __PYX_ERR(0, 210, __pyx_L1_error)
 
@@ -8819,6 +8826,7 @@ if (!__Pyx_RefNanny) {
  *     data = init_search('../table-EP_ARTIKEL2.json')
  *     test = "07611996073546"
  *     print(search_refnumber(test, data))             # <<<<<<<<<<<<<<
+ *     print(search_in_dictionary(data, 'DJO'))
  */
     __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_search_refnumber); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 211, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
@@ -8843,6 +8851,32 @@ if (!__Pyx_RefNanny) {
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
+    /* "data/import_ep.py":212
+ *     test = "07611996073546"
+ *     print(search_refnumber(test, data))
+ *     print(search_in_dictionary(data, 'DJO'))             # <<<<<<<<<<<<<<
+ */
+    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_search_in_dictionary); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 212, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_data); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 212, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 212, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_GIVEREF(__pyx_t_3);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_3)) __PYX_ERR(0, 212, __pyx_L1_error);
+    __Pyx_INCREF(__pyx_n_u_DJO);
+    __Pyx_GIVEREF(__pyx_n_u_DJO);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_n_u_DJO)) __PYX_ERR(0, 212, __pyx_L1_error);
+    __pyx_t_3 = 0;
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 212, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 212, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
     /* "data/import_ep.py":208
  * 
  * 
@@ -8857,10 +8891,10 @@ if (!__Pyx_RefNanny) {
  * import os
  * from typing import Dict, Any
  */
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_test_2, __pyx_t_4) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_test_2, __pyx_t_2) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /*--- Wrapped vars code ---*/
 
