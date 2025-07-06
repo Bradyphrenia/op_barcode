@@ -112,3 +112,4 @@
 2025-07-06 08:48:22,747 - data.import_ep - INFO - Suche nach GTIN: 04026575247370
 2025-07-06 08:48:23,382 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 04026575247370
 2025-07-06 08:48:23,382 - data.import_ep - INFO - Referenznummer gefunden: 880-010/50
+2025-07-06 09:30:08,582 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
