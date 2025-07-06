@@ -4,4 +4,226 @@
 2025-07-05 23:06:33,832 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
 2025-07-05 23:27:51,969 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
 2025-07-05 23:50:22,483 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
-2025-07-06 00:03:37,093 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:20:19,696 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:20:30,059 - data.import_ep - INFO - Suche nach GTIN: 00888912167949
+2025-07-06 08:20:30,697 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912167949
+2025-07-06 08:20:30,698 - data.import_ep - INFO - Referenznummer gefunden: 351-02-107
+2025-07-06 08:21:30,155 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:21:35,963 - data.import_ep - INFO - Suche nach GTIN: 00888912166652
+2025-07-06 08:21:36,613 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912166652
+2025-07-06 08:21:36,613 - data.import_ep - INFO - Referenznummer gefunden: 241-01-108
+2025-07-06 08:23:32,694 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:23:40,348 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:23:41,010 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912166959
+2025-07-06 08:23:41,011 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:24:36,532 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:24:42,606 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:24:43,254 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912166959
+2025-07-06 08:24:43,254 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:25:44,867 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:25:51,223 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:25:51,878 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912166959
+2025-07-06 08:25:51,878 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:26:36,487 - data.import_ep - INFO - Suche nach GTIN: 00888912167949
+2025-07-06 08:26:37,137 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912167949
+2025-07-06 08:26:37,137 - data.import_ep - INFO - Referenznummer gefunden: 351-02-107
+2025-07-06 08:26:44,537 - data.import_ep - INFO - Suche nach GTIN: 00888912166744
+2025-07-06 08:26:45,182 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912166744
+2025-07-06 08:26:45,182 - data.import_ep - INFO - Referenznummer gefunden: 241-02-107
+2025-07-06 08:27:01,712 - data.import_ep - INFO - Suche nach GTIN: 00888912167949
+2025-07-06 08:27:02,357 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912167949
+2025-07-06 08:27:02,357 - data.import_ep - INFO - Referenznummer gefunden: 351-02-107
+2025-07-06 08:27:12,128 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:27:29,729 - data.import_ep - INFO - Suche nach GTIN: 00888912166744
+2025-07-06 08:27:30,379 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912166744
+2025-07-06 08:27:30,379 - data.import_ep - INFO - Referenznummer gefunden: 241-02-107
+2025-07-06 08:28:44,895 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:28:51,233 - data.import_ep - INFO - Suche nach GTIN: 00888912167949
+2025-07-06 08:28:51,887 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912167949
+2025-07-06 08:28:51,887 - data.import_ep - INFO - Referenznummer gefunden: 351-02-107
+2025-07-06 08:28:57,617 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:28:58,267 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912166959
+2025-07-06 08:28:58,268 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:29:17,435 - data.import_ep - INFO - Suche nach GTIN: 00888912166744
+2025-07-06 08:29:18,081 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912166744
+2025-07-06 08:29:18,081 - data.import_ep - INFO - Referenznummer gefunden: 241-02-107
+2025-07-06 08:30:53,428 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:30:54,087 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912166959
+2025-07-06 08:30:54,087 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:31:09,043 - data.import_ep - INFO - Suche nach GTIN: 00888912166744
+2025-07-06 08:31:09,701 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912166744
+2025-07-06 08:31:09,701 - data.import_ep - INFO - Referenznummer gefunden: 241-02-107
+2025-07-06 08:32:33,990 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:32:40,134 - data.import_ep - INFO - Suche nach GTIN: 00888912167949
+2025-07-06 08:32:40,816 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912167949
+2025-07-06 08:32:40,816 - data.import_ep - INFO - Referenznummer gefunden: 351-02-107
+2025-07-06 08:33:19,462 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:33:20,111 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912166959
+2025-07-06 08:33:20,111 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:33:39,950 - data.import_ep - INFO - Suche nach GTIN: 00888912168052
+2025-07-06 08:33:40,604 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912168052
+2025-07-06 08:33:40,604 - data.import_ep - INFO - Referenznummer gefunden: 351-03-108
+2025-07-06 08:34:53,215 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:34:57,487 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:34:58,138 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912166959
+2025-07-06 08:34:58,138 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:35:10,047 - data.import_ep - INFO - Suche nach GTIN: 00888912166744
+2025-07-06 08:35:10,688 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912166744
+2025-07-06 08:35:10,688 - data.import_ep - INFO - Referenznummer gefunden: 241-02-107
+2025-07-06 08:36:36,393 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:36:41,393 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:36:42,058 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912166959
+2025-07-06 08:36:42,058 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:37:42,276 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:37:47,265 - data.import_ep - INFO - Suche nach GTIN: 00888912167345
+2025-07-06 08:37:47,918 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912167345
+2025-07-06 08:37:47,918 - data.import_ep - INFO - Referenznummer gefunden: 342-10-707
+2025-07-06 08:39:58,824 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:40:04,868 - data.import_ep - INFO - Suche nach GTIN: 00888912166652
+2025-07-06 08:40:05,542 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912166652
+2025-07-06 08:40:05,542 - data.import_ep - INFO - Referenznummer gefunden: 241-01-108
+2025-07-06 08:40:13,292 - data.import_ep - INFO - Suche nach GTIN: 00888912166744
+2025-07-06 08:40:13,953 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912166744
+2025-07-06 08:40:13,953 - data.import_ep - INFO - Referenznummer gefunden: 241-02-107
+2025-07-06 08:43:01,227 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:43:07,933 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:43:08,574 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912166959
+2025-07-06 08:43:08,574 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:44:27,798 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:44:32,351 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:44:33,032 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912166959
+2025-07-06 08:44:33,032 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:45:36,603 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 08:45:41,591 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:45:42,236 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912166959
+2025-07-06 08:45:42,237 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:45:57,671 - data.import_ep - INFO - Suche nach GTIN: 00888912166744
+2025-07-06 08:45:58,310 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912166744
+2025-07-06 08:45:58,310 - data.import_ep - INFO - Referenznummer gefunden: 241-02-107
+2025-07-06 08:46:43,993 - data.import_ep - INFO - Suche nach GTIN: 00888912166652
+2025-07-06 08:46:44,631 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912166652
+2025-07-06 08:46:44,632 - data.import_ep - INFO - Referenznummer gefunden: 241-01-108
+2025-07-06 08:46:53,177 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 08:46:53,810 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912166959
+2025-07-06 08:46:53,810 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 08:47:41,938 - data.import_ep - INFO - Suche nach GTIN: 00888912167949
+2025-07-06 08:47:42,584 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 00888912167949
+2025-07-06 08:47:42,585 - data.import_ep - INFO - Referenznummer gefunden: 351-02-107
+2025-07-06 08:48:22,747 - data.import_ep - INFO - Suche nach GTIN: 04026575247370
+2025-07-06 08:48:23,382 - data.import_ep - INFO - Gefunden: 1 Eintr‰ge f¸r GTIN 04026575247370
+2025-07-06 08:48:23,382 - data.import_ep - INFO - Referenznummer gefunden: 880-010/50
+2025-07-06 09:30:08,582 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 09:50:18,334 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 09:51:24,266 - mainwindow.m_window - INFO - Verarbeite Barcode: 010088891216674410951R165517300116
+2025-07-06 09:51:24,266 - mainwindow.m_window - INFO - Starte Barcode-Verarbeitung f√ºr: 010088891216674410951R165517300116
+2025-07-06 09:51:24,267 - mainwindow.m_window - INFO - Datum erfolgreich konvertiert: '300116' -> '2030-01-16'
+2025-07-06 09:51:24,267 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 00888912166744, Ablauf: 2030-01-16, Serial: 951R1655
+2025-07-06 09:51:24,268 - data.import_ep - INFO - Suche nach GTIN: 00888912166744
+2025-07-06 09:51:24,656 - data.import_ep - INFO - Gefunden: 1 Eintr√§ge f√ºr GTIN 00888912166744
+2025-07-06 09:51:24,656 - data.import_ep - INFO - Referenznummer gefunden: 241-02-107
+2025-07-06 09:51:24,657 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 00888912166744, Ablauf: 2030-01-16, Serial: 951R1655
+2025-07-06 09:51:55,542 - mainwindow.m_window - INFO - Verarbeite Barcode: 010088891216695910112T1091A17260420
+2025-07-06 09:51:55,542 - mainwindow.m_window - INFO - Starte Barcode-Verarbeitung f√ºr: 010088891216695910112T1091A17260420
+2025-07-06 09:51:55,543 - mainwindow.m_window - INFO - Datum erfolgreich konvertiert: '260420' -> '2026-04-20'
+2025-07-06 09:51:55,543 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 00888912166959, Ablauf: 2026-04-20, Serial: 112T1091A
+2025-07-06 09:51:55,543 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 09:51:55,937 - data.import_ep - INFO - Gefunden: 1 Eintr√§ge f√ºr GTIN 00888912166959
+2025-07-06 09:51:55,937 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 09:51:55,938 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 00888912166959, Ablauf: 2026-04-20, Serial: 112T1091A
+2025-07-06 09:52:18,205 - mainwindow.m_window - INFO - Verarbeite Barcode: 01040265752473701729113021240606/3768
+2025-07-06 09:52:18,205 - mainwindow.m_window - INFO - Starte Barcode-Verarbeitung f√ºr: 01040265752473701729113021240606/3768
+2025-07-06 09:52:18,206 - mainwindow.m_window - INFO - Datum erfolgreich konvertiert: '291130' -> '2029-11-30'
+2025-07-06 09:52:18,206 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 04026575247370, Ablauf: 2029-11-30, Serial: 240606/3768
+2025-07-06 09:52:18,206 - data.import_ep - INFO - Suche nach GTIN: 04026575247370
+2025-07-06 09:52:18,599 - data.import_ep - INFO - Gefunden: 1 Eintr√§ge f√ºr GTIN 04026575247370
+2025-07-06 09:52:18,599 - data.import_ep - INFO - Referenznummer gefunden: 880-010/50
+2025-07-06 09:52:18,599 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 04026575247370, Ablauf: 2029-11-30, Serial: 240606/3768
+2025-07-06 09:52:26,336 - mainwindow.m_window - WARNING - Kein Barcode eingegeben
+2025-07-06 09:52:27,416 - mainwindow.m_window - WARNING - Kein Barcode eingegeben
+2025-07-06 09:52:28,060 - mainwindow.m_window - WARNING - Kein Barcode eingegeben
+2025-07-06 09:52:29,111 - mainwindow.m_window - WARNING - Kein Barcode eingegeben
+2025-07-06 09:52:30,068 - mainwindow.m_window - WARNING - Kein Barcode eingegeben
+2025-07-06 09:54:51,764 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 09:54:55,691 - mainwindow.m_window - WARNING - Kein Barcode eingegeben
+2025-07-06 09:55:01,901 - mainwindow.m_window - INFO - Verarbeite Barcode: self.ui.lineEdit_gtin.setText(gtin)
+            self.ui.lineEdit_expire.setText(expires)
+            self.ui.lineEdit_serial.setText(serial)
+2025-07-06 09:55:01,901 - mainwindow.m_window - INFO - Starte Barcode-Verarbeitung f√ºr: self.ui.lineEdit_gtin.setText(gtin)
+            self.ui.lineEdit_expire.setText(expires)
+            self.ui.lineEdit_serial.setText(serial)
+2025-07-06 09:55:01,901 - mainwindow.m_window - ERROR - Datum enth√§lt nicht-numerische Zeichen: 'tin.se'
+2025-07-06 09:55:01,901 - mainwindow.m_window - ERROR - Wertfehler bei Datumskonvertierung: Datum muss nur Ziffern enthalten, erhalten: 'tin.se'
+2025-07-06 09:55:01,901 - mainwindow.m_window - ERROR - Fehler bei der Datumskonvertierung: Datum muss nur Ziffern enthalten, erhalten: 'tin.se'
+2025-07-06 09:55:01,902 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: lf.ui.lineEdit, Ablauf: , Serial: ext(gtin)
+            self.ui.lineEdit_expire.setText(expires)
+            self.ui.lineEdit_serial.setText(serial)
+2025-07-06 09:55:01,902 - data.import_ep - INFO - Suche nach GTIN: lf.ui.lineEdit
+2025-07-06 09:55:02,291 - data.import_ep - WARNING - Keine Eintr√§ge gefunden f√ºr GTIN lf.ui.lineEdit
+2025-07-06 09:55:02,291 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: lf.ui.lineEdit, Ablauf: , Serial: ext(gtin)
+            self.ui.lineEdit_expire.setText(expires)
+            self.ui.lineEdit_serial.setText(serial)
+2025-07-06 09:55:16,781 - mainwindow.m_window - WARNING - Kein Barcode eingegeben
+2025-07-06 09:55:23,127 - mainwindow.m_window - INFO - Verarbeite Barcode: self.ui.lineEdit_gtin.setText(gtin)
+            self.ui.lineEdit_expire.setText(expires)
+            self.ui.lineEdit_serial.setText(serial)
+2025-07-06 09:55:23,127 - mainwindow.m_window - INFO - Starte Barcode-Verarbeitung f√ºr: self.ui.lineEdit_gtin.setText(gtin)
+            self.ui.lineEdit_expire.setText(expires)
+            self.ui.lineEdit_serial.setText(serial)
+2025-07-06 09:55:23,127 - mainwindow.m_window - ERROR - Datum enth√§lt nicht-numerische Zeichen: 'tin.se'
+2025-07-06 09:55:23,127 - mainwindow.m_window - ERROR - Wertfehler bei Datumskonvertierung: Datum muss nur Ziffern enthalten, erhalten: 'tin.se'
+2025-07-06 09:55:23,127 - mainwindow.m_window - ERROR - Fehler bei der Datumskonvertierung: Datum muss nur Ziffern enthalten, erhalten: 'tin.se'
+2025-07-06 09:55:23,127 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: lf.ui.lineEdit, Ablauf: , Serial: ext(gtin)
+            self.ui.lineEdit_expire.setText(expires)
+            self.ui.lineEdit_serial.setText(serial)
+2025-07-06 09:55:23,127 - data.import_ep - INFO - Suche nach GTIN: lf.ui.lineEdit
+2025-07-06 09:55:23,515 - data.import_ep - WARNING - Keine Eintr√§ge gefunden f√ºr GTIN lf.ui.lineEdit
+2025-07-06 09:55:23,515 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: lf.ui.lineEdit, Ablauf: , Serial: ext(gtin)
+            self.ui.lineEdit_expire.setText(expires)
+            self.ui.lineEdit_serial.setText(serial)
+2025-07-06 10:00:54,453 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 10:01:10,676 - mainwindow.m_window - INFO - Verarbeite Barcode: 01040265752473701729113021240606/3768
+2025-07-06 10:01:10,678 - mainwindow.m_window - INFO - Starte Barcode-Verarbeitung f√ºr: 01040265752473701729113021240606/3768
+2025-07-06 10:01:10,679 - mainwindow.m_window - INFO - Datum erfolgreich konvertiert: '291130' -> '2029-11-30'
+2025-07-06 10:01:10,679 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 04026575247370, Ablauf: 2029-11-30, Serial: 240606/3768
+2025-07-06 10:01:10,679 - data.import_ep - INFO - Suche nach GTIN: 04026575247370
+2025-07-06 10:01:11,071 - data.import_ep - INFO - Gefunden: 1 Eintr√§ge f√ºr GTIN 04026575247370
+2025-07-06 10:01:11,071 - data.import_ep - INFO - Referenznummer gefunden: 880-010/50
+2025-07-06 10:01:11,071 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 04026575247370, Ablauf: 2029-11-30, Serial: 240606/3768
+2025-07-06 10:02:03,504 - mainwindow.m_window - WARNING - Kein Barcode eingegeben
+2025-07-06 10:03:14,676 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 10:03:19,960 - mainwindow.m_window - INFO - Verarbeite Barcode: 01040265752473701729113021240606/3768
+2025-07-06 10:03:19,961 - mainwindow.m_window - INFO - Starte Barcode-Verarbeitung f√ºr: 01040265752473701729113021240606/3768
+2025-07-06 10:03:19,962 - mainwindow.m_window - INFO - Datum erfolgreich konvertiert: '291130' -> '2029-11-30'
+2025-07-06 10:03:19,962 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 04026575247370, Ablauf: 2029-11-30, Serial: 240606/3768
+2025-07-06 10:03:19,963 - data.import_ep - INFO - Suche nach GTIN: 04026575247370
+2025-07-06 10:03:20,366 - data.import_ep - INFO - Gefunden: 1 Eintr√§ge f√ºr GTIN 04026575247370
+2025-07-06 10:03:20,366 - data.import_ep - INFO - Referenznummer gefunden: 880-010/50
+2025-07-06 10:03:20,366 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 04026575247370, Ablauf: 2029-11-30, Serial: 240606/3768
+2025-07-06 10:04:13,379 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 10:04:33,113 - mainwindow.m_window - INFO - Verarbeite Barcode: 010088891216695910112T1091A17260420
+2025-07-06 10:04:33,113 - mainwindow.m_window - INFO - Starte Barcode-Verarbeitung f√ºr: 010088891216695910112T1091A17260420
+2025-07-06 10:04:33,114 - mainwindow.m_window - INFO - Datum erfolgreich konvertiert: '260420' -> '2026-04-20'
+2025-07-06 10:04:33,115 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 00888912166959, Ablauf: 2026-04-20, Serial: 112T1091A
+2025-07-06 10:04:33,115 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 10:04:33,507 - data.import_ep - INFO - Gefunden: 1 Eintr√§ge f√ºr GTIN 00888912166959
+2025-07-06 10:04:33,507 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 10:04:33,507 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 00888912166959, Ablauf: 2026-04-20, Serial: 112T1091A
+2025-07-06 10:05:00,414 - mainwindow.m_window - INFO - Verarbeite Barcode: 010088891216674410951R165517300116
+2025-07-06 10:05:00,414 - mainwindow.m_window - INFO - Starte Barcode-Verarbeitung f√ºr: 010088891216674410951R165517300116
+2025-07-06 10:05:00,415 - mainwindow.m_window - INFO - Datum erfolgreich konvertiert: '300116' -> '2030-01-16'
+2025-07-06 10:05:00,415 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 00888912166744, Ablauf: 2030-01-16, Serial: 951R1655
+2025-07-06 10:05:00,415 - data.import_ep - INFO - Suche nach GTIN: 00888912166744
+2025-07-06 10:05:00,807 - data.import_ep - INFO - Gefunden: 1 Eintr√§ge f√ºr GTIN 00888912166744
+2025-07-06 10:05:00,808 - data.import_ep - INFO - Referenznummer gefunden: 241-02-107
+2025-07-06 10:05:00,808 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 00888912166744, Ablauf: 2030-01-16, Serial: 951R1655
+2025-07-06 10:05:02,830 - mainwindow.m_window - WARNING - Kein Barcode eingegeben
+2025-07-06 10:16:55,291 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 10:16:59,974 - mainwindow.m_window - INFO - Verarbeite Barcode: 010088891216695910112T1091A17260420
+2025-07-06 10:16:59,974 - mainwindow.m_window - INFO - Starte Barcode-Verarbeitung f√ºr: 010088891216695910112T1091A17260420
+2025-07-06 10:16:59,975 - mainwindow.m_window - INFO - Datum erfolgreich konvertiert: '260420' -> '2026-04-20'
+2025-07-06 10:16:59,975 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 00888912166959, Ablauf: 2026-04-20, Serial: 112T1091A
+2025-07-06 10:16:59,976 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 10:17:00,367 - data.import_ep - INFO - Gefunden: 1 Eintr√§ge f√ºr GTIN 00888912166959
+2025-07-06 10:17:00,367 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 10:17:00,367 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 00888912166959, Ablauf: 2026-04-20, Serial: 112T1091A
+2025-07-06 11:17:27,789 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json

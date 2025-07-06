@@ -144,29 +144,6 @@
      <string>Ablaufdatum:</string>
     </property>
    </widget>
-   <widget class="QPlainTextEdit" name="plainTextEdit_output">
-    <property name="geometry">
-     <rect>
-      <x>520</x>
-      <y>150</y>
-      <width>261</width>
-      <height>331</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_djo">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>100</y>
-      <width>100</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>DJO</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_ref">
     <property name="geometry">
      <rect>
