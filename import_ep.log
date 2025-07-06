@@ -113,3 +113,107 @@
 2025-07-06 08:48:23,382 - data.import_ep - INFO - Gefunden: 1 Eintr�ge f�r GTIN 04026575247370
 2025-07-06 08:48:23,382 - data.import_ep - INFO - Referenznummer gefunden: 880-010/50
 2025-07-06 09:30:08,582 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 09:50:18,334 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 09:51:24,266 - mainwindow.m_window - INFO - Verarbeite Barcode: 010088891216674410951R165517300116
+2025-07-06 09:51:24,266 - mainwindow.m_window - INFO - Starte Barcode-Verarbeitung für: 010088891216674410951R165517300116
+2025-07-06 09:51:24,267 - mainwindow.m_window - INFO - Datum erfolgreich konvertiert: '300116' -> '2030-01-16'
+2025-07-06 09:51:24,267 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 00888912166744, Ablauf: 2030-01-16, Serial: 951R1655
+2025-07-06 09:51:24,268 - data.import_ep - INFO - Suche nach GTIN: 00888912166744
+2025-07-06 09:51:24,656 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166744
+2025-07-06 09:51:24,656 - data.import_ep - INFO - Referenznummer gefunden: 241-02-107
+2025-07-06 09:51:24,657 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 00888912166744, Ablauf: 2030-01-16, Serial: 951R1655
+2025-07-06 09:51:55,542 - mainwindow.m_window - INFO - Verarbeite Barcode: 010088891216695910112T1091A17260420
+2025-07-06 09:51:55,542 - mainwindow.m_window - INFO - Starte Barcode-Verarbeitung für: 010088891216695910112T1091A17260420
+2025-07-06 09:51:55,543 - mainwindow.m_window - INFO - Datum erfolgreich konvertiert: '260420' -> '2026-04-20'
+2025-07-06 09:51:55,543 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 00888912166959, Ablauf: 2026-04-20, Serial: 112T1091A
+2025-07-06 09:51:55,543 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 09:51:55,937 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166959
+2025-07-06 09:51:55,937 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 09:51:55,938 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 00888912166959, Ablauf: 2026-04-20, Serial: 112T1091A
+2025-07-06 09:52:18,205 - mainwindow.m_window - INFO - Verarbeite Barcode: 01040265752473701729113021240606/3768
+2025-07-06 09:52:18,205 - mainwindow.m_window - INFO - Starte Barcode-Verarbeitung für: 01040265752473701729113021240606/3768
+2025-07-06 09:52:18,206 - mainwindow.m_window - INFO - Datum erfolgreich konvertiert: '291130' -> '2029-11-30'
+2025-07-06 09:52:18,206 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 04026575247370, Ablauf: 2029-11-30, Serial: 240606/3768
+2025-07-06 09:52:18,206 - data.import_ep - INFO - Suche nach GTIN: 04026575247370
+2025-07-06 09:52:18,599 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 04026575247370
+2025-07-06 09:52:18,599 - data.import_ep - INFO - Referenznummer gefunden: 880-010/50
+2025-07-06 09:52:18,599 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 04026575247370, Ablauf: 2029-11-30, Serial: 240606/3768
+2025-07-06 09:52:26,336 - mainwindow.m_window - WARNING - Kein Barcode eingegeben
+2025-07-06 09:52:27,416 - mainwindow.m_window - WARNING - Kein Barcode eingegeben
+2025-07-06 09:52:28,060 - mainwindow.m_window - WARNING - Kein Barcode eingegeben
+2025-07-06 09:52:29,111 - mainwindow.m_window - WARNING - Kein Barcode eingegeben
+2025-07-06 09:52:30,068 - mainwindow.m_window - WARNING - Kein Barcode eingegeben
+2025-07-06 09:54:51,764 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 09:54:55,691 - mainwindow.m_window - WARNING - Kein Barcode eingegeben
+2025-07-06 09:55:01,901 - mainwindow.m_window - INFO - Verarbeite Barcode: self.ui.lineEdit_gtin.setText(gtin)
+            self.ui.lineEdit_expire.setText(expires)
+            self.ui.lineEdit_serial.setText(serial)
+2025-07-06 09:55:01,901 - mainwindow.m_window - INFO - Starte Barcode-Verarbeitung für: self.ui.lineEdit_gtin.setText(gtin)
+            self.ui.lineEdit_expire.setText(expires)
+            self.ui.lineEdit_serial.setText(serial)
+2025-07-06 09:55:01,901 - mainwindow.m_window - ERROR - Datum enthält nicht-numerische Zeichen: 'tin.se'
+2025-07-06 09:55:01,901 - mainwindow.m_window - ERROR - Wertfehler bei Datumskonvertierung: Datum muss nur Ziffern enthalten, erhalten: 'tin.se'
+2025-07-06 09:55:01,901 - mainwindow.m_window - ERROR - Fehler bei der Datumskonvertierung: Datum muss nur Ziffern enthalten, erhalten: 'tin.se'
+2025-07-06 09:55:01,902 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: lf.ui.lineEdit, Ablauf: , Serial: ext(gtin)
+            self.ui.lineEdit_expire.setText(expires)
+            self.ui.lineEdit_serial.setText(serial)
+2025-07-06 09:55:01,902 - data.import_ep - INFO - Suche nach GTIN: lf.ui.lineEdit
+2025-07-06 09:55:02,291 - data.import_ep - WARNING - Keine Einträge gefunden für GTIN lf.ui.lineEdit
+2025-07-06 09:55:02,291 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: lf.ui.lineEdit, Ablauf: , Serial: ext(gtin)
+            self.ui.lineEdit_expire.setText(expires)
+            self.ui.lineEdit_serial.setText(serial)
+2025-07-06 09:55:16,781 - mainwindow.m_window - WARNING - Kein Barcode eingegeben
+2025-07-06 09:55:23,127 - mainwindow.m_window - INFO - Verarbeite Barcode: self.ui.lineEdit_gtin.setText(gtin)
+            self.ui.lineEdit_expire.setText(expires)
+            self.ui.lineEdit_serial.setText(serial)
+2025-07-06 09:55:23,127 - mainwindow.m_window - INFO - Starte Barcode-Verarbeitung für: self.ui.lineEdit_gtin.setText(gtin)
+            self.ui.lineEdit_expire.setText(expires)
+            self.ui.lineEdit_serial.setText(serial)
+2025-07-06 09:55:23,127 - mainwindow.m_window - ERROR - Datum enthält nicht-numerische Zeichen: 'tin.se'
+2025-07-06 09:55:23,127 - mainwindow.m_window - ERROR - Wertfehler bei Datumskonvertierung: Datum muss nur Ziffern enthalten, erhalten: 'tin.se'
+2025-07-06 09:55:23,127 - mainwindow.m_window - ERROR - Fehler bei der Datumskonvertierung: Datum muss nur Ziffern enthalten, erhalten: 'tin.se'
+2025-07-06 09:55:23,127 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: lf.ui.lineEdit, Ablauf: , Serial: ext(gtin)
+            self.ui.lineEdit_expire.setText(expires)
+            self.ui.lineEdit_serial.setText(serial)
+2025-07-06 09:55:23,127 - data.import_ep - INFO - Suche nach GTIN: lf.ui.lineEdit
+2025-07-06 09:55:23,515 - data.import_ep - WARNING - Keine Einträge gefunden für GTIN lf.ui.lineEdit
+2025-07-06 09:55:23,515 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: lf.ui.lineEdit, Ablauf: , Serial: ext(gtin)
+            self.ui.lineEdit_expire.setText(expires)
+            self.ui.lineEdit_serial.setText(serial)
+2025-07-06 10:00:54,453 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 10:01:10,676 - mainwindow.m_window - INFO - Verarbeite Barcode: 01040265752473701729113021240606/3768
+2025-07-06 10:01:10,678 - mainwindow.m_window - INFO - Starte Barcode-Verarbeitung für: 01040265752473701729113021240606/3768
+2025-07-06 10:01:10,679 - mainwindow.m_window - INFO - Datum erfolgreich konvertiert: '291130' -> '2029-11-30'
+2025-07-06 10:01:10,679 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 04026575247370, Ablauf: 2029-11-30, Serial: 240606/3768
+2025-07-06 10:01:10,679 - data.import_ep - INFO - Suche nach GTIN: 04026575247370
+2025-07-06 10:01:11,071 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 04026575247370
+2025-07-06 10:01:11,071 - data.import_ep - INFO - Referenznummer gefunden: 880-010/50
+2025-07-06 10:01:11,071 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 04026575247370, Ablauf: 2029-11-30, Serial: 240606/3768
+2025-07-06 10:02:03,504 - mainwindow.m_window - WARNING - Kein Barcode eingegeben
+2025-07-06 10:03:14,676 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 10:03:19,960 - mainwindow.m_window - INFO - Verarbeite Barcode: 01040265752473701729113021240606/3768
+2025-07-06 10:03:19,961 - mainwindow.m_window - INFO - Starte Barcode-Verarbeitung für: 01040265752473701729113021240606/3768
+2025-07-06 10:03:19,962 - mainwindow.m_window - INFO - Datum erfolgreich konvertiert: '291130' -> '2029-11-30'
+2025-07-06 10:03:19,962 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 04026575247370, Ablauf: 2029-11-30, Serial: 240606/3768
+2025-07-06 10:03:19,963 - data.import_ep - INFO - Suche nach GTIN: 04026575247370
+2025-07-06 10:03:20,366 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 04026575247370
+2025-07-06 10:03:20,366 - data.import_ep - INFO - Referenznummer gefunden: 880-010/50
+2025-07-06 10:03:20,366 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 04026575247370, Ablauf: 2029-11-30, Serial: 240606/3768
+2025-07-06 10:04:13,379 - data.import_ep - INFO - Reading JSON file: table-EP_ARTIKEL2.json
+2025-07-06 10:04:33,113 - mainwindow.m_window - INFO - Verarbeite Barcode: 010088891216695910112T1091A17260420
+2025-07-06 10:04:33,113 - mainwindow.m_window - INFO - Starte Barcode-Verarbeitung für: 010088891216695910112T1091A17260420
+2025-07-06 10:04:33,114 - mainwindow.m_window - INFO - Datum erfolgreich konvertiert: '260420' -> '2026-04-20'
+2025-07-06 10:04:33,115 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 00888912166959, Ablauf: 2026-04-20, Serial: 112T1091A
+2025-07-06 10:04:33,115 - data.import_ep - INFO - Suche nach GTIN: 00888912166959
+2025-07-06 10:04:33,507 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166959
+2025-07-06 10:04:33,507 - data.import_ep - INFO - Referenznummer gefunden: 341-12-708
+2025-07-06 10:04:33,507 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 00888912166959, Ablauf: 2026-04-20, Serial: 112T1091A
+2025-07-06 10:05:00,414 - mainwindow.m_window - INFO - Verarbeite Barcode: 010088891216674410951R165517300116
+2025-07-06 10:05:00,414 - mainwindow.m_window - INFO - Starte Barcode-Verarbeitung für: 010088891216674410951R165517300116
+2025-07-06 10:05:00,415 - mainwindow.m_window - INFO - Datum erfolgreich konvertiert: '300116' -> '2030-01-16'
+2025-07-06 10:05:00,415 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 00888912166744, Ablauf: 2030-01-16, Serial: 951R1655
+2025-07-06 10:05:00,415 - data.import_ep - INFO - Suche nach GTIN: 00888912166744
+2025-07-06 10:05:00,807 - data.import_ep - INFO - Gefunden: 1 Einträge für GTIN 00888912166744
+2025-07-06 10:05:00,808 - data.import_ep - INFO - Referenznummer gefunden: 241-02-107
+2025-07-06 10:05:00,808 - mainwindow.m_window - INFO - Barcode erfolgreich verarbeitet - GTIN: 00888912166744, Ablauf: 2030-01-16, Serial: 951R1655
+2025-07-06 10:05:02,830 - mainwindow.m_window - WARNING - Kein Barcode eingegeben

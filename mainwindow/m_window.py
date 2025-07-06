@@ -1,9 +1,11 @@
-import sys
 import logging
+import sys
+
 from PyQt5 import QtWidgets as qtw
 from PyQt5.QtWidgets import QMainWindow
-from mainwindow import Ui_MainWindow
+
 import data
+from mainwindow import Ui_MainWindow
 
 # Logging-Konfiguration
 logging.basicConfig(
@@ -188,8 +190,7 @@ class BarcodeProcessor:
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        self.ui = Ui_MainWindow()
-        self.ui.setupUi(self)
+        self.setupUi(self)
         # Verbindungen einrichten
         self._setup_connections()
         # Barcode-Prozessor initialisieren
@@ -198,29 +199,41 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def _setup_connections(self):
         """Stellt alle Signal-Slot-Verbindungen her"""
-        self.ui.pushButton_ok.clicked.connect(self.close)
-        self.ui.pushButton_decode.clicked.connect(self.barcode_decode)
-        self.ui.actionBeenden.triggered.connect(self.close)
+        self.pushButton_ok.clicked.connect(self.close)
+        self.pushButton_decode.clicked.connect(self.barcode_decode)
+        self.actionBeenden.triggered.connect(self.close)
 
     def barcode_decode(self):
-        barcode = self.ui.lineEdit_barcode.text()
+        self._clear_ui_fields()
+        barcode = self.lineEdit_barcode.text()
+
         if not barcode:
-            # Logging statt plainTextEdit_output
             logger.warning("Kein Barcode eingegeben")
             return
+
         try:
             logger.info(f"Verarbeite Barcode: {barcode}")
             gtin, expires, serial = self.barcode_processor.process_barcode(barcode)
-            # UI aktualisieren
-            self.ui.lineEdit_gtin.setText(gtin)
-            self.ui.lineEdit_expire.setText(expires)
-            self.ui.lineEdit_serial.setText(serial)
-            self.ui.lineEdit_barcode.setText('')
-            self.ui.lineEdit_ref.setText(data.search_refnumber(gtin, self.data))
+            self._update_ui_with_barcode_data(gtin, expires, serial)
             logger.info(f"Barcode erfolgreich verarbeitet - GTIN: {gtin}, Ablauf: {expires}, Serial: {serial}")
-
         except Exception as e:
             logger.error(f"Fehler bei der Barcode-Verarbeitung: {e}", exc_info=True)
+
+    def _clear_ui_fields(self):
+        """Löscht alle UI-Eingabefelder"""
+        self.lineEdit_gtin.setText('')
+        self.lineEdit_expire.setText('')
+        self.lineEdit_serial.setText('')
+        self.lineEdit_ref.setText('')
+
+
+    def _update_ui_with_barcode_data(self, gtin: str, expires: str, serial: str):
+        """Aktualisiert die UI mit den verarbeiteten Barcode-Daten"""
+        self.lineEdit_gtin.setText(gtin)
+        self.lineEdit_expire.setText(expires)
+        self.lineEdit_serial.setText(serial)
+        self.lineEdit_barcode.setText('')
+        self.lineEdit_ref.setText(data.search_refnumber(gtin, self.data))
 
 
 if __name__ == '__main__':
