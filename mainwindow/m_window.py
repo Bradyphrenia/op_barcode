@@ -202,6 +202,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.pushButton_ok.clicked.connect(self.close)
         self.pushButton_decode.clicked.connect(self.barcode_decode)
         self.actionBeenden.triggered.connect(self.close)
+        self.lineEdit_barcode.textChanged.connect(self.barcode_changed)
 
     def barcode_decode(self):
         self._clear_ui_fields()
@@ -226,6 +227,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.lineEdit_serial.setText('')
         self.lineEdit_ref.setText('')
 
+    def barcode_changed(self):
+        if len(self.lineEdit_barcode.text()) > 0:
+            self._clear_ui_fields()
 
     def _update_ui_with_barcode_data(self, gtin: str, expires: str, serial: str):
         """Aktualisiert die UI mit den verarbeiteten Barcode-Daten"""
@@ -238,6 +242,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Fokus auf lineEdit_barcode setzen und Cursor auf erste Position
         self.lineEdit_barcode.setFocus()
         self.lineEdit_barcode.setCursorPosition(0)
+
 
 if __name__ == '__main__':
     app = qtw.QApplication(sys.argv)
