@@ -43,6 +43,8 @@ class BarcodeProcessor:
             try:
                 gtin = barcode[2:16]
                 logger.debug(f"GTIN extrahiert: {gtin}")
+                chk = BarcodeProcessor.check_gtin(gtin)
+                logger.info(f"GTIN valid: {chk}")
             except IndexError as e:
                 logger.error(f"Fehler beim Extrahieren der GTIN: {e}")
                 raise ValueError(f"Fehler beim Extrahieren der GTIN aus Barcode: {barcode}")
@@ -92,6 +94,17 @@ class BarcodeProcessor:
         except Exception as e:
             logger.error(f"Unerwarteter Fehler beim Verarbeiten des Barcodes '{barcode}': {e}", exc_info=True)
             raise RuntimeError(f"Unerwarteter Fehler bei der Barcode-Verarbeitung: {e}")
+
+    @staticmethod
+    def check_gtin(gtin):
+        checksum = lambda x: str(sum(int(ziffer) for ziffer in str(x)))
+        number = gtin[0:13]
+        check = gtin[13:14]
+        logger.debug(f"GTIN: {number}, Check: {check}")
+        while len(number) > 1:
+            number = checksum(number)
+        logger.info(f"Nummer: {number}, Prüfziffer: {check}")
+        return number == check
 
     @staticmethod
     def convert_date(date):
