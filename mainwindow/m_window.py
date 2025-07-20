@@ -48,8 +48,8 @@ class BarcodeProcessor:
                 if chk == False:
                     gtin = barcode[2:15]
                     logger.debug(f"GTIN erneut extrahiert: {gtin}")
-                    chk = BarcodeProcessor.check_gtin(gtin)
-                    logger.info(f"GTIN valid: {chk}")
+                    chk = BarcodeProcessor.validate_gtin13(gtin)
+                    logger.info(f"GTIN-13 valid: {chk}")
             except IndexError as e:
                 logger.error(f"Fehler beim Extrahieren der GTIN: {e}")
                 raise ValueError(f"Fehler beim Extrahieren der GTIN aus Barcode: {barcode}")
@@ -134,9 +134,10 @@ class BarcodeProcessor:
             return False
 
         # Berechnung der Prüfziffer
-        check_digit = calculate_gtin13_check_digit(gtin[:12])
+        check_digit = BarcodeProcessor.calculate_gtin13_check_digit(gtin[:12])
 
         # Vergleich mit der angegebenen Prüfziffer
+        logger.info(f"Nummer: {check_digit}, Prüfziffer: {gtin[12]}")
         return int(gtin[12]) == check_digit
 
     @staticmethod
