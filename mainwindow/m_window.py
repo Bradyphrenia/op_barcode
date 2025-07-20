@@ -46,9 +46,9 @@ class BarcodeProcessor:
                 chk = BarcodeProcessor.check_gtin(gtin)
                 logger.info(f"GTIN valid: {chk}")
                 if chk == False:
-                    gtin = barcode[2:15]
-                    logger.debug(f"GTIN erneut extrahiert: {gtin}")
-                    chk = BarcodeProcessor.validate_gtin13(gtin)
+                    gtin_13 = barcode[3:16]
+                    logger.debug(f"GTIN-13 extrahiert: {gtin_13}")
+                    chk = BarcodeProcessor.validate_gtin13(gtin_13)
                     logger.info(f"GTIN-13 valid: {chk}")
             except IndexError as e:
                 logger.error(f"Fehler beim Extrahieren der GTIN: {e}")
