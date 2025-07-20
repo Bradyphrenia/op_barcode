@@ -45,6 +45,11 @@ class BarcodeProcessor:
                 logger.debug(f"GTIN extrahiert: {gtin}")
                 chk = BarcodeProcessor.check_gtin(gtin)
                 logger.info(f"GTIN valid: {chk}")
+                if chk == False:
+                    gtin = barcode[2:15]
+                    logger.debug(f"GTIN erneut extrahiert: {gtin}")
+                    chk = BarcodeProcessor.check_gtin(gtin)
+                    logger.info(f"GTIN valid: {chk}")
             except IndexError as e:
                 logger.error(f"Fehler beim Extrahieren der GTIN: {e}")
                 raise ValueError(f"Fehler beim Extrahieren der GTIN aus Barcode: {barcode}")
@@ -105,6 +110,64 @@ class BarcodeProcessor:
             number = checksum(number)
         logger.info(f"Nummer: {number}, Prüfziffer: {check}")
         return number == check
+
+    @staticmethod
+    def validate_gtin13(gtin):
+        """
+        Validiert einen GTIN-13 Code durch Überprüfung der Prüfziffer.
+
+        Args:
+            gtin (str): Der 13-stellige GTIN-13 Code
+
+        Returns:
+            bool: True wenn der Code gültig ist, False sonst
+        """
+    # Entfernen von Leerzeichen und Bindestrichen
+        gtin = gtin.replace(' ', '').replace('-', '')
+
+        # Überprüfung der Länge
+        if len(gtin) != 13:
+            return False
+
+        # Überprüfung, ob alle Zeichen Ziffern sind
+        if not gtin.isdigit():
+            return False
+
+        # Berechnung der Prüfziffer
+        check_digit = calculate_gtin13_check_digit(gtin[:12])
+
+        # Vergleich mit der angegebenen Prüfziffer
+        return int(gtin[12]) == check_digit
+
+    @staticmethod
+    def calculate_gtin13_check_digit(gtin_12):
+        """
+        Berechnet die Prüfziffer für die ersten 12 Stellen eines GTIN-13 Codes.
+
+        Args:
+            gtin_12 (str): Die ersten 12 Stellen des GTIN-13 Codes
+
+        Returns:
+            int: Die berechnete Prüfziffer
+        """
+        if len(gtin_12) != 12:
+            raise ValueError("GTIN-12 muss genau 12 Stellen haben")
+
+        # GTIN-13 Algorithmus: Abwechselnd mit 1 und 3 multiplizieren
+        total = 0
+        for i, digit in enumerate(gtin_12):
+            multiplier = 1 if i % 2 == 0 else 3
+            total += int(digit) * multiplier
+
+        # Prüfziffer = (10 - (Summe mod 10)) mod 10
+        check_digit = (10 - (total % 10)) % 10
+        return check_digit
+
+
+
+
+
+
 
     @staticmethod
     def convert_date(date):
