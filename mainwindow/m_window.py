@@ -122,7 +122,7 @@ class BarcodeProcessor:
         Returns:
             bool: True wenn der Code gültig ist, False sonst
         """
-    # Entfernen von Leerzeichen und Bindestrichen
+        # Entfernen von Leerzeichen und Bindestrichen
         gtin = gtin.replace(' ', '').replace('-', '')
 
         # Überprüfung der Länge
@@ -162,12 +162,6 @@ class BarcodeProcessor:
         # Prüfziffer = (10 - (Summe mod 10)) mod 10
         check_digit = (10 - (total % 10)) % 10
         return check_digit
-
-
-
-
-
-
 
     @staticmethod
     def convert_date(date):
