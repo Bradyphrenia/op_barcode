@@ -173,20 +173,20 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>480</x>
+      <x>470</x>
       <y>170</y>
       <width>31</width>
       <height>21</height>
      </rect>
     </property>
     <property name="frameShape">
-     <enum>QFrame::Shape::Box</enum>
+     <enum>QFrame::Box</enum>
     </property>
     <property name="text">
-     <string>i.O.</string>
+     <string> i.O.</string>
     </property>
     <property name="textFormat">
-     <enum>Qt::TextFormat::PlainText</enum>
+     <enum>Qt::PlainText</enum>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_reverse">
@@ -194,7 +194,7 @@
      <rect>
       <x>460</x>
       <y>120</y>
-      <width>61</width>
+      <width>51</width>
       <height>41</height>
      </rect>
     </property>
@@ -209,7 +209,7 @@
      <x>0</x>
      <y>0</y>
      <width>700</width>
-     <height>36</height>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuDatei">
