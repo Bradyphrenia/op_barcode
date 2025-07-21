@@ -205,8 +205,61 @@ def _extract_refnumber_from_json(json_str: str) -> str:
     return ''
 
 
+def _extract_gtin_from_json(json_str: str) -> str:
+    """Extrahiert die GTIN aus einem JSON-String, wenn vorhanden."""
+    zeilen = json_str.splitlines()
+
+    for i, zeile in enumerate(zeilen):
+        if 'UDI' in zeile and i + 1 < len(zeilen):
+            naechste_zeile = zeilen[i + 1].strip()
+            if naechste_zeile.startswith('"ARI_Artikelkennzeichen":'):
+                return naechste_zeile.split('"')[3]
+
+    return ''
+
+
+def search_gtin(ref: str, search_data) -> str:
+    """
+    Sucht nach der GTIN für eine gegebene Ref-Nr. in den Suchdaten.
+
+    Args:
+        ref: Die zu suchende Ref-Nr.
+        search_data: Die Daten, in denen gesucht werden soll
+
+    Returns:
+        Die gefundene GTIN oder ein leerer String, wenn nichts gefunden wurde
+    """
+    logger.info(f"Suche nach Ref-Nr.: {ref}")
+
+    # Suche nach Einträgen
+    gefundene_eintraege = search_in_dictionary(search_data, ref)
+
+    if not gefundene_eintraege:
+        logger.warning(f"Keine Einträge gefunden für Ref-Nr.: {ref}")
+        return ''
+
+    logger.info(f"Gefunden: {len(gefundene_eintraege)} Einträge für Ref-Nr. {ref}")
+
+    # Verarbeite nur eindeutige Root-Elemente
+    eindeutige_root_elemente = _get_unique_root_elements(gefundene_eintraege)
+
+    # Suche nach Referenznummer in den JSON-Daten
+    for root_element in eindeutige_root_elemente:
+        json_str = json.dumps(root_element, indent=2, ensure_ascii=False)
+        gtin = _extract_gtin_from_json(json_str)
+
+        if gtin:
+            logger.info(f"GTIN gefunden: {gtin}")
+            return gtin
+
+    logger.warning(f"Keine GTIN im gefundenen Eintrag für Ref-Nr.: {ref}")
+    return ''
+
+
 if __name__ == '__main__':
     data = init_search('../table-EP_ARTIKEL2.json')
     test = "07611996073546"
     print(search_refnumber(test, data))
     print(search_in_dictionary(data, 'DJO'))
+    print(search_in_dictionary(data, '880-010/50'))
+    print(search_gtin('880-010/50', data))
