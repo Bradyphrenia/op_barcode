@@ -275,6 +275,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.pushButton_decode.clicked.connect(self.barcode_decode)
         self.actionBeenden.triggered.connect(self.close)
         self.lineEdit_barcode.textChanged.connect(self.barcode_changed)
+        self.pushButton_reverse.clicked.connect(self.reverse_search)
+
+    def reverse_search(self):
+        ref = self.lineEdit_ref.text()
+        if not ref:
+            logger.warning("Keine Ref-Nr. eingegeben")
+            return
+        try:
+            logger.info(f"Verarbeite Ref-Nr.: {ref}")
+            gtin = data.search_gtin(ref, self.data)
+            self.lineEdit_gtin.setText(gtin)
+            logger.info(f"Ref-Nr. erfolgreich verarbeitet - Ref: {ref}")
+        except Exception as e:
+            logger.error(f"Fehler bei der Ref-Nr-Verarbeitung: {e}", exc_info=True)
 
     def barcode_decode(self):
         self._clear_ui_fields()
