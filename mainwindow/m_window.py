@@ -28,7 +28,7 @@ class BarcodeProcessor:
 
             if not barcode:
                 logger.warning("Leerer Barcode übergeben")
-                return None, None, None
+                return None, None, None, None
 
             if not isinstance(barcode, str):
                 logger.error(f"Barcode muss ein String sein, erhalten: {type(barcode)}")
@@ -91,7 +91,7 @@ class BarcodeProcessor:
                 expires = ""
 
             logger.info(f"Barcode erfolgreich verarbeitet - GTIN: {gtin}, Ablauf: {expires}, Serial: {serial}")
-            return gtin, expires, serial
+            return gtin, expires, serial, chk
 
         except (TypeError, ValueError) as e:
             logger.error(f"Validierungsfehler beim Verarbeiten des Barcodes '{barcode}': {e}")
@@ -267,6 +267,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Barcode-Prozessor initialisieren
         self.barcode_processor = BarcodeProcessor()
         self.data = data.init_search('table-EP_ARTIKEL2.json')
+        self.label_valid.setVisible(False)
 
     def _setup_connections(self):
         """Stellt alle Signal-Slot-Verbindungen her"""
@@ -285,8 +286,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         try:
             logger.info(f"Verarbeite Barcode: {barcode}")
-            gtin, expires, serial = self.barcode_processor.process_barcode(barcode)
-            self._update_ui_with_barcode_data(gtin, expires, serial)
+            gtin, expires, serial, chk = self.barcode_processor.process_barcode(barcode)
+            self._update_ui_with_barcode_data(gtin, expires, serial, chk)
             logger.info(f"Barcode erfolgreich verarbeitet - GTIN: {gtin}, Ablauf: {expires}, Serial: {serial}")
         except Exception as e:
             logger.error(f"Fehler bei der Barcode-Verarbeitung: {e}", exc_info=True)
@@ -297,18 +298,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.lineEdit_expire.setText('')
         self.lineEdit_serial.setText('')
         self.lineEdit_ref.setText('')
+        self.label_valid.setVisible(False)
 
     def barcode_changed(self):
         if len(self.lineEdit_barcode.text()) > 0:
             self._clear_ui_fields()
 
-    def _update_ui_with_barcode_data(self, gtin: str, expires: str, serial: str):
+    def _update_ui_with_barcode_data(self, gtin: str, expires: str, serial: str, chk: bool):
         """Aktualisiert die UI mit den verarbeiteten Barcode-Daten"""
         self.lineEdit_gtin.setText(gtin)
         self.lineEdit_expire.setText(expires)
         self.lineEdit_serial.setText(serial)
         self.lineEdit_barcode.setText('')
         self.lineEdit_ref.setText(data.search_refnumber(gtin, self.data))
+        self.label_valid.setVisible(True) if chk else self.label_valid.setVisible(False)
 
         # Fokus auf lineEdit_barcode setzen und Cursor auf erste Position
         self.lineEdit_barcode.setFocus()
