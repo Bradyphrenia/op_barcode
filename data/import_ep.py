@@ -263,3 +263,4 @@ if __name__ == '__main__':
     print(search_in_dictionary(data, 'DJO'))
     print(search_in_dictionary(data, '880-010/50'))
     print(search_gtin('880-010/50', data))
+    print(search_gtin('880-010/5', data))
