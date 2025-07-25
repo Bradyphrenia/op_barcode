@@ -1,18 +1,15 @@
 import json
+import logging
 import os
 from typing import Dict, List, Any, Tuple, Union
-import logging
 
 # Logging-Konfiguration hinzufügen
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.StreamHandler(),  # Ausgabe auf der Konsole
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[logging.StreamHandler(),  # Ausgabe auf der Konsole
         logging.FileHandler('import_ep.log')  # Speichern in einer Logdatei
-    ]
-)
+    ])
 logger = logging.getLogger(__name__)
+
 
 def import_json_file(file_path: str) -> Dict[str, Any]:
     try:
@@ -30,6 +27,7 @@ def import_json_file(file_path: str) -> Dict[str, Any]:
     except Exception as e:
         logger.error(f"Error reading JSON file {file_path}: {str(e)}")
         raise Exception(f"Error reading JSON file: {str(e)}")
+
 
 class JsonSearcher:
     """Klasse für die Suche in JSON-Datenstrukturen."""
@@ -119,15 +117,8 @@ class JsonSearcher:
         # Fallback: Das Dictionary selbst als einziges Root-Element verwenden
         return [data]
 
-    def _search_recursively(
-            self,
-            obj: Any,
-            root_idx: int,
-            search_term_lower: str,
-            path: str,
-            results: List[Tuple[str, Any, Dict[str, Any]]],
-            root_element: Dict[str, Any]
-    ) -> None:
+    def _search_recursively(self, obj: Any, root_idx: int, search_term_lower: str, path: str,
+            results: List[Tuple[str, Any, Dict[str, Any]]], root_element: Dict[str, Any]) -> None:
         """
         Führt eine rekursive Suche in einem Objekt durch.
         Args:
@@ -152,7 +143,8 @@ class JsonSearcher:
             if search_term_lower in str(obj).lower():
                 results.append((f"Root-Element {root_idx}: {path}", obj, root_element))
 
-    def _get_unique_root_elements(self, gefundene_eintraege: List[Tuple[str, Any, Dict[str, Any]]]) -> List[Dict[str, Any]]:
+    def _get_unique_root_elements(self, gefundene_eintraege: List[Tuple[str, Any, Dict[str, Any]]]) -> List[
+        Dict[str, Any]]:
         """Gibt eine Liste eindeutiger Root-Elemente zurück."""
         eindeutige_elemente = []
         gesehene_hashes = set()
@@ -183,6 +175,7 @@ class JsonSearcher:
                     return naechste_zeile.split('"')[3]
         return ''
 
+
 def init_search(search_file: str) -> Dict[str, Any]:
     """
     Initialisiert Suchdaten aus einer JSON-Datei.
@@ -204,21 +197,25 @@ def init_search(search_file: str) -> Dict[str, Any]:
         logging.error(f"Unerwarteter Fehler beim Laden der Suchdatei: {e}")
         return {}
 
+
 # Kompatibilitätsfunktionen für bestehenden Code
 def search_in_dictionary(data: Union[Dict[str, Any], List], search_term: str) -> List[Tuple[str, Any, Dict[str, Any]]]:
     """Kompatibilitätsfunktion für bestehenden Code."""
     searcher = JsonSearcher(data)
     return searcher.search_in_dictionary(search_term)
 
+
 def search_refnumber(gtin: str, search_data: Dict[str, Any]) -> str:
     """Kompatibilitätsfunktion für bestehenden Code."""
     searcher = JsonSearcher(search_data)
     return searcher.search_refnumber(gtin)
 
+
 def search_gtin(ref: str, search_data: Dict[str, Any]) -> str:
     """Kompatibilitätsfunktion für bestehenden Code."""
     searcher = JsonSearcher(search_data)
     return searcher.search_gtin(ref)
+
 
 if __name__ == '__main__':
     data = init_search('../table-EP_ARTIKEL2.json')
