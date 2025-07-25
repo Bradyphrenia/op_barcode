@@ -1,5 +1,6 @@
 import logging
 import sys
+from functools import lru_cache
 
 from PyQt5 import QtWidgets as qtw
 from PyQt5.QtWidgets import QMainWindow
@@ -37,14 +38,18 @@ class GtinValidator:
     def __init__(self):
         self.logger = LoggerService("GtinValidator")
 
+    @lru_cache(maxsize=1000)
+    def _calculate_digit_sum(self, x):
+        """Berechnet die Quersumme mit Caching für bessere Performance"""
+        return str(sum(int(digit) for digit in str(x)))
+
     def check_gtin(self, gtin):
-        checksum = lambda x: str(sum(int(ziffer) for ziffer in str(x)))
         number = gtin[0:13]
         check = gtin[13:14]
         self.logger.debug(f"GTIN: {number}, Check: {check}")
 
         while len(number) > 1:
-            number = checksum(number)
+            number = self._calculate_digit_sum(number)
 
         self.logger.info(f"Nummer: {number}, Prüfziffer: {check}")
         return number == check
