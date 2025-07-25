@@ -9,7 +9,7 @@ from mainwindow import Ui_MainWindow
 
 # Logging-Konfiguration
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[logging.FileHandler('barcode_processor.log'), logging.StreamHandler(sys.stdout)])
+                    handlers=[logging.FileHandler('barcode_processor.log'), logging.StreamHandler(sys.stdout)])
 
 
 class LoggerService:
@@ -258,10 +258,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
         self.logger = LoggerService("MainWindow")
-
         # Verbindungen einrichten
         self._setup_connections()
-
         # Barcode-Prozessor initialisieren
         self.barcode_processor = BarcodeProcessor()
         self.data = data.init_search('table-EP_ARTIKEL2.json')
@@ -281,24 +279,29 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if not ref:
             self.logger.warning("Keine Ref-Nr. eingegeben")
             return
-
         try:
             self.logger.info(f"Verarbeite Ref-Nr.: {ref}")
             gtin = data.search_gtin(ref, self.data)
             self.lineEdit_gtin.setText(gtin)
             self.logger.info(f"Ref-Nr. erfolgreich verarbeitet - Ref: {ref}")
-            chk = self.barcode_processor.gtin_validator.check_gtin(gtin)
-            self.logger.info(f"GTIN valid: {chk}")
 
-            if not chk:
-                gtin_13 = gtin[1:]
-                self.logger.debug(f"GTIN-13 extrahiert: {gtin_13}")
-                chk = self.barcode_processor.gtin_validator.validate_gtin13(gtin_13)
-                self.logger.info(f"GTIN-13 valid: {chk}")
-
+            chk = self._validate_gtin_with_fallback(gtin)
             self.label_valid.setVisible(chk)
         except Exception as e:
             self.logger.error(f"Fehler bei der Ref-Nr-Verarbeitung: {e}", exc_info=True)
+
+    def _validate_gtin_with_fallback(self, gtin: str) -> bool:
+        """Validiert GTIN mit Fallback auf GTIN-13 falls notwendig"""
+        chk = self.barcode_processor.gtin_validator.check_gtin(gtin)
+        self.logger.info(f"GTIN valid: {chk}")
+
+        if not chk:
+            gtin_13 = gtin[1:]
+            self.logger.debug(f"GTIN-13 extrahiert: {gtin_13}")
+            chk = self.barcode_processor.gtin_validator.validate_gtin13(gtin_13)
+            self.logger.info(f"GTIN-13 valid: {chk}")
+
+        return chk
 
     def barcode_decode(self):
         self._clear_ui_fields()
@@ -306,7 +309,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if not self.barcode:
             self.logger.warning("Kein Barcode eingegeben")
             return
-
         try:
             self.logger.info(f"Verarbeite Barcode: {self.barcode}")
             gtin, expires, serial, chk = self.barcode_processor.process_barcode(self.barcode)
@@ -338,7 +340,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.lineEdit_barcode.setText('')
         self.lineEdit_ref.setText(data.search_refnumber(gtin, self.data))
         self.label_valid.setVisible(chk)
-
         # Fokus auf lineEdit_barcode setzen und Cursor auf erste Position
         self.lineEdit_barcode.setFocus()
         self.lineEdit_barcode.setCursorPosition(0)
