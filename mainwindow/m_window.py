@@ -8,14 +8,8 @@ import data
 from mainwindow import Ui_MainWindow
 
 # Logging-Konfiguration
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('barcode_processor.log'),
-        logging.StreamHandler(sys.stdout)
-    ]
-)
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[logging.FileHandler('barcode_processor.log'), logging.StreamHandler(sys.stdout)])
 
 
 class LoggerService:
