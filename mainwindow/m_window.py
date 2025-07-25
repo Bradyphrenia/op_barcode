@@ -79,14 +79,10 @@ class GtinValidator:
             raise ValueError("GTIN-12 muss genau 12 Stellen haben")
 
         # GTIN-13 Algorithmus: Abwechselnd mit 1 und 3 multiplizieren
-        total = 0
-        for i, digit in enumerate(gtin_12):
-            multiplier = 1 if i % 2 == 0 else 3
-            total += int(digit) * multiplier
+        total = sum(int(digit) * (1 if i % 2 == 0 else 3) for i, digit in enumerate(gtin_12))
 
         # Prüfziffer = (10 - (Summe mod 10)) mod 10
-        check_digit = (10 - (total % 10)) % 10
-        return check_digit
+        return (10 - (total % 10)) % 10
 
 
 class DateConverter:
