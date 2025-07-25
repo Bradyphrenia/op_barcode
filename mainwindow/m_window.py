@@ -1,7 +1,9 @@
 import logging
 import sys
+
 from PyQt5 import QtWidgets as qtw
 from PyQt5.QtWidgets import QMainWindow
+
 import data
 from mainwindow import Ui_MainWindow
 
@@ -175,6 +177,9 @@ class BarcodeProcessor:
 
             # GTIN extrahieren und validieren
             gtin, chk = self._extract_and_validate_gtin(barcode)
+            if not chk:
+                barcode = self._test_on_alternative_barcode(barcode)
+                gtin, chk = self._extract_and_validate_gtin(barcode)
 
             # DJO-Code prüfen
             djo = self._check_djo_code(barcode)
@@ -195,24 +200,33 @@ class BarcodeProcessor:
             self.logger.error(f"Unerwarteter Fehler beim Verarbeiten des Barcodes '{barcode}': {e}", exc_info=True)
             raise RuntimeError(f"Unerwarteter Fehler bei der Barcode-Verarbeitung: {e}")
 
-    def _extract_and_validate_gtin(self, barcode):
+    def _extract_and_validate_gtin(self, barcode) -> tuple[str, bool]:
         """Extrahiert und validiert die GTIN aus einem Barcode"""
         try:
             gtin = barcode[2:16]
             self.logger.debug(f"GTIN extrahiert: {gtin}")
             chk = self.gtin_validator.check_gtin(gtin)
             self.logger.info(f"GTIN valid: {chk}")
-
             if not chk:
                 gtin_13 = barcode[3:16]
                 self.logger.debug(f"GTIN-13 extrahiert: {gtin_13}")
                 chk = self.gtin_validator.validate_gtin13(gtin_13)
                 self.logger.info(f"GTIN-13 valid: {chk}")
-
             return gtin, chk
         except IndexError as e:
             self.logger.error(f"Fehler beim Extrahieren der GTIN: {e}")
             raise ValueError(f"Fehler beim Extrahieren der GTIN aus Barcode: {barcode}")
+
+    def _test_on_alternative_barcode(self, barcode) -> str:
+        self.logger.info(f"Teste auf Fehler in Barcode")
+        older_barcode = barcode
+        barcode = barcode[0:1] + barcode[2:]
+        gtin, chk = self._extract_and_validate_gtin(barcode)
+        if chk:
+            self.logger.info(f"alternativer Barcode-Test erfolgreich - GTIN: {gtin}")
+            return barcode
+        else:
+            return older_barcode
 
     def _check_djo_code(self, barcode):
         """Prüft, ob der Barcode ein DJO-Code ist"""
@@ -258,6 +272,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.barcode_processor = BarcodeProcessor()
         self.data = data.init_search('table-EP_ARTIKEL2.json')
         self.label_valid.setVisible(False)
+        self.barcode = None
 
     def _setup_connections(self):
         """Stellt alle Signal-Slot-Verbindungen her"""
@@ -278,7 +293,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             gtin = data.search_gtin(ref, self.data)
             self.lineEdit_gtin.setText(gtin)
             self.logger.info(f"Ref-Nr. erfolgreich verarbeitet - Ref: {ref}")
-
             chk = self.barcode_processor.gtin_validator.check_gtin(gtin)
             self.logger.info(f"GTIN valid: {chk}")
 
@@ -294,15 +308,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def barcode_decode(self):
         self._clear_ui_fields()
-        barcode = self.lineEdit_barcode.text()
-
-        if not barcode:
+        self.barcode = self.lineEdit_barcode.text()
+        if not self.barcode:
             self.logger.warning("Kein Barcode eingegeben")
             return
 
         try:
-            self.logger.info(f"Verarbeite Barcode: {barcode}")
-            gtin, expires, serial, chk = self.barcode_processor.process_barcode(barcode)
+            self.logger.info(f"Verarbeite Barcode: {self.barcode}")
+            gtin, expires, serial, chk = self.barcode_processor.process_barcode(self.barcode)
+            if not chk:
+                self.barcode = self.barcode_processor._test_on_alternative_barcode(self.barcode)
+                gtin, expires, serial, chk = self.barcode_processor.process_barcode(self.barcode)
             self._update_ui_with_barcode_data(gtin, expires, serial, chk)
             self.logger.info(f"Barcode erfolgreich verarbeitet - GTIN: {gtin}, Ablauf: {expires}, Serial: {serial}")
         except Exception as e:
