@@ -362,10 +362,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.lineEdit_barcode.setCursorPosition(0)
 
     def _copy_to_clipboard(self):
-        if self.radioButton_ref.isChecked():
-            pyperclip.copy(self.lineEdit_ref.text())
-        elif self.radioButton_gtin.isChecked():
-            pyperclip.copy(self.lineEdit_gtin.text())
+        """Kopiert den entsprechenden Wert basierend auf dem ausgewählten Radio Button"""
+        clipboard_mapping = {self.radioButton_ref: self.lineEdit_ref.text(),
+                             self.radioButton_gtin: self.lineEdit_gtin.text()}
+        selected_value = next((value for button, value in clipboard_mapping.items() if button.isChecked()), "")
+        if selected_value:
+            pyperclip.copy(selected_value)
 
 
 if __name__ == '__main__':
