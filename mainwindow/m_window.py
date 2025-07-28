@@ -1,5 +1,8 @@
 import logging
 import sys
+import pyperclip
+
+
 
 from PyQt5 import QtWidgets as qtw
 from PyQt5.QtWidgets import QMainWindow
@@ -339,9 +342,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.lineEdit_barcode.setText('')
         self.lineEdit_ref.setText(data.search_refnumber(gtin, self.data))
         self.label_valid.setVisible(chk)
+        self._copy_to_clipboard('ref')
         # Fokus auf lineEdit_barcode setzen und Cursor auf erste Position
         self.lineEdit_barcode.setFocus()
         self.lineEdit_barcode.setCursorPosition(0)
+
+    def _copy_to_clipboard(self, direction = 'ref'):
+        if direction == 'ref':
+            pyperclip.copy(self.lineEdit_ref.text())
+
+
 
 
 if __name__ == '__main__':
