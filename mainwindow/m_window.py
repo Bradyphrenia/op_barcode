@@ -1,9 +1,7 @@
 import logging
 import sys
+
 import pyperclip
-
-
-
 from PyQt5 import QtWidgets as qtw
 from PyQt5.QtWidgets import QMainWindow
 
@@ -267,6 +265,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.data = data.init_search('table-EP_ARTIKEL2.json')
         self.label_valid.setVisible(False)
         self.barcode = None
+        self.radioButton_ref.setChecked(True)
+        self.radioButton_gtin.setChecked(False)
 
     def _setup_connections(self):
         """Stellt alle Signal-Slot-Verbindungen her"""
@@ -275,6 +275,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionBeenden.triggered.connect(self.close)
         self.lineEdit_barcode.textChanged.connect(self.barcode_changed)
         self.pushButton_reverse.clicked.connect(self.reverse_search)
+        self.radioButton_ref.toggled.connect(self.radio_button_ref_changed)
+        self.radioButton_gtin.toggled.connect(self.radio_button_gtin_changed)
+
+    def radio_button_ref_changed(self):
+        if self.radioButton_ref.isChecked():
+            self.radioButton_gtin.setChecked(False)
+        else:
+            self.radioButton_gtin.setChecked(True)
+
+    def radio_button_gtin_changed(self):
+        if self.radioButton_gtin.isChecked():
+            self.radioButton_ref.setChecked(False)
+        else:
+            self.radioButton_ref.setChecked(True)
 
     def reverse_search(self):
         ref = self.lineEdit_ref.text()
@@ -286,7 +300,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             gtin = data.search_gtin(ref, self.data)
             self.lineEdit_gtin.setText(gtin)
             self.logger.info(f"Ref-Nr. erfolgreich verarbeitet - Ref: {ref}")
-
+            self._copy_to_clipboard()
             chk = self._validate_gtin_with_fallback(gtin)
             self.label_valid.setVisible(chk)
         except Exception as e:
@@ -342,16 +356,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.lineEdit_barcode.setText('')
         self.lineEdit_ref.setText(data.search_refnumber(gtin, self.data))
         self.label_valid.setVisible(chk)
-        self._copy_to_clipboard('ref')
+        self._copy_to_clipboard()
         # Fokus auf lineEdit_barcode setzen und Cursor auf erste Position
         self.lineEdit_barcode.setFocus()
         self.lineEdit_barcode.setCursorPosition(0)
 
-    def _copy_to_clipboard(self, direction = 'ref'):
-        if direction == 'ref':
+    def _copy_to_clipboard(self):
+        if self.radioButton_ref.isChecked():
             pyperclip.copy(self.lineEdit_ref.text())
-
-
+        elif self.radioButton_gtin.isChecked():
+            pyperclip.copy(self.lineEdit_gtin.text())
 
 
 if __name__ == '__main__':
