@@ -279,16 +279,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.radioButton_gtin.toggled.connect(self.radio_button_gtin_changed)
 
     def radio_button_ref_changed(self):
-        if self.radioButton_ref.isChecked():
-            self.radioButton_gtin.setChecked(False)
-        else:
-            self.radioButton_gtin.setChecked(True)
+        self.radioButton_gtin.setChecked(
+            False) if self.radioButton_ref.isChecked() else self.radioButton_gtin.setChecked(True)
 
     def radio_button_gtin_changed(self):
-        if self.radioButton_gtin.isChecked():
-            self.radioButton_ref.setChecked(False)
-        else:
-            self.radioButton_ref.setChecked(True)
+        self.radioButton_ref.setChecked(
+            False) if self.radioButton_gtin.isChecked() else self.radioButton_ref.setChecked(True)
 
     def reverse_search(self):
         ref = self.lineEdit_ref.text()
