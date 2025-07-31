@@ -1,6 +1,6 @@
 import logging
 import sys
-
+import os.path
 import pyperclip
 from PyQt5 import QtWidgets as qtw
 from PyQt5.QtWidgets import QMainWindow
