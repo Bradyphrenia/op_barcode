@@ -1,14 +1,13 @@
 import logging
 import sys
-import os.path
+
 import pyperclip
 from PyQt5 import QtWidgets as qtw
 from PyQt5.QtWidgets import QMainWindow
 
 import data
-from mainwindow import Ui_MainWindow
-
 from find_json_file import FileOpenDialog
+from mainwindow import Ui_MainWindow
 
 # Logging-Konfiguration
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -271,6 +270,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.radioButton_gtin.setChecked(False)
         self.json_search_file_dialog = FileOpenDialog()
 
+
     def _file_path(self):
         with open('json_file.cfg', 'r') as f:
             return f.read()
@@ -375,7 +375,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def select_json_file(self):
         self.json_search_file_dialog.show()
-
 
 
 if __name__ == '__main__':
