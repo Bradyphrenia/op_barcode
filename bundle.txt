@@ -6,5 +6,4 @@ pyinstaller -F -w ^
 --add-binary=search_json.cp312-win_amd64.pyd;dist ^
 barcode.py
 
-
 python setup.py build_ext --inplace
