@@ -245,6 +245,8 @@
     <property name="title">
      <string>Datei</string>
     </property>
+    <addaction name="actionjson_Datei_ausw_hlen"/>
+    <addaction name="separator"/>
     <addaction name="actionBeenden"/>
    </widget>
    <widget class="QMenu" name="menu">
@@ -265,6 +267,11 @@
   <action name="action_ber_Barcode_Leser">
    <property name="text">
     <string>Über Barcode-Leser</string>
+   </property>
+  </action>
+  <action name="actionjson_Datei_ausw_hlen">
+   <property name="text">
+    <string>json-Datei auswählen</string>
    </property>
   </action>
  </widget>

@@ -8,6 +8,8 @@ from PyQt5.QtWidgets import QMainWindow
 import data
 from mainwindow import Ui_MainWindow
 
+from find_json_file import FileOpenDialog
+
 # Logging-Konfiguration
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     handlers=[logging.FileHandler('barcode_processor.log'), logging.StreamHandler(sys.stdout)])
@@ -262,17 +264,23 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self._setup_connections()
         # Barcode-Prozessor initialisieren
         self.barcode_processor = BarcodeProcessor()
-        self.data = data.init_search('table-EP_ARTIKEL2.json')
+        self.data = data.init_search(self._file_path())
         self.label_valid.setVisible(False)
         self.barcode = None
         self.radioButton_ref.setChecked(True)
         self.radioButton_gtin.setChecked(False)
+        self.json_search_file_dialog = FileOpenDialog()
+
+    def _file_path(self):
+        with open('json_file.cfg', 'r') as f:
+            return f.read()
 
     def _setup_connections(self):
         """Stellt alle Signal-Slot-Verbindungen her"""
         self.pushButton_ok.clicked.connect(self.close)
         self.pushButton_decode.clicked.connect(self.barcode_decode)
         self.actionBeenden.triggered.connect(self.close)
+        self.actionjson_Datei_ausw_hlen.triggered.connect(self.select_json_file)
         self.lineEdit_barcode.textChanged.connect(self.barcode_changed)
         self.pushButton_reverse.clicked.connect(self.reverse_search)
         self.radioButton_ref.toggled.connect(self.radio_button_ref_changed)
@@ -364,6 +372,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         selected_value = next((value for button, value in clipboard_mapping.items() if button.isChecked()), "")
         if selected_value:
             pyperclip.copy(selected_value)
+
+    def select_json_file(self):
+        self.json_search_file_dialog.show()
+
 
 
 if __name__ == '__main__':

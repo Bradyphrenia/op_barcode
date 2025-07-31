@@ -72,7 +72,7 @@ class Ui_FileOpenDialog(object):
 
     def retranslateUi(self, FileOpenDialog):
         _translate = QtCore.QCoreApplication.translate
-        FileOpenDialog.setWindowTitle(_translate("FileOpenDialog", "Datei öffnen"))
+        FileOpenDialog.setWindowTitle(_translate("FileOpenDialog", "json-Datei auswählen"))
         self.pathLabel.setText(_translate("FileOpenDialog", "Pfad:"))
         self.pathLineEdit.setPlaceholderText(_translate("FileOpenDialog", "Kein Pfad ausgewählt"))
         self.browseButton.setText(_translate("FileOpenDialog", "Durchsuchen..."))
@@ -84,5 +84,5 @@ class Ui_FileOpenDialog(object):
         self.filterComboBox.setItemText(4, _translate("FileOpenDialog", "CSV-Dateien (*.csv)"))
         self.statusLabel.setStyleSheet(_translate("FileOpenDialog", "color: gray;"))
         self.statusLabel.setText(_translate("FileOpenDialog", "Bereit"))
-        self.openButton.setText(_translate("FileOpenDialog", "Öffnen"))
+        self.openButton.setText(_translate("FileOpenDialog", "Auswählen"))
         self.cancelButton.setText(_translate("FileOpenDialog", "Abbrechen"))
