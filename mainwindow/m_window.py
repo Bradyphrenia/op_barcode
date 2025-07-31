@@ -377,7 +377,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.json_search_file_dialog.show()
 
 
-
 if __name__ == '__main__':
     app = qtw.QApplication(sys.argv)
     mw = MainWindow()
