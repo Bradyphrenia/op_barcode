@@ -16,6 +16,10 @@ setup(
                       ["mainwindow/mainwindow.py"]),
             Extension("data",
                       ["data/import_ep.py"]),
+            Extension("file_open",
+                      ["find_json_file/file_open.py"]),
+            Extension("search_json",
+                      ["find_json_file/search_json.py"]),
         ],
         build_dir="build_cythonize",
         compiler_directives={
