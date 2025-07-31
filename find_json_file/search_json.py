@@ -1,9 +1,7 @@
 import sys
-import os
-from pathlib import Path
 from typing import Optional
+
 from PyQt5.QtWidgets import QApplication, QDialog, QFileDialog, QMessageBox
-from PyQt5.QtCore import QFileInfo
 
 from .file_open import Ui_FileOpenDialog
 
@@ -74,7 +72,6 @@ class FileOpenDialog(QDialog, Ui_FileOpenDialog):
                 file.write(file_path)
                 file.close()
 
-            # self._load_preview(file_path)
         except AttributeError:
             # UI-Elemente eventuell nicht vorhanden
             pass
