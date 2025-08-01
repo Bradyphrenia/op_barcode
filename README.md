@@ -1,0 +1,1 @@
+Program for scanning barcodes of prosthesis implants to automatically generate Ref-number, GTIN, expiration date and serial number. For fully functioning you need a json-file with all the implants in it.
