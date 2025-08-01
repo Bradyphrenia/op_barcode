@@ -68,7 +68,7 @@ op_barcode/
 ```
 ## Konfiguration
 - : Konfigurationsdatei für JSON-Einstellungen `json_file.cfg`
-- : JSON-Datei mit Artikeldaten `table-EP_ARTIKEL2.json`
+- : JSON-Datei mit Artikeldaten `table-EP_ARTIKEL.json` (nicht Inhalt dieses Repo's)
 
 ## Entwicklung
 Das Projekt verwendet:
