@@ -1,6 +1,7 @@
 import sys
 from typing import Optional
 
+from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtWidgets import QApplication, QDialog, QFileDialog, QMessageBox
 
 from .file_open import Ui_FileOpenDialog
@@ -10,6 +11,9 @@ class FileOpenDialog(QDialog, Ui_FileOpenDialog):
     """
     Dialog für die Dateiauswahl.
     """
+
+    # Benutzerdefiniertes Signal für den Open-Button
+    file_opened = pyqtSignal(str)  # Signal mit Dateipfad als Parameter
 
     # Dateifilter
     FILE_FILTERS = "Alle Dateien (*.*);;JSON-Dateien (*.json)"
@@ -36,7 +40,7 @@ class FileOpenDialog(QDialog, Ui_FileOpenDialog):
     def _connect_signals(self) -> None:
         """Stellt Signal-Slot-Verbindungen her."""
         signal_connections = [(self.ui.browseButton, 'clicked', self._browse_file),
-                              (self.ui.openButton, 'clicked', self.accept),
+                              (self.ui.openButton, 'clicked', self._handle_open_button_clicked),
                               (self.ui.cancelButton, 'clicked', self.reject)]
 
         for widget, signal, slot in signal_connections:
@@ -44,6 +48,13 @@ class FileOpenDialog(QDialog, Ui_FileOpenDialog):
                 getattr(widget, signal).connect(slot)
             except AttributeError as e:
                 self._show_warning(f"UI-Element nicht gefunden: {str(e)}")
+
+    def _handle_open_button_clicked(self) -> None:
+        """Behandelt das Klicken auf den Open-Button."""
+        if self._selected_file_path:
+            # Signal mit dem ausgewählten Dateipfad emittieren
+            self.file_opened.emit(self._selected_file_path)
+        self.accept()
 
     def _setup_initial_state(self) -> None:
         """Setzt den initialen Zustand des Dialogs."""
@@ -111,6 +122,12 @@ def main():
     """Haupteinstiegspunkt der Anwendung."""
     app = QApplication(sys.argv)
     file_open_dialog = FileOpenDialog()
+
+    # Beispiel für die Verbindung des Signals mit einem Slot
+    def on_file_opened(file_path: str):
+        print(f"Signal empfangen: Datei geöffnet - {file_path}")
+
+    file_open_dialog.file_opened.connect(on_file_opened)
     file_open_dialog.show()
 
     sys.exit(app.exec())

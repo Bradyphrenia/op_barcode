@@ -6,9 +6,9 @@ from typing import Dict, List, Any, Tuple, Union, Set
 
 # Logging-Konfiguration hinzufügen
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[logging.StreamHandler(),  # Ausgabe auf der Konsole
-        logging.FileHandler('import_ep.log')  # Speichern in einer Logdatei
-    ])
+                    handlers=[logging.StreamHandler(),  # Ausgabe auf der Konsole
+                              logging.FileHandler('import_ep.log')  # Speichern in einer Logdatei
+                              ])
 logger = logging.getLogger(__name__)
 
 

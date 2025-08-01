@@ -263,13 +263,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self._setup_connections()
         # Barcode-Prozessor initialisieren
         self.barcode_processor = BarcodeProcessor()
-        self.data = data.init_search(self._file_path())
+        self.data = self._init_data(self._file_path())
         self.label_valid.setVisible(False)
         self.barcode = None
         self.radioButton_ref.setChecked(True)
         self.radioButton_gtin.setChecked(False)
         self.json_search_file_dialog = FileOpenDialog()
+        # Signal von search_json verbinden
+        self.json_search_file_dialog.file_opened.connect(self._handle_file_opened)
 
+    def _init_data(self, data_file):
+        return data.init_search(data_file)
 
     def _file_path(self):
         with open('json_file.cfg', 'r') as f:
@@ -375,6 +379,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def select_json_file(self):
         self.json_search_file_dialog.show()
+
+    def _handle_file_opened(self, file_path: str) -> None:
+        """Behandelt das file_opened Signal und initialisiert die Daten neu."""
+        try:
+            self.data = self._init_data(file_path)
+            if self.data is not None:
+                self.logger.info(f"Daten erfolgreich aus Datei geladen: {file_path}")
+            else:
+                self.logger.error(f"Fehler beim Laden der Datei {file_path}")
+
+        except Exception as e:
+            self.logger.error(f"Fehler beim Laden der Datei {file_path}: {str(e)}")
+            # Optional: Fehlermeldung für den Benutzer anzeigen
+            self.logger.warning(self, "Fehler", f"Datei konnte nicht geladen werden: {str(e)}")
 
 
 if __name__ == '__main__':
