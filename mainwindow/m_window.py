@@ -7,6 +7,7 @@ from PyQt5.QtWidgets import QMainWindow
 
 import data
 from find_json_file import FileOpenDialog
+from info import InfoWindow
 from mainwindow import Ui_MainWindow
 
 # Logging-Konfiguration
@@ -269,6 +270,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.radioButton_ref.setChecked(True)
         self.radioButton_gtin.setChecked(False)
         self.json_search_file_dialog = FileOpenDialog()
+        self.info_dialog = InfoWindow()
         # Signal von search_json verbinden
         self.json_search_file_dialog.file_opened.connect(self._handle_file_opened)
 
@@ -284,6 +286,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.pushButton_ok.clicked.connect(self.close)
         self.pushButton_decode.clicked.connect(self.barcode_decode)
         self.actionBeenden.triggered.connect(self.close)
+        self.action_ber_Barcode_Leser.triggered.connect(self._handle_info_window)
         self.actionjson_Datei_ausw_hlen.triggered.connect(self.select_json_file)
         self.lineEdit_barcode.textChanged.connect(self.barcode_changed)
         self.pushButton_reverse.clicked.connect(self.reverse_search)
@@ -393,6 +396,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.logger.error(f"Fehler beim Laden der Datei {file_path}: {str(e)}")
             # Optional: Fehlermeldung für den Benutzer anzeigen
             self.logger.warning(self, "Fehler", f"Datei konnte nicht geladen werden: {str(e)}")
+
+    def _handle_info_window(self):
+        self.info_dialog.show()
 
 
 if __name__ == '__main__':
