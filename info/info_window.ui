@@ -28,16 +28,16 @@
   <widget class="QPlainTextEdit" name="plainTextEdit">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>50</y>
+     <x>50</x>
+     <y>40</y>
      <width>291</width>
      <height>191</height>
     </rect>
    </property>
    <property name="plainText">
-    <string>Dieses Programm dient dem Lesen von Barcodes der Implantate für die Pflege der Endoprothesen-Stammdaten. Es wird die Implantate-json-Datei für die Ermittlung von REF-Nummern bzw. Validierung der GTIN eingebunden. Verwendet wurden die Sprachen PyQT5 und Python.
+    <string>Der Barcode-Leser ist eine Desktop-Anwendung, die mit PyQt5 entwickelt wurde und es Benutzern ermöglicht, Barcode-Daten einzugeben und zu verarbeiten. Die Anwendung kann verschiedene Barcode-Informationen wie GTIN, Seriennummern, Referenznummern und Ablaufdaten extrahieren und anzeigen.
 
-Brady</string>
+(C) 2025 Brady</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_ok">
