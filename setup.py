@@ -20,6 +20,12 @@ setup(
                       ["find_json_file/file_open.py"]),
             Extension("search_json",
                       ["find_json_file/search_json.py"]),
+            Extension("info_window",
+                      ["info/info_window.py"]),
+            Extension("i_window",
+                      ["info/i_window.py"]),            
+
+
         ],
         build_dir="build_cythonize",
         compiler_directives={
