@@ -6,4 +6,6 @@ pyinstaller --onefile --windowed \
  --add-binary "data.cpython-312-darwin.so:data" \
  --add-binary "file_open.cpython-312-darwin.so:find_json_file" \
  --add-binary "search_json.cpython-312-darwin.so:find_json_file" \
+ --add-binary "i_window.cpython-312-darwin.so:info" \
+ --add-binary "info_window.cpython-312-darwin.so:info" \
  barcode.py
