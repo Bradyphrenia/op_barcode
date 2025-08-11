@@ -53,7 +53,7 @@ class GtinValidator:
             number = self._calculate_digit_sum(number)
 
         self.logger.info(f"Nummer: {number}, Prüfziffer: {check}")
-        return number == check
+        return number == check if number != '' else False
 
     def validate_gtin13(self, gtin):
         """
