@@ -303,17 +303,23 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def reverse_search(self):
         ref = self.lineEdit_ref.text()
+        self._clear_ui_fields()
         if not ref:
             self.logger.warning("Keine Ref-Nr. eingegeben")
             return
         try:
             self.logger.info(f"Verarbeite Ref-Nr.: {ref}")
             gtin = data.search_gtin(ref, self.data)
-            self.lineEdit_gtin.setText(gtin)
-            self.logger.info(f"Ref-Nr. erfolgreich verarbeitet - Ref: {ref}")
-            self._copy_to_clipboard()
             chk = self._validate_gtin_with_fallback(gtin)
-            self.label_valid.setVisible(chk)
+            if chk:
+                self.lineEdit_gtin.setText(gtin)
+                self.label_valid.setVisible(True)
+                self.logger.info(f"Ref-Nr. erfolgreich verarbeitet - Ref: {ref}")
+                self._copy_to_clipboard()
+            else:
+                self.logger.info(f"Ref-Nr. nicht gefunden - Ref: {ref}")
+                self.label_valid.setVisible(False)
+            
         except Exception as e:
             self.logger.error(f"Fehler bei der Ref-Nr-Verarbeitung: {e}", exc_info=True)
 
