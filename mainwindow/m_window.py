@@ -1,42 +1,53 @@
 import logging
 import sys
-
 import pyperclip
 from PyQt5 import QtWidgets as qtw
 from PyQt5.QtWidgets import QMainWindow
-
 import data
 from find_json_file import FileOpenDialog
 from info import InfoWindow
 from mainwindow import Ui_MainWindow
 
+# Konstanten
+BARCODE_MIN_LENGTH = 16
+GTIN_START_POS = 2
+GTIN_END_POS = 16
+GTIN_13_START_POS = 3
+DJO_CODE_START = 4
+DJO_CODE_END = 7
+DJO_IDENTIFIER = "888"
+STANDARD_EXPIRE_START = 18
+STANDARD_EXPIRE_END = 24
+STANDARD_SERIAL_START = 26
+DJO_EXPIRE_START_LONG = 29
+DJO_EXPIRE_END_LONG = 35
+DJO_EXPIRE_START_SHORT = 28
+DJO_EXPIRE_END_SHORT = 34
+DJO_SERIAL_START_LONG = 18
+DJO_SERIAL_END_LONG = 27
+DJO_SERIAL_END_SHORT = 26
+CONFIG_FILE = 'json_file.cfg'
+LOG_FILE = 'barcode_processor.log'
+
 # Logging-Konfiguration
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    handlers=[logging.FileHandler('barcode_processor.log'), logging.StreamHandler(sys.stdout)])
-
+                    handlers=[logging.FileHandler(LOG_FILE), logging.StreamHandler(sys.stdout)])
 
 class LoggerService:
     """Zentrale Klasse für alle Logging-Funktionen"""
-
     def __init__(self, name):
         self.logger = logging.getLogger(name)
-
     def info(self, message):
         self.logger.info(message)
-
     def debug(self, message):
         self.logger.debug(message)
-
     def warning(self, message):
         self.logger.warning(message)
-
     def error(self, message, exc_info=False):
         self.logger.error(message, exc_info=exc_info)
 
-
 class GtinValidator:
     """Klasse für die Validierung von GTIN-Codes"""
-
     def __init__(self):
         self.logger = LoggerService("GtinValidator")
 
@@ -44,56 +55,46 @@ class GtinValidator:
         """Berechnet die Quersumme mit Caching für bessere Performance"""
         return str(sum(int(digit) for digit in str(x)))
 
+    def validate_gtin(self, gtin):
+        """Einheitliche GTIN-Validierung mit Fallback auf GTIN-13"""
+        # Zuerst standard GTIN-Validierung versuchen
+        if self.check_gtin(gtin):
+            return True
+
+        # Falls fehlgeschlagen, GTIN-13 versuchen
+        if len(gtin) >= 13:
+            gtin_13 = gtin[1:] if len(gtin) == 14 else gtin[:13]
+            return self.validate_gtin13(gtin_13)
+
+        return False
+
     def check_gtin(self, gtin):
         number = gtin[0:13]
         check = gtin[13:14]
         self.logger.debug(f"GTIN: {number}, Check: {check}")
-
         while len(number) > 1:
             number = self._calculate_digit_sum(number)
-
         self.logger.info(f"Nummer: {number}, Prüfziffer: {check}")
         return number == check if number != '' else False
 
     def validate_gtin13(self, gtin):
-        """
-        Validiert einen GTIN-13 Code durch Überprüfung der Prüfziffer.
-        """
-        # Entfernen von Leerzeichen und Bindestrichen
+        """Validiert einen GTIN-13 Code durch Überprüfung der Prüfziffer."""
         gtin = gtin.replace(' ', '').replace('-', '')
-
-        # Überprüfung der Länge
-        if len(gtin) != 13:
+        if len(gtin) != 13 or not gtin.isdigit():
             return False
-
-        # Überprüfung, ob alle Zeichen Ziffern sind
-        if not gtin.isdigit():
-            return False
-
-        # Berechnung der Prüfziffer
         check_digit = self.calculate_gtin13_check_digit(gtin[:12])
-
-        # Vergleich mit der angegebenen Prüfziffer
         self.logger.info(f"Nummer: {check_digit}, Prüfziffer: {gtin[12]}")
         return int(gtin[12]) == check_digit
 
     def calculate_gtin13_check_digit(self, gtin_12):
-        """
-        Berechnet die Prüfziffer für die ersten 12 Stellen eines GTIN-13 Codes.
-        """
+        """Berechnet die Prüfziffer für die ersten 12 Stellen eines GTIN-13 Codes."""
         if len(gtin_12) != 12:
             raise ValueError("GTIN-12 muss genau 12 Stellen haben")
-
-        # GTIN-13 Algorithmus: Abwechselnd mit 1 und 3 multiplizieren
         total = sum(int(digit) * (1 if i % 2 == 0 else 3) for i, digit in enumerate(gtin_12))
-
-        # Prüfziffer = (10 - (Summe mod 10)) mod 10
         return (10 - (total % 10)) % 10
-
 
 class DateConverter:
     """Klasse für die Konvertierung von Datumsformaten"""
-
     def __init__(self):
         self.logger = LoggerService("DateConverter")
 
@@ -101,51 +102,55 @@ class DateConverter:
         """Konvertiert ein Datum im Format YYMMDD zu YYYY-MM-DD"""
         try:
             self.logger.debug(f"Starte Datumskonvertierung für: '{date}'")
-
-            # Input-Validierung
-            if not date or not isinstance(date, str) or len(date) != 6 or not date.isdigit():
-                self.logger.warning(f"Ungültiges Datumsformat: '{date}'")
+            if not self._is_valid_date_input(date):
                 return ""
 
-            # Datum-Komponenten extrahieren
             yy, mm, dd = date[0:2], date[2:4], date[4:6]
             self.logger.debug(f"Extrahierte Komponenten - Jahr: {yy}, Monat: {mm}, Tag: {dd}")
 
-            # Validierung der Datumskomponenten
-            month_int = int(mm)
-            day_int = int(dd)
-
-            if month_int < 1 or month_int > 12:
-                self.logger.error(f"Ungültiger Monat: {month_int}")
+            if not self._are_valid_date_components(mm, dd):
                 return ""
 
-            # Tagesvalidierung
-            days_in_month = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]  # Februar mit 29 für Schaltjahre
-            if day_int < 1 or day_int > days_in_month[month_int - 1]:
-                self.logger.error(f"Tag {day_int} ist ungültig für Monat {month_int}")
-                return ""
-
-            # Formatiertes Datum erstellen
             formatted_date = f'20{yy}-{mm}-{dd}'
-
-            # Zusätzliche Validierung mit datetime
-            from datetime import datetime
-            try:
-                datetime.strptime(formatted_date, '%Y-%m-%d')
-                self.logger.info(f"Datum erfolgreich konvertiert: '{date}' -> '{formatted_date}'")
-                return formatted_date
-            except ValueError:
-                self.logger.error(f"Ungültiges Datum nach Formatierung: {formatted_date}")
-                return ""
+            return self._validate_formatted_date(formatted_date)
 
         except Exception as e:
             self.logger.error(f"Unerwarteter Fehler bei Datumskonvertierung für '{date}': {e}", exc_info=True)
             return ""
 
+    def _is_valid_date_input(self, date):
+        """Validiert die Eingabe für die Datumskonvertierung"""
+        if not date or not isinstance(date, str) or len(date) != 6 or not date.isdigit():
+            self.logger.warning(f"Ungültiges Datumsformat: '{date}'")
+            return False
+        return True
+
+    def _are_valid_date_components(self, mm, dd):
+        """Validiert Monat und Tag"""
+        month_int, day_int = int(mm), int(dd)
+        if month_int < 1 or month_int > 12:
+            self.logger.error(f"Ungültiger Monat: {month_int}")
+            return False
+
+        days_in_month = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        if day_int < 1 or day_int > days_in_month[month_int - 1]:
+            self.logger.error(f"Tag {day_int} ist ungültig für Monat {month_int}")
+            return False
+        return True
+
+    def _validate_formatted_date(self, formatted_date):
+        """Validiert das formatierte Datum"""
+        from datetime import datetime
+        try:
+            datetime.strptime(formatted_date, '%Y-%m-%d')
+            self.logger.info(f"Datum erfolgreich konvertiert: '{formatted_date}'")
+            return formatted_date
+        except ValueError:
+            self.logger.error(f"Ungültiges Datum nach Formatierung: {formatted_date}")
+            return ""
 
 class BarcodeProcessor:
     """Hauptklasse für die Verarbeitung von Barcodes"""
-
     def __init__(self):
         self.logger = LoggerService("BarcodeProcessor")
         self.gtin_validator = GtinValidator()
@@ -155,35 +160,15 @@ class BarcodeProcessor:
         """Verarbeitet einen Barcode und extrahiert relevante Informationen"""
         try:
             self.logger.info(f"Starte Barcode-Verarbeitung für: {barcode}")
+            self._validate_barcode_input(barcode)
 
-            # Grundlegende Validierung
-            if not barcode:
-                self.logger.warning("Leerer Barcode übergeben")
-                return None, None, None, None
-
-            if not isinstance(barcode, str):
-                error_msg = f"Barcode muss ein String sein, erhalten: {type(barcode)}"
-                self.logger.error(error_msg)
-                raise TypeError(error_msg)
-
-            if len(barcode) < 16:
-                error_msg = f"Barcode zu kurz (Länge: {len(barcode)}). Mindestlänge: 16 Zeichen"
-                self.logger.error(error_msg)
-                raise ValueError(error_msg)
-
-            # GTIN extrahieren und validieren
             gtin, chk = self._extract_and_validate_gtin(barcode)
             if not chk:
                 barcode = self._test_on_alternative_barcode(barcode)
                 gtin, chk = self._extract_and_validate_gtin(barcode)
 
-            # DJO-Code prüfen
             djo = self._check_djo_code(barcode)
-
-            # Ablaufdatum und Seriennummer extrahieren
             expires, serial = self._extract_expiry_and_serial(barcode, djo)
-
-            # Datum konvertieren
             expires = self.date_converter.convert_date(expires) if expires else ""
 
             self.logger.info(f"Barcode erfolgreich verarbeitet - GTIN: {gtin}, Ablauf: {expires}, Serial: {serial}")
@@ -196,18 +181,29 @@ class BarcodeProcessor:
             self.logger.error(f"Unerwarteter Fehler beim Verarbeiten des Barcodes '{barcode}': {e}", exc_info=True)
             raise RuntimeError(f"Unerwarteter Fehler bei der Barcode-Verarbeitung: {e}")
 
+    def _validate_barcode_input(self, barcode):
+        """Validiert die Barcode-Eingabe"""
+        if not barcode:
+            self.logger.warning("Leerer Barcode übergeben")
+            raise ValueError("Leerer Barcode")
+
+        if not isinstance(barcode, str):
+            error_msg = f"Barcode muss ein String sein, erhalten: {type(barcode)}"
+            self.logger.error(error_msg)
+            raise TypeError(error_msg)
+
+        if len(barcode) < BARCODE_MIN_LENGTH:
+            error_msg = f"Barcode zu kurz (Länge: {len(barcode)}). Mindestlänge: {BARCODE_MIN_LENGTH} Zeichen"
+            self.logger.error(error_msg)
+            raise ValueError(error_msg)
+
     def _extract_and_validate_gtin(self, barcode) -> tuple[str, bool]:
         """Extrahiert und validiert die GTIN aus einem Barcode"""
         try:
-            gtin = barcode[2:16]
+            gtin = barcode[GTIN_START_POS:GTIN_END_POS]
             self.logger.debug(f"GTIN extrahiert: {gtin}")
-            chk = self.gtin_validator.check_gtin(gtin)
+            chk = self.gtin_validator.validate_gtin(gtin)
             self.logger.info(f"GTIN valid: {chk}")
-            if not chk:
-                gtin_13 = barcode[3:16]
-                self.logger.debug(f"GTIN-13 extrahiert: {gtin_13}")
-                chk = self.gtin_validator.validate_gtin13(gtin_13)
-                self.logger.info(f"GTIN-13 valid: {chk}")
             return gtin, chk
         except IndexError as e:
             self.logger.error(f"Fehler beim Extrahieren der GTIN: {e}")
@@ -227,8 +223,8 @@ class BarcodeProcessor:
     def _check_djo_code(self, barcode):
         """Prüft, ob der Barcode ein DJO-Code ist"""
         try:
-            djo_code = barcode[4:7]
-            djo = djo_code == "888"  # DJO-GTIN-CODE
+            djo_code = barcode[DJO_CODE_START:DJO_CODE_END]
+            djo = djo_code == DJO_IDENTIFIER
             self.logger.debug(f"DJO-Code erkannt: {djo_code}, ist DJO: {djo}")
             return djo
         except IndexError as e:
@@ -239,46 +235,62 @@ class BarcodeProcessor:
         """Extrahiert Ablaufdatum und Seriennummer aus einem Barcode"""
         try:
             if not djo:
-                # Standard-Format
-                expires = barcode[18:24] if len(barcode) > 24 else ""
-                serial = barcode[26:] if len(barcode) > 26 else ""
-                self.logger.debug(f"Standard-Format: Ablauf={expires}, Serial={serial}")
+                return self._extract_standard_format_data(barcode)
             else:
-                # DJO-Format
-                self.logger.debug(f"DJO-Format erkannt, Barcode-Länge: {len(barcode)}")
-                expires = barcode[29:35] if len(barcode) > 34 else barcode[28:34]
-                serial = barcode[18:27] if len(barcode) > 34 else barcode[18:26]
-                self.logger.debug(f"DJO-Format: Ablauf={expires}, Serial={serial}")
-            return expires, serial
+                return self._extract_djo_format_data(barcode)
         except IndexError:
             self.logger.error("Fehler beim Extrahieren von Ablaufdatum/Seriennummer")
             return "", ""
 
+    def _extract_standard_format_data(self, barcode):
+        """Extrahiert Daten im Standard-Format"""
+        expires = barcode[STANDARD_EXPIRE_START:STANDARD_EXPIRE_END] if len(barcode) > STANDARD_EXPIRE_END else ""
+        serial = barcode[STANDARD_SERIAL_START:] if len(barcode) > STANDARD_SERIAL_START else ""
+        self.logger.debug(f"Standard-Format: Ablauf={expires}, Serial={serial}")
+        return expires, serial
+
+    def _extract_djo_format_data(self, barcode):
+        """Extrahiert Daten im DJO-Format"""
+        self.logger.debug(f"DJO-Format erkannt, Barcode-Länge: {len(barcode)}")
+        if len(barcode) > DJO_EXPIRE_END_SHORT:
+            expires = barcode[DJO_EXPIRE_START_LONG:DJO_EXPIRE_END_LONG]
+            serial = barcode[DJO_SERIAL_START_LONG:DJO_SERIAL_END_LONG]
+        else:
+            expires = barcode[DJO_EXPIRE_START_SHORT:DJO_EXPIRE_END_SHORT]
+            serial = barcode[DJO_SERIAL_START_LONG:DJO_SERIAL_END_SHORT]
+
+        self.logger.debug(f"DJO-Format: Ablauf={expires}, Serial={serial}")
+        return expires, serial
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
         self.logger = LoggerService("MainWindow")
-        # Verbindungen einrichten
+        self._initialize_components()
+        self._setup_ui_state()
+
+    def _initialize_components(self):
+        """Initialisiert alle Komponenten"""
         self._setup_connections()
-        # Barcode-Prozessor initialisieren
         self.barcode_processor = BarcodeProcessor()
         self.data = self._init_data(self._file_path())
+        self.json_search_file_dialog = FileOpenDialog()
+        self.info_dialog = InfoWindow()
+        self.json_search_file_dialog.file_opened.connect(self._handle_file_opened)
+
+    def _setup_ui_state(self):
+        """Setzt den initialen UI-Zustand"""
         self.label_valid.setVisible(False)
         self.barcode = None
         self.radioButton_ref.setChecked(True)
         self.radioButton_gtin.setChecked(False)
-        self.json_search_file_dialog = FileOpenDialog()
-        self.info_dialog = InfoWindow()
-        # Signal von search_json verbinden
-        self.json_search_file_dialog.file_opened.connect(self._handle_file_opened)
 
     def _init_data(self, data_file):
         return data.init_search(data_file)
 
     def _file_path(self):
-        with open('json_file.cfg', 'r') as f:
+        with open(CONFIG_FILE, 'r') as f:
             return f.read()
 
     def _setup_connections(self):
@@ -294,12 +306,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.radioButton_gtin.toggled.connect(self.radio_button_gtin_changed)
 
     def radio_button_ref_changed(self):
-        self.radioButton_gtin.setChecked(
-            False) if self.radioButton_ref.isChecked() else self.radioButton_gtin.setChecked(True)
+        self.radioButton_gtin.setChecked(False if self.radioButton_ref.isChecked() else True)
 
     def radio_button_gtin_changed(self):
-        self.radioButton_ref.setChecked(
-            False) if self.radioButton_gtin.isChecked() else self.radioButton_ref.setChecked(True)
+        self.radioButton_ref.setChecked(False if self.radioButton_gtin.isChecked() else True)
 
     def reverse_search(self):
         ref = self.lineEdit_ref.text()
@@ -307,34 +317,31 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if not ref:
             self.logger.warning("Keine Ref-Nr. eingegeben")
             return
+
         try:
             self.logger.info(f"Verarbeite Ref-Nr.: {ref}")
             gtin = data.search_gtin(ref, self.data)
-            chk = self._validate_gtin_with_fallback(gtin)
+            chk = self.barcode_processor.gtin_validator.validate_gtin(gtin)
+
             if chk:
-                self.lineEdit_gtin.setText(gtin)
-                self.label_valid.setVisible(True)
-                self.logger.info(f"Ref-Nr. erfolgreich verarbeitet - Ref: {ref}")
-                self._copy_to_clipboard()
+                self._handle_successful_reverse_search(gtin, ref)
             else:
-                self.logger.info(f"Ref-Nr. nicht gefunden - Ref: {ref}")
-                self.label_valid.setVisible(False)
+                self._handle_failed_reverse_search(ref)
 
         except Exception as e:
             self.logger.error(f"Fehler bei der Ref-Nr-Verarbeitung: {e}", exc_info=True)
 
-    def _validate_gtin_with_fallback(self, gtin: str) -> bool:
-        """Validiert GTIN mit Fallback auf GTIN-13 falls notwendig"""
-        chk = self.barcode_processor.gtin_validator.check_gtin(gtin)
-        self.logger.info(f"GTIN valid: {chk}")
+    def _handle_successful_reverse_search(self, gtin, ref):
+        """Behandelt erfolgreiches Reverse-Search-Ergebnis"""
+        self.lineEdit_gtin.setText(gtin)
+        self.label_valid.setVisible(True)
+        self.logger.info(f"Ref-Nr. erfolgreich verarbeitet - Ref: {ref}")
+        self._copy_to_clipboard()
 
-        if not chk:
-            gtin_13 = gtin[1:]
-            self.logger.debug(f"GTIN-13 extrahiert: {gtin_13}")
-            chk = self.barcode_processor.gtin_validator.validate_gtin13(gtin_13)
-            self.logger.info(f"GTIN-13 valid: {chk}")
-
-        return chk
+    def _handle_failed_reverse_search(self, ref):
+        """Behandelt fehlgeschlagenes Reverse-Search-Ergebnis"""
+        self.logger.info(f"Ref-Nr. nicht gefunden - Ref: {ref}")
+        self.label_valid.setVisible(False)
 
     def barcode_decode(self):
         self._clear_ui_fields()
@@ -342,12 +349,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if not self.barcode:
             self.logger.warning("Kein Barcode eingegeben")
             return
+
         try:
             self.logger.info(f"Verarbeite Barcode: {self.barcode}")
             gtin, expires, serial, chk = self.barcode_processor.process_barcode(self.barcode)
-            if not chk:
-                self.barcode = self.barcode_processor._test_on_alternative_barcode(self.barcode)
-                gtin, expires, serial, chk = self.barcode_processor.process_barcode(self.barcode)
             self._update_ui_with_barcode_data(gtin, expires, serial, chk)
             self.logger.info(f"Barcode erfolgreich verarbeitet - GTIN: {gtin}, Ablauf: {expires}, Serial: {serial}")
         except Exception as e:
@@ -355,10 +360,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def _clear_ui_fields(self):
         """Löscht alle UI-Eingabefelder"""
-        self.lineEdit_gtin.setText('')
-        self.lineEdit_expire.setText('')
-        self.lineEdit_serial.setText('')
-        self.lineEdit_ref.setText('')
+        fields = [self.lineEdit_gtin, self.lineEdit_expire, self.lineEdit_serial, self.lineEdit_ref]
+        for field in fields:
+            field.setText('')
         self.label_valid.setVisible(False)
 
     def barcode_changed(self):
@@ -374,14 +378,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.lineEdit_ref.setText(data.search_refnumber(gtin, self.data))
         self.label_valid.setVisible(chk)
         self._copy_to_clipboard()
-        # Fokus auf lineEdit_barcode setzen und Cursor auf erste Position
+        self._set_focus_to_barcode_input()
+
+    def _set_focus_to_barcode_input(self):
+        """Setzt den Fokus auf das Barcode-Eingabefeld"""
         self.lineEdit_barcode.setFocus()
         self.lineEdit_barcode.setCursorPosition(0)
 
     def _copy_to_clipboard(self):
         """Kopiert den entsprechenden Wert basierend auf dem ausgewählten Radio Button"""
-        clipboard_mapping = {self.radioButton_ref: self.lineEdit_ref.text(),
-                             self.radioButton_gtin: self.lineEdit_gtin.text()}
+        clipboard_mapping = {
+            self.radioButton_ref: self.lineEdit_ref.text(),
+            self.radioButton_gtin: self.lineEdit_gtin.text()
+        }
         selected_value = next((value for button, value in clipboard_mapping.items() if button.isChecked()), "")
         if selected_value:
             pyperclip.copy(selected_value)
@@ -397,15 +406,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.logger.info(f"Daten erfolgreich aus Datei geladen: {file_path}")
             else:
                 self.logger.error(f"Fehler beim Laden der Datei {file_path}")
-
         except Exception as e:
             self.logger.error(f"Fehler beim Laden der Datei {file_path}: {str(e)}")
-            # Optional: Fehlermeldung für den Benutzer anzeigen
             self.logger.warning(self, "Fehler", f"Datei konnte nicht geladen werden: {str(e)}")
 
     def _handle_info_window(self):
         self.info_dialog.show()
-
 
 if __name__ == '__main__':
     app = qtw.QApplication(sys.argv)
