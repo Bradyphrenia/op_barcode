@@ -319,7 +319,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             else:
                 self.logger.info(f"Ref-Nr. nicht gefunden - Ref: {ref}")
                 self.label_valid.setVisible(False)
-            
+
         except Exception as e:
             self.logger.error(f"Fehler bei der Ref-Nr-Verarbeitung: {e}", exc_info=True)
 
