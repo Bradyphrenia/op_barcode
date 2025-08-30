@@ -27,7 +27,29 @@ bin/
 
 ### Mac OS ###
 .DS_Store
-*.xml
+
+# Logs
+*.log
 /import_ep.log
 /barcode_processor.log
+
+# Large data not in repo
 /table-EP_ARTIKEL2.json
+
+
+# Python ignores
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+venv_p/
+build/
+dist/
+build_cythonize/
+.eggs/
+*.egg-info/
+
+# IDE/project files
+.idea/
+*.iml

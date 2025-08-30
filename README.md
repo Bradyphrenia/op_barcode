@@ -28,7 +28,10 @@ Der Barcode-Leser ist eine Desktop-Anwendung, die mit PyQt5 entwickelt wurde und
 
 1. Klonen Sie das Repository:
 
-bash git clone <repository-url> cd op_barcode
+```bash
+git clone <repository-url>
+cd op_barcode
+```
 
 2. Erstellen Sie eine virtuelle Umgebung:
 ```bash

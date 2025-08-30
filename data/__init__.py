@@ -10,6 +10,8 @@ from .import_ep import (
 )
 
 __all__ = [
-    "search_refnumber","search_gtin",
+    "search_refnumber",
+    "search_gtin",
     "search_in_dictionary",
+    "init_search",
 ]
