@@ -728,13 +728,8 @@ class BarcodeProcessor:
 
 if __name__ == '__main__':
 
-    print ("Test")
-
-
-
     barcode_processor = BarcodeProcessor()
     data = init_search('J:/EPZ/Daten OA Troeger/table-EP_ARTIKEL.json')
-
 
     proth_list = Database('139.64.201.9', 'eprd_db2_m1', 'postgres', 'SuperUser2012')
     proth_list.open_db()
