@@ -1,32 +1,14 @@
-import logging
-import sys
-import pyperclip
-
-
-
-
-from datetime import datetime
-import psycopg2
-# from datalog import datalog
 import codecs
-
-
-
-
-
-
-
 import json
 import logging
 import os
+import sys
 from collections import defaultdict
+from datetime import datetime
 from typing import Dict, List, Any, Tuple, Union, Set
 
-# Logging-Konfiguration hinzufügen
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    handlers=[logging.StreamHandler(),  # Ausgabe auf der Konsole
-                              logging.FileHandler('import_ep.log')  # Speichern in einer Logdatei
-                              ])
+import psycopg2
+
 logger = logging.getLogger(__name__)
 
 
@@ -307,14 +289,6 @@ def search_gtin(ref: str, search_data: Dict[str, Any]) -> str:
     return searcher.search_gtin(ref)
 
 
-
-
-
-
-
-
-
-
 DEBUGGING = 0  # if 1 then debugging is on else off
 
 
@@ -355,18 +329,12 @@ class Database:
     def name(self):
         return self.dbname
 
-#    @datalog
+    #    @datalog
     def open_db(self):
         try:  # catch database error...
-            connection_params = {
-                "host": self.host,
-                "dbname": self.dbname,
-                "user": self.username,
-                "password": self.password,
-                "options": "-c client_encoding=UTF8"
-            }
-            connection_string = " ".join("%s='%s'" % (key, val)
-                                         for key, val in connection_params.items())
+            connection_params = {"host": self.host, "dbname": self.dbname, "user": self.username,
+                                 "password": self.password, "options": "-c client_encoding=UTF8"}
+            connection_string = " ".join("%s='%s'" % (key, val) for key, val in connection_params.items())
             self.conn = psycopg2.connect(connection_string)
             self.cur = self.conn.cursor()
         except psycopg2.OperationalError as e:
@@ -462,8 +430,6 @@ class Database:
             pass
 
 
-
-
 # Konstanten
 BARCODE_MIN_LENGTH = 16
 GTIN_START_POS = 2
@@ -482,28 +448,35 @@ DJO_EXPIRE_END_SHORT = 34
 DJO_SERIAL_START_LONG = 18
 DJO_SERIAL_END_LONG = 27
 DJO_SERIAL_END_SHORT = 26
-CONFIG_FILE = 'json_file.cfg'
 LOG_FILE = 'barcode_processor.log'
 
 # Logging-Konfiguration
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     handlers=[logging.FileHandler(LOG_FILE), logging.StreamHandler(sys.stdout)])
 
+
 class LoggerService:
     """Zentrale Klasse für alle Logging-Funktionen"""
+
     def __init__(self, name):
         self.logger = logging.getLogger(name)
+
     def info(self, message):
         self.logger.info(message)
+
     def debug(self, message):
         self.logger.debug(message)
+
     def warning(self, message):
         self.logger.warning(message)
+
     def error(self, message, exc_info=False):
         self.logger.error(message, exc_info=exc_info)
 
+
 class GtinValidator:
     """Klasse für die Validierung von GTIN-Codes"""
+
     def __init__(self):
         self.logger = LoggerService("GtinValidator")
 
@@ -549,8 +522,10 @@ class GtinValidator:
         total = sum(int(digit) * (1 if i % 2 == 0 else 3) for i, digit in enumerate(gtin_12))
         return (10 - (total % 10)) % 10
 
+
 class DateConverter:
     """Klasse für die Konvertierung von Datumsformaten"""
+
     def __init__(self):
         self.logger = LoggerService("DateConverter")
 
@@ -605,8 +580,10 @@ class DateConverter:
             self.logger.error(f"Ungültiges Datum nach Formatierung: {formatted_date}")
             return ""
 
+
 class BarcodeProcessor:
     """Hauptklasse für die Verarbeitung von Barcodes"""
+
     def __init__(self):
         self.logger = LoggerService("BarcodeProcessor")
         self.gtin_validator = GtinValidator()
@@ -719,33 +696,19 @@ class BarcodeProcessor:
         return expires, serial
 
 
-
-            
-
-
-
-
-
 if __name__ == '__main__':
-
     barcode_processor = BarcodeProcessor()
     data = init_search('J:/EPZ/Daten OA Troeger/table-EP_ARTIKEL.json')
-
     proth_list = Database('139.64.201.9', 'eprd_db2_m1', 'postgres', 'SuperUser2012')
     proth_list.open_db()
     query = ('SELECT * from artikel_ep;')
     records = proth_list.fetchall(query)
     for record in records:
         ref_nr, idnr = record[2], record[5]
-        print (ref_nr,idnr)
+        print(ref_nr, idnr)
         gtin = search_gtin(ref_nr, data)
         chk = barcode_processor.gtin_validator.validate_gtin(gtin)
         if chk:
-            print (gtin)
+            print(gtin)
             proth_list.execute(f'update artikel_ep set gtin = {gtin} where id = {idnr};')
-        
-
-    
-    
-
-    
+    proth_list.close_db()
